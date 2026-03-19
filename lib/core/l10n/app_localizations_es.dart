@@ -9,7 +9,7 @@ class AppLocalizationsEs extends AppLocalizations {
   AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
-  String get appTitle => 'Coach Phrase';
+  String get appTitle => 'Philos';
 
   @override
   String get onboardingTitle1 => 'Inspiración Diaria';
@@ -113,7 +113,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get settingsShareMessage =>
-      'Conoce Coach Phrase - Frases inspiradoras diarias para impulsar tu éxito!';
+      'Conoce Philos - Frases inspiradoras diarias para impulsar tu éxito!';
 
   @override
   String get settingsFeedback => 'Comentarios y Soporte';

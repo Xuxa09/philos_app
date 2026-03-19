@@ -103,7 +103,7 @@ abstract class AppLocalizations {
   /// No description provided for @appTitle.
   ///
   /// In en, this message translates to:
-  /// **'Coach Phrase'**
+  /// **'Philos'**
   String get appTitle;
 
   /// No description provided for @onboardingTitle1.
@@ -301,7 +301,7 @@ abstract class AppLocalizations {
   /// No description provided for @settingsShareMessage.
   ///
   /// In en, this message translates to:
-  /// **'Check out Coach Phrase - Daily inspirational quotes to fuel your success!'**
+  /// **'Check out Philos - Daily philosophical quotes from the greatest thinkers in history!'**
   String get settingsShareMessage;
 
   /// No description provided for @settingsFeedback.

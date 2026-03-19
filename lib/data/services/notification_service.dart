@@ -101,7 +101,7 @@ class NotificationService {
 
       await _plugin.zonedSchedule(
         _notificationId,
-        'Coach Phrase',
+        'Philos',
         _getRandomMessage(),
         scheduledDate,
         const NotificationDetails(

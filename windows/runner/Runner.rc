@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.gambitstudio" "\0"
-            VALUE "FileDescription", "coach_phrase_app" "\0"
+            VALUE "FileDescription", "Philos" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "coach_phrase_app" "\0"
+            VALUE "InternalName", "Philos" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2026 com.gambitstudio. All rights reserved." "\0"
-            VALUE "OriginalFilename", "coach_phrase_app.exe" "\0"
-            VALUE "ProductName", "coach_phrase_app" "\0"
+            VALUE "OriginalFilename", "Philos.exe" "\0"
+            VALUE "ProductName", "Philos" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

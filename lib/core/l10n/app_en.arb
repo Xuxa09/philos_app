@@ -1,6 +1,6 @@
 {
   "@@locale": "en",
-  "appTitle": "Coach Phrase",
+  "appTitle": "Philos",
 
   "onboardingTitle1": "Daily Inspiration",
   "onboardingDesc1": "Receive 3 powerful quotes every day with reflections to fuel your success",
@@ -38,7 +38,7 @@
   "settingsDailyReminder": "Daily Reminder",
   "settingsRateApp": "Rate App",
   "settingsShareApp": "Share App",
-  "settingsShareMessage": "Check out Coach Phrase - Daily inspirational quotes to fuel your success!",
+  "settingsShareMessage": "Check out Philos - Daily philosophical quotes from the greatest thinkers in history!",
   "settingsFeedback": "Feedback & Support",
   "settingsPrivacyPolicy": "Privacy Policy",
   "settingsTermsOfUse": "Terms of Use",

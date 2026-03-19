@@ -1,7 +1,7 @@
 // === App Constants ===
 
 abstract class AppConstants {
-  static const String appName = 'Coach Phrase';
+  static const String appName = 'Philos';
   static const int dailyQuoteCount = 3;
   static const int reviewCooldownDays = 60;
   static const int reviewMinUsageCount = 3;

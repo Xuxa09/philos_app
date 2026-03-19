@@ -1,6 +1,6 @@
 {
-    "name": "coach_phrase_app",
-    "short_name": "coach_phrase_app",
+    "name": "Philos",
+    "short_name": "Philos",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

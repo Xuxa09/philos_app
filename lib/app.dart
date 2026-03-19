@@ -25,7 +25,7 @@ class _AppState extends State<App> {
     final settingsVm = context.watch<SettingsViewModel>();
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      title: 'Coach Phrase',
+      title: 'Philos',
       theme: AppTheme.dark,
       darkTheme: AppTheme.dark,
       themeMode: ThemeMode.dark,

@@ -1,5 +1,5 @@
-name: coach_phrase
-description: "Daily inspirational quotes for success, perseverance and personal growth."
+name: philos
+description: "Daily philosophical quotes from the greatest thinkers in history."
 publish_to: 'none'
 version: 1.0.0+1
 

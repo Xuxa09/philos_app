@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="coach_phrase_app"
+        android:label="Philos"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -4,7 +4,10 @@
       "Bash(powershell -Command \"Get-PSDrive C | Select-Object Used,Free | Format-List\")",
       "Bash(grep -r \"streak\\\\|ofensiva\" --include=*.dart --include=*.yaml --include=*.json)",
       "Bash(flutter gen-l10n:*)",
-      "WebFetch(domain:www.pensador.com)"
+      "WebFetch(domain:www.pensador.com)",
+      "Bash(mkdir -p philos)",
+      "Bash(cp coach_phrase_app/MainActivity.kt philos/)",
+      "Bash(rm -rf coach_phrase_app)"
     ]
   }
 }

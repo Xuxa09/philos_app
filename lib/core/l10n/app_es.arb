@@ -1,6 +1,6 @@
 {
   "@@locale": "es",
-  "appTitle": "Coach Phrase",
+  "appTitle": "Philos",
 
   "onboardingTitle1": "Inspiraci\u00f3n Diaria",
   "onboardingDesc1": "Recibe 3 frases poderosas cada d\u00eda con reflexiones para impulsar tu \u00e9xito",
@@ -38,7 +38,7 @@
   "settingsDailyReminder": "Recordatorio Diario",
   "settingsRateApp": "Calificar App",
   "settingsShareApp": "Compartir App",
-  "settingsShareMessage": "Conoce Coach Phrase - Frases inspiradoras diarias para impulsar tu \u00e9xito!",
+  "settingsShareMessage": "Conoce Philos - Frases inspiradoras diarias para impulsar tu \u00e9xito!",
   "settingsFeedback": "Comentarios y Soporte",
   "settingsPrivacyPolicy": "Pol\u00edtica de Privacidad",
   "settingsTermsOfUse": "T\u00e9rminos de Uso",

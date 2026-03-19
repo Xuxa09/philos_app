@@ -1,4 +1,4 @@
-package com.gambitstudio.coach_phrase_app
+package com.gambitstudio.philos
 
 import io.flutter.embedding.android.FlutterActivity
 
