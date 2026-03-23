@@ -11,4 +11,6 @@ abstract class StorageKeys {
   static const String notificationsEnabled = 'notifications_enabled';
   static const String widgetBackground = 'widget_background';
   static const String widgetFontStyle = 'widget_font_style';
+  static const String cardBackground = 'card_background';
+  static const String cardFontStyle = 'card_font_style';
 }

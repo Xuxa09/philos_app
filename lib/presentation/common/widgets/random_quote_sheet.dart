@@ -2,7 +2,7 @@
 
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:share_plus/share_plus.dart';
+import 'share_quote_sheet.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_fonts.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -160,16 +160,15 @@ class _RandomQuoteSheetState extends State<RandomQuoteSheet> {
           },
         ),
         const SizedBox(width: AppSpacing.lg),
-        _buildActionButton(
+        Builder(builder: (ctx) => _buildActionButton(
           icon: Icons.share_outlined,
           color: AppColors.textSecondary,
           onTap: () {
             HapticService.light();
-            Share.share(
-              '\u201C${_quote.text(locale)}\u201D \u2014 ${_quote.author(locale)}',
-            );
+            Navigator.pop(ctx);
+            ShareQuoteSheet.show(ctx, _quote, locale);
           },
-        ),
+        )),
       ],
     );
   }

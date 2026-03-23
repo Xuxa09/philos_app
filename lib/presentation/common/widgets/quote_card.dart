@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:share_plus/share_plus.dart';
+import 'share_quote_sheet.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_fonts.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -98,13 +98,11 @@ class QuoteCard extends StatelessWidget {
               ),
             ),
           ),
-        GestureDetector(
+        Builder(builder: (ctx) => GestureDetector(
           behavior: HitTestBehavior.opaque,
           onTap: () {
             HapticService.light();
-            Share.share(
-              '"${quote.text(locale)}" \u2014 ${quote.author(locale)}',
-            );
+            ShareQuoteSheet.show(ctx, quote, locale);
           },
           child: const SizedBox(
             width: 44, height: 44,
@@ -116,7 +114,7 @@ class QuoteCard extends StatelessWidget {
               ),
             ),
           ),
-        ),
+        )),
       ],
     );
   }
