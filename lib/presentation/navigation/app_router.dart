@@ -9,6 +9,8 @@ import '../moods/moods_screen.dart';
 import '../onboarding/onboarding_screen.dart';
 import '../schools/schools_screen.dart';
 import '../settings/settings_screen.dart';
+import '../widget_editor/widget_editor_screen.dart';
+import '../widget_editor/widget_tutorial_screen.dart';
 import 'main_shell.dart';
 
 GoRouter createRouter() {
@@ -22,6 +24,8 @@ GoRouter createRouter() {
       GoRoute(path: '/schools', builder: (context, state) => const SchoolsScreen()),
       GoRoute(path: '/authors', builder: (context, state) => const AuthorsScreen()),
       GoRoute(path: '/journal', builder: (context, state) => const JournalScreen()),
+      GoRoute(path: '/widget-editor', builder: (context, state) => const WidgetEditorScreen()),
+      GoRoute(path: '/widget-tutorial', builder: (context, state) => const WidgetTutorialScreen()),
       ShellRoute(
         builder: (context, state, child) => MainShell(child: child),
         routes: [

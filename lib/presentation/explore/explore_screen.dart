@@ -104,25 +104,25 @@ class _ExploreScreenState extends State<ExploreScreen> {
       _CategoryItem(
         icon: Icons.edit_note,
         label: locale == 'pt' ? 'Suas frases' : locale == 'es' ? 'Tus frases' : 'Your quotes',
-        color: AppColors.accent,
+        color: AppColors.primary,
         route: '/journal',
       ),
       _CategoryItem(
         icon: Icons.emoji_emotions_outlined,
         label: locale == 'pt' ? 'Por sentimento' : locale == 'es' ? 'Por sentimiento' : 'By mood',
-        color: const Color(0xFFFF9F0A),
+        color: AppColors.primary,
         route: '/moods',
       ),
       _CategoryItem(
         icon: Icons.account_balance_outlined,
         label: locale == 'pt' ? 'Por escola' : locale == 'es' ? 'Por escuela' : 'By school',
-        color: const Color(0xFF0A84FF),
+        color: AppColors.primary,
         route: '/schools',
       ),
       _CategoryItem(
         icon: Icons.person_outline,
         label: locale == 'pt' ? 'Por autor' : locale == 'es' ? 'Por autor' : 'By author',
-        color: const Color(0xFF30D158),
+        color: AppColors.primary,
         route: '/authors',
       ),
     ];

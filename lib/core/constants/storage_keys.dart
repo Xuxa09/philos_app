@@ -9,4 +9,6 @@ abstract class StorageKeys {
   static const String themeMode = 'theme_mode';
   static const String dailySeed = 'daily_seed';
   static const String notificationsEnabled = 'notifications_enabled';
+  static const String widgetBackground = 'widget_background';
+  static const String widgetFontStyle = 'widget_font_style';
 }

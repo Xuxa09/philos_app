@@ -23,7 +23,19 @@ class AuthorsScreen extends StatelessWidget {
           _buildHeader(context, locale),
           _buildAuthorsRow(vm, authors),
           const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.md)),
-          if (vm.quotes.isNotEmpty) ...[
+          if (vm.selectedAuthor == null)
+            SliverToBoxAdapter(child: Padding(
+              padding: const EdgeInsets.only(top: 60),
+              child: Center(child: Column(children: [
+                Icon(Icons.touch_app_outlined, size: 40, color: AppColors.textTertiary),
+                const SizedBox(height: AppSpacing.md),
+                Text(
+                  locale == 'pt' ? 'Selecione um filósofo acima' : locale == 'es' ? 'Selecciona un filósofo arriba' : 'Select a philosopher above',
+                  style: AppFonts.body.copyWith(color: AppColors.textTertiary),
+                ),
+              ])),
+            ))
+          else ...[
             _buildQuotesHeader(vm, locale),
             _buildQuotesList(vm, locale),
           ],

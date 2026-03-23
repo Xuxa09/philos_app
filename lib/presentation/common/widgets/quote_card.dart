@@ -73,37 +73,48 @@ class QuoteCard extends StatelessWidget {
         Expanded(
           child: Text(
             quote.author(locale),
-            style: AppFonts.caption.copyWith(
+            style: AppFonts.callout.copyWith(
               color: AppColors.primary,
               fontWeight: FontWeight.w600,
-              letterSpacing: 0.5,
+              letterSpacing: 0.3,
             ),
           ),
         ),
         if (onFavoriteTap != null)
           GestureDetector(
+            behavior: HitTestBehavior.opaque,
             onTap: () {
               HapticService.selection();
               onFavoriteTap!();
             },
-            child: Icon(
-              isFavorite ? Icons.favorite : Icons.favorite_border,
-              color: isFavorite ? AppColors.love : AppColors.textTertiary,
-              size: 22,
+            child: SizedBox(
+              width: 44, height: 44,
+              child: Center(
+                child: Icon(
+                  isFavorite ? Icons.favorite : Icons.favorite_border,
+                  color: isFavorite ? AppColors.love : AppColors.textTertiary,
+                  size: 22,
+                ),
+              ),
             ),
           ),
-        const SizedBox(width: AppSpacing.sm),
         GestureDetector(
+          behavior: HitTestBehavior.opaque,
           onTap: () {
             HapticService.light();
             Share.share(
               '"${quote.text(locale)}" \u2014 ${quote.author(locale)}',
             );
           },
-          child: const Icon(
-            Icons.share_outlined,
-            color: AppColors.textTertiary,
-            size: 20,
+          child: const SizedBox(
+            width: 44, height: 44,
+            child: Center(
+              child: Icon(
+                Icons.share_outlined,
+                color: AppColors.textTertiary,
+                size: 20,
+              ),
+            ),
           ),
         ),
       ],
@@ -134,7 +145,7 @@ class QuoteCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              const Icon(Icons.lightbulb_outline, size: 16, color: AppColors.accent),
+              const Icon(Icons.lightbulb_outline, size: 18, color: AppColors.accent),
               const SizedBox(width: AppSpacing.xs),
               Text(
                 locale == 'pt'
@@ -142,7 +153,7 @@ class QuoteCard extends StatelessWidget {
                     : locale == 'es'
                         ? 'Reflexi\u00F3n'
                         : 'Reflection',
-                style: AppFonts.caption.copyWith(
+                style: AppFonts.subheadline.copyWith(
                   color: AppColors.accent,
                   fontWeight: FontWeight.w600,
                 ),
@@ -152,9 +163,9 @@ class QuoteCard extends StatelessWidget {
           const SizedBox(height: AppSpacing.xs),
           Text(
             quote.reflection(locale),
-            style: AppFonts.subheadline.copyWith(
+            style: AppFonts.body.copyWith(
               color: AppColors.textSecondary,
-              height: 1.4,
+              height: 1.5,
             ),
           ),
         ],

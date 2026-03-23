@@ -10,7 +10,11 @@
       "Bash(rm -rf coach_phrase_app)",
       "WebSearch",
       "Bash(find /c/Users/lalli/Flutter/coach_phrase_app/android -type f -name *.kt -o -name *.java)",
-      "Bash(flutter pub:*)"
+      "Bash(flutter pub:*)",
+      "Bash(flutter clean:*)",
+      "Bash(./gradlew --stop)",
+      "Bash(flutter build:*)",
+      "Bash(flutter --version)"
     ]
   }
 }

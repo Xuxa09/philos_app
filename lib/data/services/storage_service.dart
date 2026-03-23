@@ -54,4 +54,15 @@ class StorageService {
 
   Future<void> setSelectedLocale(String locale) =>
       _prefs.setString(StorageKeys.selectedLocale, locale);
+
+  // === Widget Customization ===
+  String get widgetBackground => _prefs.getString(StorageKeys.widgetBackground) ?? 'gradient';
+
+  Future<void> setWidgetBackground(String value) =>
+      _prefs.setString(StorageKeys.widgetBackground, value);
+
+  String get widgetFontStyle => _prefs.getString(StorageKeys.widgetFontStyle) ?? 'serif';
+
+  Future<void> setWidgetFontStyle(String value) =>
+      _prefs.setString(StorageKeys.widgetFontStyle, value);
 }
