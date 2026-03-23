@@ -3,7 +3,9 @@
 import 'dart:math';
 import '../models/quote_model.dart';
 import '../models/category_model.dart';
+import '../models/mood_model.dart';
 import '../services/mock_data_provider.dart';
+import '../services/moods_data.dart';
 import '../services/storage_service.dart';
 
 class QuoteRepository {
@@ -63,4 +65,44 @@ class QuoteRepository {
         .toList();
   }
 
+  // === Philosopher Filtering ===
+  List<String> getUniqueAuthors() {
+    final authors = <String>{};
+    for (final q in MockDataProvider.quotes) {
+      authors.add(q.authorEn);
+    }
+    return authors.toList()..sort();
+  }
+
+  List<QuoteModel> getQuotesByAuthor(String authorEn) {
+    return MockDataProvider.quotes
+        .where((q) => q.authorEn == authorEn)
+        .toList();
+  }
+
+  // === Mood Filtering ===
+  List<QuoteModel> getQuotesByMood(MoodType mood) {
+    return MoodsData.moods[mood.name] ?? [];
+  }
+
+  List<QuoteModel> getAllMoodQuotes() {
+    return MoodsData.moods.values.expand((list) => list).toList();
+  }
+
+  // === Search ===
+  List<QuoteModel> searchQuotes(List<QuoteModel> source, String query, String locale) {
+    final terms = query.toLowerCase().split(RegExp(r'\s+')).where((t) => t.isNotEmpty).toList();
+    if (terms.isEmpty) return source;
+
+    return source.where((q) {
+      final author = q.author(locale).toLowerCase();
+      final text = q.text(locale).toLowerCase();
+      final cat = QuoteCategory.values.where((c) => c.name == q.category).firstOrNull;
+      final school = cat?.localizedName(locale).toLowerCase() ?? '';
+
+      return terms.every((term) =>
+        author.contains(term) || text.contains(term) || school.contains(term)
+      );
+    }).toList();
+  }
 }

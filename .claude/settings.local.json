@@ -7,7 +7,8 @@
       "WebFetch(domain:www.pensador.com)",
       "Bash(mkdir -p philos)",
       "Bash(cp coach_phrase_app/MainActivity.kt philos/)",
-      "Bash(rm -rf coach_phrase_app)"
+      "Bash(rm -rf coach_phrase_app)",
+      "WebSearch"
     ]
   }
 }

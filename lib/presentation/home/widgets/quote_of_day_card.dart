@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_fonts.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/utils/haptic_service.dart';
 import '../../../data/models/quote_model.dart';
+import '../../common/widgets/pressable_scale.dart';
 
 class QuoteOfDayCard extends StatefulWidget {
   final QuoteModel quote;
@@ -39,8 +41,26 @@ class _QuoteOfDayCardState extends State<QuoteOfDayCard> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return PressableScale(
       onTap: _overflows ? () => setState(() => _expanded = !_expanded) : null,
+      onLongPress: () {
+        HapticService.light();
+        final text = '"${widget.quote.text(widget.locale)}" — ${widget.quote.author(widget.locale)}';
+        Clipboard.setData(ClipboardData(text: text));
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              widget.locale == 'pt'
+                  ? 'Frase copiada!'
+                  : widget.locale == 'es'
+                      ? '¡Frase copiada!'
+                      : 'Quote copied!',
+            ),
+            duration: const Duration(seconds: 2),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+      },
       child: AnimatedSize(
         duration: const Duration(milliseconds: 300),
         curve: Curves.easeInOut,

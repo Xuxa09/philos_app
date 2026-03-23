@@ -5,35 +5,32 @@ import '../../data/repositories/quote_repository.dart';
 
 class ExploreViewModel extends ChangeNotifier {
   final QuoteRepository _repository = QuoteRepository();
-  QuoteCategory? _selectedCategory;
+
+  String _searchQuery = '';
+  String _locale = 'pt';
   List<QuoteModel> _quotes = [];
   bool _isLoading = true;
   bool _hasLoadedOnce = false;
 
-  QuoteCategory? get selectedCategory => _selectedCategory;
+  String get searchQuery => _searchQuery;
   List<QuoteModel> get quotes => _quotes;
   bool get isLoading => _isLoading;
-  List<QuoteCategory> get categories => QuoteCategory.values;
 
   Future<void> loadData() async {
-    if (_hasLoadedOnce) { _refreshSilently(); return; }
+    if (_hasLoadedOnce) { _applyFilters(); return; }
     _isLoading = true;
     notifyListeners();
     await Future.delayed(const Duration(milliseconds: 400));
-    _quotes = _repository.getAllQuotes();
+    _applyFilters();
     _hasLoadedOnce = true;
     _isLoading = false;
     notifyListeners();
   }
 
-  void selectCategory(QuoteCategory? category) {
-    if (_selectedCategory == category) {
-      _selectedCategory = null;
-      _quotes = _repository.getAllQuotes();
-    } else {
-      _selectedCategory = category;
-      _quotes = category != null ? _repository.getQuotesByCategory(category) : _repository.getAllQuotes();
-    }
+  void setSearchQuery(String query, String locale) {
+    _searchQuery = query;
+    _locale = locale;
+    _applyFilters();
     notifyListeners();
   }
 
@@ -44,8 +41,13 @@ class ExploreViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void _refreshSilently() {
-    _quotes = _selectedCategory != null ? _repository.getQuotesByCategory(_selectedCategory!) : _repository.getAllQuotes();
-    notifyListeners();
+  void _applyFilters() {
+    List<QuoteModel> source = _repository.getAllQuotes();
+
+    if (_searchQuery.isNotEmpty) {
+      source = _repository.searchQuotes(source, _searchQuery, _locale);
+    }
+
+    _quotes = source;
   }
 }
