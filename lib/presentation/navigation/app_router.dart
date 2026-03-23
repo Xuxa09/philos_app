@@ -4,8 +4,10 @@ import '../favorites/favorites_screen.dart';
 import '../home/home_screen.dart';
 import '../explore/explore_screen.dart';
 import '../journal/journal_screen.dart';
+import '../authors/authors_screen.dart';
 import '../moods/moods_screen.dart';
 import '../onboarding/onboarding_screen.dart';
+import '../schools/schools_screen.dart';
 import '../settings/settings_screen.dart';
 import 'main_shell.dart';
 
@@ -17,6 +19,8 @@ GoRouter createRouter() {
       GoRoute(path: '/onboarding', builder: (context, state) => const OnboardingScreen()),
       GoRoute(path: '/settings', builder: (context, state) => const SettingsScreen()),
       GoRoute(path: '/moods', builder: (context, state) => const MoodsScreen()),
+      GoRoute(path: '/schools', builder: (context, state) => const SchoolsScreen()),
+      GoRoute(path: '/authors', builder: (context, state) => const AuthorsScreen()),
       GoRoute(path: '/journal', builder: (context, state) => const JournalScreen()),
       ShellRoute(
         builder: (context, state, child) => MainShell(child: child),
