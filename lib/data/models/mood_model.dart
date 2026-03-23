@@ -24,9 +24,9 @@ enum MoodType {
     switch (this) {
       case MoodType.unmotivated:
         return locale == 'pt'
-            ? 'Desmotivado'
+            ? 'Desanimado'
             : locale == 'es'
-                ? 'Desmotivado'
+                ? 'Desanimado'
                 : 'Unmotivated';
       case MoodType.anxious:
         return locale == 'pt'

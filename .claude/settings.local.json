@@ -14,7 +14,8 @@
       "Bash(flutter clean:*)",
       "Bash(./gradlew --stop)",
       "Bash(flutter build:*)",
-      "Bash(flutter --version)"
+      "Bash(flutter --version)",
+      "Bash(dart analyze:*)"
     ]
   }
 }

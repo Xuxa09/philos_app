@@ -22,7 +22,7 @@ class AuthorsScreen extends StatelessWidget {
         return SafeArea(child: CustomScrollView(slivers: [
           _buildHeader(context, locale),
           _buildAuthorsRow(vm, authors),
-          const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.md)),
+          const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.lg)),
           if (vm.selectedAuthor == null)
             SliverToBoxAdapter(child: Padding(
               padding: const EdgeInsets.only(top: 60),
@@ -35,10 +35,8 @@ class AuthorsScreen extends StatelessWidget {
                 ),
               ])),
             ))
-          else ...[
-            _buildQuotesHeader(vm, locale),
+          else
             _buildQuotesList(vm, locale),
-          ],
           const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.xxl)),
         ]));
       }),
@@ -91,16 +89,6 @@ class AuthorsScreen extends StatelessWidget {
           );
         },
       ),
-    ));
-  }
-
-  SliverToBoxAdapter _buildQuotesHeader(AuthorsViewModel vm, String locale) {
-    final authors = vm.getAuthors(locale);
-    final current = authors.where((a) => a.key == vm.selectedAuthor).firstOrNull;
-    return SliverToBoxAdapter(child: Padding(
-      padding: const EdgeInsets.fromLTRB(AppSpacing.screenPadding, AppSpacing.sm, AppSpacing.screenPadding, AppSpacing.md),
-      child: Text(current?.name ?? '',
-        style: AppFonts.title2.copyWith(color: current?.color ?? AppColors.textPrimary)),
     ));
   }
 

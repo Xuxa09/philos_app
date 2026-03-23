@@ -20,10 +20,9 @@ class MoodsScreen extends StatelessWidget {
         return SafeArea(child: CustomScrollView(slivers: [
           _buildHeader(context, locale),
           _buildMoodsGrid(vm, locale),
-          if (vm.quotes.isNotEmpty) ...[
-            _buildQuotesHeader(vm, locale),
+          const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.lg)),
+          if (vm.quotes.isNotEmpty)
             _buildQuotesList(vm, locale),
-          ],
           const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.xxl)),
         ]));
       }),
@@ -59,14 +58,6 @@ class MoodsScreen extends StatelessWidget {
           }, childCount: vm.moods.length),
       ),
     );
-  }
-
-  SliverToBoxAdapter _buildQuotesHeader(MoodsViewModel vm, String locale) {
-    return SliverToBoxAdapter(child: Padding(
-      padding: const EdgeInsets.fromLTRB(AppSpacing.screenPadding, AppSpacing.lg, AppSpacing.screenPadding, AppSpacing.md),
-      child: Text(vm.selectedMood?.localizedName(locale) ?? '',
-        style: AppFonts.title2.copyWith(color: vm.selectedMood?.color ?? AppColors.textPrimary)),
-    ));
   }
 
   SliverPadding _buildQuotesList(MoodsViewModel vm, String locale) {

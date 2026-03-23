@@ -21,10 +21,9 @@ class SchoolsScreen extends StatelessWidget {
         return SafeArea(child: CustomScrollView(slivers: [
           _buildHeader(context, locale),
           _buildSchoolsGrid(vm, locale),
-          if (vm.quotes.isNotEmpty) ...[
-            _buildQuotesHeader(vm, locale),
+          const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.lg)),
+          if (vm.quotes.isNotEmpty)
             _buildQuotesList(vm, locale),
-          ],
           const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.xxl)),
         ]));
       }),
@@ -80,14 +79,6 @@ class SchoolsScreen extends StatelessWidget {
           }, childCount: vm.schools.length),
       ),
     );
-  }
-
-  SliverToBoxAdapter _buildQuotesHeader(SchoolsViewModel vm, String locale) {
-    return SliverToBoxAdapter(child: Padding(
-      padding: const EdgeInsets.fromLTRB(AppSpacing.screenPadding, AppSpacing.lg, AppSpacing.screenPadding, AppSpacing.md),
-      child: Text(vm.selectedSchool?.localizedName(locale) ?? '',
-        style: AppFonts.title2.copyWith(color: vm.selectedSchool?.color ?? AppColors.textPrimary)),
-    ));
   }
 
   SliverPadding _buildQuotesList(SchoolsViewModel vm, String locale) {

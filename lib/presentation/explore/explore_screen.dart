@@ -102,12 +102,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
   Widget _buildCategoryGrid(BuildContext context, String locale) {
     final items = [
       _CategoryItem(
-        icon: Icons.edit_note,
-        label: locale == 'pt' ? 'Suas frases' : locale == 'es' ? 'Tus frases' : 'Your quotes',
-        color: AppColors.primary,
-        route: '/journal',
-      ),
-      _CategoryItem(
         icon: Icons.emoji_emotions_outlined,
         label: locale == 'pt' ? 'Por sentimento' : locale == 'es' ? 'Por sentimiento' : 'By mood',
         color: AppColors.primary,
@@ -124,6 +118,12 @@ class _ExploreScreenState extends State<ExploreScreen> {
         label: locale == 'pt' ? 'Por autor' : locale == 'es' ? 'Por autor' : 'By author',
         color: AppColors.primary,
         route: '/authors',
+      ),
+      _CategoryItem(
+        icon: Icons.edit_note,
+        label: locale == 'pt' ? 'Suas frases' : locale == 'es' ? 'Tus frases' : 'Your quotes',
+        color: AppColors.primary,
+        route: '/journal',
       ),
     ];
 
