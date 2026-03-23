@@ -51,6 +51,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
       _buildSettingsTile(icon: Icons.share_outlined, title: context.l10n.settingsShareApp,
         onTap: () { HapticService.light(); Share.share(context.l10n.settingsShareMessage); }),
       const SizedBox(height: AppSpacing.lg),
+      _buildSectionTitle(_widgetSectionTitle(vm.selectedLocale)),
+      const SizedBox(height: AppSpacing.sm),
+      _buildWidgetBanner(vm.selectedLocale),
+      const SizedBox(height: AppSpacing.lg),
       _buildSectionTitle(context.l10n.settingsLegal),
       const SizedBox(height: AppSpacing.sm),
       _buildSettingsTile(icon: Icons.privacy_tip_outlined, title: context.l10n.settingsPrivacyPolicy,
@@ -102,4 +106,40 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   String _localeName(String code) { switch (code) { case 'pt': return 'Portugu\u00EAs'; case 'es': return 'Espa\u00F1ol'; default: return 'English'; } }
+
+  String _widgetSectionTitle(String locale) {
+    if (locale == 'pt') return 'Widget';
+    if (locale == 'es') return 'Widget';
+    return 'Widget';
+  }
+
+  Widget _buildWidgetBanner(String locale) {
+    final title = locale == 'pt'
+        ? 'Adicione à tela inicial'
+        : locale == 'es'
+            ? 'Añadir a la pantalla de inicio'
+            : 'Add to home screen';
+    final description = locale == 'pt'
+        ? 'Receba frases filosóficas diretamente na tela inicial do seu celular. Segure a tela inicial e adicione o widget Philos.'
+        : locale == 'es'
+            ? 'Recibe frases filosóficas directamente en la pantalla de inicio. Mantén presionada la pantalla y añade el widget Philos.'
+            : 'Get philosophical quotes right on your home screen. Long press your home screen and add the Philos widget.';
+
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md, vertical: AppSpacing.md - 2),
+      decoration: BoxDecoration(
+        color: AppColors.surface,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Row(children: [
+        const Icon(Icons.widgets_outlined, color: AppColors.textTertiary, size: 22),
+        const SizedBox(width: AppSpacing.md),
+        Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Text(title, style: AppFonts.body.copyWith(color: AppColors.textPrimary)),
+          const SizedBox(height: 2),
+          Text(description, style: AppFonts.caption.copyWith(color: AppColors.textTertiary, height: 1.3)),
+        ])),
+      ]),
+    );
+  }
 }

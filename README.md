@@ -14,3 +14,5 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+Nota para iOS: A extensão WidgetKit precisa ser adicionada ao projeto Xcode manualmente (target + App Group capability group.com.gambitstudio.philos). O arquivo Swift já está pronto.
