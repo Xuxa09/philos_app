@@ -13,4 +13,5 @@ abstract class StorageKeys {
   static const String widgetFontStyle = 'widget_font_style';
   static const String cardBackground = 'card_background';
   static const String cardFontStyle = 'card_font_style';
+  static const String cardCustomImagePath = 'card_custom_image_path';
 }

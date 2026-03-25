@@ -8,6 +8,7 @@ class ExploreViewModel extends ChangeNotifier {
   String _searchQuery = '';
   List<QuoteModel> _allQuotes = [];
   List<QuoteModel> _filteredQuotes = [];
+  List<QuoteModel> _popularQuotes = [];
   bool _isLoading = true;
   bool _hasLoadedOnce = false;
 
@@ -15,12 +16,16 @@ class ExploreViewModel extends ChangeNotifier {
   List<QuoteModel> get filteredQuotes => _filteredQuotes;
   bool get isLoading => _isLoading;
   bool get isSearching => _searchQuery.isNotEmpty;
+  List<QuoteModel> get popularQuotes => _popularQuotes;
 
-  List<QuoteModel> get popularQuotes {
+  void _refreshPopular() {
     final ids = _repository.getFavoriteIds();
     final favs = _allQuotes.where((q) => ids.contains(q.id)).toList();
-    if (favs.length >= 3) return favs.take(6).toList();
-    return _allQuotes.take(6).toList();
+    if (favs.length >= 3) {
+      _popularQuotes = favs.take(6).toList();
+    } else {
+      _popularQuotes = _allQuotes.take(6).toList();
+    }
   }
 
   Future<void> loadData() async {
@@ -29,6 +34,7 @@ class ExploreViewModel extends ChangeNotifier {
     notifyListeners();
     await Future.delayed(const Duration(milliseconds: 400));
     _allQuotes = _repository.getAllQuotes();
+    _refreshPopular();
     _hasLoadedOnce = true;
     _isLoading = false;
     notifyListeners();
@@ -48,6 +54,7 @@ class ExploreViewModel extends ChangeNotifier {
 
   Future<void> toggleFavorite(String id) async {
     await _repository.toggleFavorite(id);
+    _refreshPopular();
     notifyListeners();
   }
 }

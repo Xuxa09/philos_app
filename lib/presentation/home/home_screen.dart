@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   const SizedBox(height: AppSpacing.lg),
                   if (vm.quoteOfDay != null)
                     QuoteOfDayCard(
-                      key: ValueKey('qod_${StorageService.instance.cardBackground}_${StorageService.instance.cardFontStyle}'),
+                      key: ValueKey('qod_${StorageService.instance.cardBackground}_${StorageService.instance.cardFontStyle}_${StorageService.instance.cardCustomImagePath}'),
                       quote: vm.quoteOfDay!, locale: locale,
                       isFavorite: vm.isFavorite(vm.quoteOfDay!.id),
                       onFavoriteTap: () => vm.toggleFavorite(vm.quoteOfDay!.id),
@@ -112,7 +112,10 @@ class _HomeScreenState extends State<HomeScreen> {
               await context.push('/settings');
               if (mounted) setState(() {});
             },
-            child: const Icon(Icons.settings_outlined, color: AppColors.textSecondary, size: 44),
+            child: const SizedBox(
+              width: 44, height: 44,
+              child: Center(child: Icon(Icons.settings_outlined, color: AppColors.textSecondary, size: 28)),
+            ),
           ),
         ]),
         const SizedBox(height: 4),

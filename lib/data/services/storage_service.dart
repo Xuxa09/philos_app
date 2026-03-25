@@ -76,4 +76,11 @@ class StorageService {
 
   Future<void> setCardFontStyle(String value) =>
       _prefs.setString(StorageKeys.cardFontStyle, value);
+
+  String? get cardCustomImagePath => _prefs.getString(StorageKeys.cardCustomImagePath);
+
+  Future<void> setCardCustomImagePath(String? value) {
+    if (value == null) return _prefs.remove(StorageKeys.cardCustomImagePath);
+    return _prefs.setString(StorageKeys.cardCustomImagePath, value);
+  }
 }

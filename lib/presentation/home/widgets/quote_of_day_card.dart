@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
@@ -10,6 +11,7 @@ import '../../../core/utils/haptic_service.dart';
 import '../../../data/models/quote_model.dart';
 import '../../../data/services/storage_service.dart';
 import '../../common/widgets/pressable_scale.dart';
+import '../../journal/widgets/reflection_sheet.dart';
 
 class QuoteOfDayCard extends StatefulWidget {
   final QuoteModel quote;
@@ -141,6 +143,14 @@ class _QuoteOfDayCardState extends State<QuoteOfDayCard> with SingleTickerProvid
               },
             )),
             _menuItem(
+              icon: Icons.edit_note,
+              label: locale == 'pt' ? 'Refletir' : locale == 'es' ? 'Reflexionar' : 'Reflect',
+              onTap: () {
+                Navigator.pop(ctx);
+                ReflectionSheet.show(context, locale, quote: widget.quote);
+              },
+            ),
+            _menuItem(
               icon: Icons.palette_outlined,
               label: locale == 'pt' ? 'Personalizar' : locale == 'es' ? 'Personalizar' : 'Customize',
               onTap: () async {
@@ -170,6 +180,20 @@ class _QuoteOfDayCardState extends State<QuoteOfDayCard> with SingleTickerProvid
   BoxDecoration _buildCardDecoration() {
     final key = _bgKey;
     final isImage = key.startsWith('img_');
+
+    if (key == 'custom') {
+      final customPath = _storage.cardCustomImagePath;
+      if (customPath != null && File(customPath).existsSync()) {
+        return BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          image: DecorationImage(
+            image: FileImage(File(customPath)),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(Colors.black.withValues(alpha: 0.35), BlendMode.darken),
+          ),
+        );
+      }
+    }
 
     if (key == 'default') {
       return BoxDecoration(
@@ -278,7 +302,7 @@ class _QuoteOfDayCardState extends State<QuoteOfDayCard> with SingleTickerProvid
               builder: (context, child) => Transform.scale(scale: _favoriteScale.value, child: child),
               child: const SizedBox(
                 width: 44, height: 44,
-                child: Center(child: Icon(Icons.favorite, color: AppColors.love, size: 32)),
+                child: Center(child: Icon(Icons.favorite, color: AppColors.love, size: 28)),
               ),
             ),
           ),
@@ -291,7 +315,7 @@ class _QuoteOfDayCardState extends State<QuoteOfDayCard> with SingleTickerProvid
           child: SizedBox(
             width: 44, height: 44,
             child: Center(
-              child: Icon(Icons.more_vert, color: _iconColor, size: 44),
+              child: Icon(Icons.more_vert, color: _iconColor, size: 28),
             ),
           ),
         )),

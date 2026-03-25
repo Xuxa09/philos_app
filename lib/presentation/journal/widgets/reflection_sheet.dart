@@ -10,7 +10,18 @@ import '../journal_view_model.dart';
 
 class ReflectionSheet extends StatefulWidget {
   final String locale;
-  const ReflectionSheet({super.key, required this.locale});
+  final QuoteModel? preselectedQuote;
+  const ReflectionSheet({super.key, required this.locale, this.preselectedQuote});
+
+  static void show(BuildContext context, String locale, {QuoteModel? quote}) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (_) => ReflectionSheet(locale: locale, preselectedQuote: quote),
+    );
+  }
+
   @override
   State<ReflectionSheet> createState() => _ReflectionSheetState();
 }
@@ -21,6 +32,12 @@ class _ReflectionSheetState extends State<ReflectionSheet> {
   final _searchController = TextEditingController();
   List<QuoteModel> _filteredQuotes = [];
   bool _isSearching = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _selectedQuote = widget.preselectedQuote;
+  }
 
   @override
   void dispose() { _textController.dispose(); _searchController.dispose(); super.dispose(); }

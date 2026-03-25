@@ -30,10 +30,9 @@ abstract class ShareStyleData {
   ];
 
   static const imageBackgrounds = [
+    ImgBgOption(key: 'img_default', label: 'Cl\u00e1ssico', asset: 'assets/images/backgrouns_cards.jpg'),
     ImgBgOption(key: 'img_biblioteca', label: 'Biblioteca', asset: 'assets/images/backgrouns_cards_biblioteca.jpg'),
     ImgBgOption(key: 'img_escultura', label: 'Escultura', asset: 'assets/images/backgrouns_cards_escultura.jpg'),
-    ImgBgOption(key: 'img_colorido', label: 'Colorido', asset: 'assets/images/backgrouns_cards_colorido.jpg'),
-    ImgBgOption(key: 'img_cabeca', label: 'Arte', asset: 'assets/images/backgrouns_cards_cabeça_colorida.jpg'),
     ImgBgOption(key: 'img_papel', label: 'Papel', asset: 'assets/images/backgrouns_cards_papel_velho.jpg'),
   ];
 

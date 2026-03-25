@@ -8,6 +8,7 @@ import '../../../core/utils/haptic_service.dart';
 import '../../../data/models/quote_model.dart';
 import 'app_card.dart';
 import 'pressable_scale.dart';
+import '../../journal/widgets/reflection_sheet.dart';
 
 class QuoteCard extends StatefulWidget {
   final QuoteModel quote;
@@ -177,7 +178,7 @@ class _QuoteCardState extends State<QuoteCard> with SingleTickerProviderStateMix
               builder: (context, child) => Transform.scale(scale: _favoriteScale.value, child: child),
               child: const SizedBox(
                 width: 44, height: 44,
-                child: Center(child: Icon(Icons.favorite, color: AppColors.love, size: 32)),
+                child: Center(child: Icon(Icons.favorite, color: AppColors.love, size: 28)),
               ),
             ),
           ),
@@ -190,7 +191,7 @@ class _QuoteCardState extends State<QuoteCard> with SingleTickerProviderStateMix
           child: const SizedBox(
             width: 44, height: 44,
             child: Center(
-              child: Icon(Icons.more_vert, color: AppColors.textTertiary, size: 44),
+              child: Icon(Icons.more_vert, color: AppColors.textTertiary, size: 28),
             ),
           ),
         )),

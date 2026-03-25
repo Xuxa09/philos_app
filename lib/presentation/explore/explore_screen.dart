@@ -90,7 +90,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
           sliver: SliverList(delegate: SliverChildBuilderDelegate(
             (context, index) {
               final q = vm.popularQuotes[index];
-              return Padding(padding: const EdgeInsets.only(bottom: AppSpacing.md),
+              return Padding(key: ValueKey(q.id), padding: const EdgeInsets.only(bottom: AppSpacing.md),
                 child: QuoteCard(quote: q, locale: locale, isFavorite: vm.isFavorite(q.id),
                   onFavoriteTap: () => vm.toggleFavorite(q.id)));
             }, childCount: vm.popularQuotes.length))),

@@ -1,5 +1,7 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:image_picker/image_picker.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_fonts.dart';
 import '../../core/theme/app_spacing.dart';
@@ -16,11 +18,13 @@ class WidgetEditorScreen extends StatefulWidget {
 
 class _WidgetEditorScreenState extends State<WidgetEditorScreen> {
   final _storage = StorageService.instance;
+  final _picker = ImagePicker();
   late String _selectedBg;
   late String _selectedFont;
+  File? _customImage;
 
   static const _backgrounds = [
-    _BgOption(key: 'gradient', label: 'Sépia', colors: [Color(0xFF3A2A1A), Color(0xFF6B4226)]),
+    _BgOption(key: 'gradient', label: 'S\u00e9pia', colors: [Color(0xFF3A2A1A), Color(0xFF6B4226)]),
     _BgOption(key: 'dark', label: 'Noturno', colors: [Color(0xFF1A1410), Color(0xFF3A2A1A)]),
     _BgOption(key: 'gold', label: 'Dourado', colors: [Color(0xFF3A2A1A), Color(0xFF8B6B28)]),
     _BgOption(key: 'purple', label: 'Violeta', colors: [Color(0xFF2D1B3D), Color(0xFF6B4888)]),
@@ -28,15 +32,14 @@ class _WidgetEditorScreenState extends State<WidgetEditorScreen> {
   ];
 
   static const _imageBackgrounds = [
+    _ImgBgOption(key: 'img_default', label: 'Cl\u00e1ssico', asset: 'assets/images/backgrouns_cards.jpg'),
     _ImgBgOption(key: 'img_biblioteca', label: 'Biblioteca', asset: 'assets/images/backgrouns_cards_biblioteca.jpg'),
     _ImgBgOption(key: 'img_escultura', label: 'Escultura', asset: 'assets/images/backgrouns_cards_escultura.jpg'),
-    _ImgBgOption(key: 'img_colorido', label: 'Colorido', asset: 'assets/images/backgrouns_cards_colorido.jpg'),
-    _ImgBgOption(key: 'img_cabeca', label: 'Arte', asset: 'assets/images/backgrouns_cards_cabeça_colorida.jpg'),
     _ImgBgOption(key: 'img_papel', label: 'Papel', asset: 'assets/images/backgrouns_cards_papel_velho.jpg'),
   ];
 
   static const _fonts = [
-    _FontOption(key: 'serif', label: 'Clássica', family: 'serif', style: FontStyle.italic),
+    _FontOption(key: 'serif', label: 'Cl\u00e1ssica', family: 'serif', style: FontStyle.italic),
     _FontOption(key: 'sans', label: 'Moderna', family: 'sans-serif', style: FontStyle.normal),
     _FontOption(key: 'mono', label: 'Mono', family: 'monospace', style: FontStyle.normal),
   ];
@@ -46,6 +49,10 @@ class _WidgetEditorScreenState extends State<WidgetEditorScreen> {
     super.initState();
     _selectedBg = _storage.cardBackground;
     _selectedFont = _storage.cardFontStyle;
+    final customPath = _storage.cardCustomImagePath;
+    if (customPath != null && File(customPath).existsSync()) {
+      _customImage = File(customPath);
+    }
   }
 
   Future<void> _save() async {
@@ -53,7 +60,48 @@ class _WidgetEditorScreenState extends State<WidgetEditorScreen> {
     await _storage.setWidgetFontStyle(_selectedFont);
     await _storage.setCardBackground(_selectedBg);
     await _storage.setCardFontStyle(_selectedFont);
+    if (_selectedBg == 'custom' && _customImage != null) {
+      await _storage.setCardCustomImagePath(_customImage!.path);
+    }
     await WidgetService.updateStyle();
+  }
+
+  Future<void> _pickImage(ImageSource source) async {
+    final picked = await _picker.pickImage(source: source, maxWidth: 1920, maxHeight: 1920, imageQuality: 90);
+    if (picked != null) {
+      setState(() {
+        _customImage = File(picked.path);
+        _selectedBg = 'custom';
+      });
+      _save();
+    }
+  }
+
+  void _showImageSourcePicker() {
+    final locale = Localizations.localeOf(context).languageCode;
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: AppColors.surface,
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
+      builder: (ctx) => SafeArea(child: Column(mainAxisSize: MainAxisSize.min, children: [
+        const SizedBox(height: AppSpacing.sm),
+        Container(width: 40, height: 4, decoration: BoxDecoration(color: AppColors.surfaceSecondary, borderRadius: BorderRadius.circular(2))),
+        const SizedBox(height: AppSpacing.md),
+        ListTile(
+          leading: const Icon(Icons.camera_alt_outlined, color: AppColors.textPrimary, size: 24),
+          title: Text(locale == 'pt' ? 'C\u00e2mera' : locale == 'es' ? 'C\u00e1mara' : 'Camera',
+            style: AppFonts.body.copyWith(color: AppColors.textPrimary)),
+          onTap: () { Navigator.pop(ctx); _pickImage(ImageSource.camera); },
+        ),
+        ListTile(
+          leading: const Icon(Icons.photo_library_outlined, color: AppColors.textPrimary, size: 24),
+          title: Text(locale == 'pt' ? 'Galeria' : locale == 'es' ? 'Galer\u00eda' : 'Gallery',
+            style: AppFonts.body.copyWith(color: AppColors.textPrimary)),
+          onTap: () { Navigator.pop(ctx); _pickImage(ImageSource.gallery); },
+        ),
+        const SizedBox(height: AppSpacing.md),
+      ])),
+    );
   }
 
   @override
@@ -71,7 +119,7 @@ class _WidgetEditorScreenState extends State<WidgetEditorScreen> {
           const SizedBox(height: AppSpacing.sm),
           _buildColorOptions(),
           const SizedBox(height: AppSpacing.md),
-          _buildSectionTitle(locale == 'pt' ? 'Imagens' : locale == 'es' ? 'Imágenes' : 'Images'),
+          _buildSectionTitle(locale == 'pt' ? 'Imagens' : locale == 'es' ? 'Im\u00e1genes' : 'Images'),
           const SizedBox(height: AppSpacing.sm),
           _buildImageOptions(),
           const SizedBox(height: AppSpacing.lg),
@@ -110,19 +158,31 @@ class _WidgetEditorScreenState extends State<WidgetEditorScreen> {
   Color get _previewMarkColor => _isDarkBg ? AppColors.accent : AppColors.primary;
 
   Widget _buildPreview() {
+    final isCustom = _selectedBg == 'custom' && _customImage != null;
     final isImage = _selectedBg.startsWith('img_');
     final fontOpt = _fonts.firstWhere((f) => f.key == _selectedFont, orElse: () => _fonts.first);
+
+    DecorationImage? bgImage;
+    if (isCustom) {
+      bgImage = DecorationImage(
+        image: FileImage(_customImage!),
+        fit: BoxFit.cover,
+        colorFilter: ColorFilter.mode(Colors.black.withValues(alpha: 0.35), BlendMode.darken),
+      );
+    } else if (isImage) {
+      bgImage = DecorationImage(
+        image: AssetImage(_imageBackgrounds.firstWhere((i) => i.key == _selectedBg, orElse: () => _imageBackgrounds.first).asset),
+        fit: BoxFit.cover,
+        colorFilter: ColorFilter.mode(Colors.black.withValues(alpha: 0.35), BlendMode.darken),
+      );
+    }
 
     return Center(child: Container(
       width: 280, height: 160,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24),
-        image: isImage ? DecorationImage(
-          image: AssetImage(_imageBackgrounds.firstWhere((i) => i.key == _selectedBg, orElse: () => _imageBackgrounds.first).asset),
-          fit: BoxFit.cover,
-          colorFilter: ColorFilter.mode(Colors.black.withValues(alpha: 0.35), BlendMode.darken),
-        ) : null,
-        gradient: !isImage ? LinearGradient(
+        image: bgImage,
+        gradient: (!isImage && !isCustom) ? LinearGradient(
           begin: Alignment.topLeft, end: Alignment.bottomRight,
           colors: _backgrounds.firstWhere((b) => b.key == _selectedBg, orElse: () => _backgrounds.first).colors,
         ) : null,
@@ -130,7 +190,7 @@ class _WidgetEditorScreenState extends State<WidgetEditorScreen> {
       padding: const EdgeInsets.all(20),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Row(children: [
-          Text('❝', style: TextStyle(color: _previewMarkColor, fontSize: 16)),
+          Text('\u275d', style: TextStyle(color: _previewMarkColor, fontSize: 16)),
           Text('  Philos', style: TextStyle(color: _previewBrandColor, fontSize: 11, fontWeight: FontWeight.w500, letterSpacing: 0.5)),
         ]),
         const SizedBox(height: 10),
@@ -144,7 +204,7 @@ class _WidgetEditorScreenState extends State<WidgetEditorScreen> {
           maxLines: 3, overflow: TextOverflow.ellipsis,
         ))),
         Align(alignment: Alignment.centerRight,
-          child: Text('— Marco Aurélio', style: TextStyle(color: _previewAuthorColor, fontSize: 12, fontWeight: FontWeight.w500))),
+          child: Text('\u2014 Marco Aur\u00e9lio', style: TextStyle(color: _previewAuthorColor, fontSize: 12, fontWeight: FontWeight.w500))),
       ]),
     ));
   }
@@ -185,12 +245,47 @@ class _WidgetEditorScreenState extends State<WidgetEditorScreen> {
   }
 
   Widget _buildImageOptions() {
+    final customSelected = _selectedBg == 'custom' && _customImage != null;
+
     return SizedBox(height: 80, child: ListView.separated(
       scrollDirection: Axis.horizontal,
-      itemCount: _imageBackgrounds.length,
+      itemCount: _imageBackgrounds.length + 1,
       separatorBuilder: (_, __) => const SizedBox(width: AppSpacing.sm),
       itemBuilder: (_, index) {
-        final img = _imageBackgrounds[index];
+        // First item: custom photo button
+        if (index == 0) {
+          return PressableScale(
+            onTap: () { HapticService.selection(); _showImageSourcePicker(); },
+            child: SizedBox(width: 56, child: Column(children: [
+              AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                width: 52, height: 52,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: customSelected ? AppColors.primary : AppColors.surfaceSecondary, width: customSelected ? 2 : 1),
+                  image: _customImage != null ? DecorationImage(image: FileImage(_customImage!), fit: BoxFit.cover) : null,
+                  color: _customImage == null ? AppColors.surface : null,
+                ),
+                child: _customImage == null
+                    ? const Icon(Icons.add_photo_alternate_outlined, color: AppColors.textTertiary, size: 24)
+                    : customSelected
+                        ? Container(
+                            decoration: BoxDecoration(
+                              color: Colors.black.withValues(alpha: 0.3),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: const Icon(Icons.check, color: Colors.white, size: 18),
+                          )
+                        : null,
+              ),
+              const SizedBox(height: 6),
+              Text('Foto', style: AppFonts.caption.copyWith(color: customSelected ? AppColors.primary : AppColors.textTertiary),
+                overflow: TextOverflow.ellipsis, maxLines: 1),
+            ])),
+          );
+        }
+
+        final img = _imageBackgrounds[index - 1];
         final selected = _selectedBg == img.key;
         return PressableScale(
           onTap: () { HapticService.selection(); setState(() => _selectedBg = img.key); _save(); },
