@@ -19,7 +19,7 @@ class QuoteRepository {
         DateTime.now().day + DateTime.now().month + DateTime.now().year;
     final shuffled = List<QuoteModel>.from(allQuotes)
       ..shuffle(Random(seed));
-    return shuffled.take(3).toList();
+    return shuffled.take(6).toList();
   }
 
   QuoteModel getQuoteOfDay() {

@@ -278,7 +278,7 @@ class _QuoteOfDayCardState extends State<QuoteOfDayCard> with SingleTickerProvid
               builder: (context, child) => Transform.scale(scale: _favoriteScale.value, child: child),
               child: const SizedBox(
                 width: 44, height: 44,
-                child: Center(child: Icon(Icons.favorite, color: AppColors.love, size: 28)),
+                child: Center(child: Icon(Icons.favorite, color: AppColors.love, size: 32)),
               ),
             ),
           ),
@@ -291,7 +291,7 @@ class _QuoteOfDayCardState extends State<QuoteOfDayCard> with SingleTickerProvid
           child: SizedBox(
             width: 44, height: 44,
             child: Center(
-              child: Icon(Icons.more_vert, color: _iconColor, size: 28),
+              child: Icon(Icons.more_vert, color: _iconColor, size: 44),
             ),
           ),
         )),

@@ -7,6 +7,7 @@ class AuthorsViewModel extends ChangeNotifier {
   final QuoteRepository _repository = QuoteRepository();
   String? _selectedAuthor;
   List<QuoteModel> _quotes = [];
+  String _searchQuery = '';
 
   AuthorsViewModel() {
     final authors = _repository.getUniqueAuthors();
@@ -17,7 +18,25 @@ class AuthorsViewModel extends ChangeNotifier {
   }
 
   String? get selectedAuthor => _selectedAuthor;
-  List<QuoteModel> get quotes => _quotes;
+  List<QuoteModel> get quotes => _filteredQuotes;
+
+  List<QuoteModel> get _filteredQuotes {
+    if (_searchQuery.isEmpty) return _quotes;
+    final q = _searchQuery.toLowerCase();
+    return _quotes.where((quote) =>
+      quote.textPt.toLowerCase().contains(q) ||
+      quote.textEn.toLowerCase().contains(q) ||
+      quote.textEs.toLowerCase().contains(q) ||
+      quote.authorPt.toLowerCase().contains(q) ||
+      quote.authorEn.toLowerCase().contains(q) ||
+      quote.authorEs.toLowerCase().contains(q)
+    ).toList();
+  }
+
+  void search(String query) {
+    _searchQuery = query;
+    notifyListeners();
+  }
 
   List<AuthorInfo> getAuthors(String locale) {
     return _repository.getUniqueAuthors().map((authorEn) {

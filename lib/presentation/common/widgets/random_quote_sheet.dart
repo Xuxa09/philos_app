@@ -96,7 +96,7 @@ class _RandomQuoteSheetState extends State<RandomQuoteSheet> {
         color: AppColors.primary.withValues(alpha: 0.15),
         shape: BoxShape.circle,
       ),
-      child: const Icon(Icons.auto_awesome, size: 28, color: AppColors.primary),
+      child: const Icon(Icons.auto_awesome, size: 44, color: AppColors.primary),
     );
   }
 

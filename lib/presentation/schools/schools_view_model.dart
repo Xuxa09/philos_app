@@ -7,6 +7,7 @@ class SchoolsViewModel extends ChangeNotifier {
   final QuoteRepository _repository = QuoteRepository();
   late QuoteCategory _selectedSchool;
   List<QuoteModel> _quotes = [];
+  String _searchQuery = '';
 
   SchoolsViewModel() {
     _selectedSchool = QuoteCategory.stoicism;
@@ -14,8 +15,26 @@ class SchoolsViewModel extends ChangeNotifier {
   }
 
   QuoteCategory get selectedSchool => _selectedSchool;
-  List<QuoteModel> get quotes => _quotes;
+  List<QuoteModel> get quotes => _filteredQuotes;
   List<QuoteCategory> get schools => QuoteCategory.values;
+
+  List<QuoteModel> get _filteredQuotes {
+    if (_searchQuery.isEmpty) return _quotes;
+    final q = _searchQuery.toLowerCase();
+    return _quotes.where((quote) =>
+      quote.textPt.toLowerCase().contains(q) ||
+      quote.textEn.toLowerCase().contains(q) ||
+      quote.textEs.toLowerCase().contains(q) ||
+      quote.authorPt.toLowerCase().contains(q) ||
+      quote.authorEn.toLowerCase().contains(q) ||
+      quote.authorEs.toLowerCase().contains(q)
+    ).toList();
+  }
+
+  void search(String query) {
+    _searchQuery = query;
+    notifyListeners();
+  }
 
   void selectSchool(QuoteCategory school) {
     _selectedSchool = school;

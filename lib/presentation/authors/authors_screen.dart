@@ -9,8 +9,21 @@ import '../common/widgets/pressable_scale.dart';
 import '../common/widgets/quote_card.dart';
 import 'authors_view_model.dart';
 
-class AuthorsScreen extends StatelessWidget {
+class AuthorsScreen extends StatefulWidget {
   const AuthorsScreen({super.key});
+
+  @override
+  State<AuthorsScreen> createState() => _AuthorsScreenState();
+}
+
+class _AuthorsScreenState extends State<AuthorsScreen> {
+  final _searchController = TextEditingController();
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,22 +34,26 @@ class AuthorsScreen extends StatelessWidget {
         final authors = vm.getAuthors(locale);
         return SafeArea(child: CustomScrollView(slivers: [
           _buildHeader(context, locale),
+          _buildSearchBar(vm, locale),
+          const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.md)),
           _buildAuthorsRow(vm, authors),
           const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.lg)),
           if (vm.selectedAuthor == null)
             SliverToBoxAdapter(child: Padding(
               padding: const EdgeInsets.only(top: 60),
               child: Center(child: Column(children: [
-                Icon(Icons.touch_app_outlined, size: 40, color: AppColors.textTertiary),
+                const Icon(Icons.touch_app_outlined, size: 40, color: AppColors.textTertiary),
                 const SizedBox(height: AppSpacing.md),
                 Text(
-                  locale == 'pt' ? 'Selecione um filósofo acima' : locale == 'es' ? 'Selecciona un filósofo arriba' : 'Select a philosopher above',
+                  locale == 'pt' ? 'Selecione um fil\u00f3sofo acima' : locale == 'es' ? 'Selecciona un fil\u00f3sofo arriba' : 'Select a philosopher above',
                   style: AppFonts.body.copyWith(color: AppColors.textTertiary),
                 ),
               ])),
             ))
-          else
-            _buildQuotesList(vm, locale),
+          else if (vm.quotes.isNotEmpty)
+            _buildQuotesList(vm, locale)
+          else if (_searchController.text.isNotEmpty)
+            _buildEmptySearch(locale),
           const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.xxl)),
         ]));
       }),
@@ -50,12 +67,38 @@ class AuthorsScreen extends StatelessWidget {
         GestureDetector(onTap: () => context.pop(),
           child: const Icon(Icons.arrow_back_ios, color: AppColors.textPrimary, size: 20)),
         const SizedBox(height: AppSpacing.md),
-        Text(locale == 'pt' ? 'Filósofos' : locale == 'es' ? 'Filósofos' : 'Philosophers',
+        Text(locale == 'pt' ? 'Fil\u00f3sofos' : locale == 'es' ? 'Fil\u00f3sofos' : 'Philosophers',
           style: AppFonts.largeTitle.copyWith(color: AppColors.textPrimary)),
-        const SizedBox(height: AppSpacing.xs),
-        Text(locale == 'pt' ? 'Escolha um filósofo' : locale == 'es' ? 'Elige un filósofo' : 'Choose a philosopher',
-          style: AppFonts.body.copyWith(color: AppColors.textSecondary)),
       ]),
+    ));
+  }
+
+  SliverToBoxAdapter _buildSearchBar(AuthorsViewModel vm, String locale) {
+    return SliverToBoxAdapter(child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.screenPadding),
+      child: TextField(
+        controller: _searchController,
+        onChanged: (value) { setState(() {}); vm.search(value); },
+        style: AppFonts.body.copyWith(color: AppColors.textPrimary),
+        cursorColor: AppColors.primary,
+        decoration: InputDecoration(
+          hintText: locale == 'pt' ? 'Pesquisar frases...' : locale == 'es' ? 'Buscar frases...' : 'Search quotes...',
+          hintStyle: AppFonts.body.copyWith(color: AppColors.textTertiary),
+          prefixIcon: const Icon(Icons.search, color: AppColors.textTertiary, size: 22),
+          suffixIcon: _searchController.text.isNotEmpty
+              ? GestureDetector(
+                  onTap: () { _searchController.clear(); setState(() {}); vm.search(''); },
+                  child: const Icon(Icons.close, color: AppColors.textTertiary, size: 20),
+                )
+              : null,
+          filled: true,
+          fillColor: AppColors.surface,
+          contentPadding: const EdgeInsets.symmetric(horizontal: AppSpacing.md, vertical: AppSpacing.sm + 2),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: BorderSide(color: AppColors.surfaceSecondary)),
+          enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: BorderSide(color: AppColors.surfaceSecondary)),
+          focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: BorderSide(color: AppColors.primary, width: 1.5)),
+        ),
+      ),
     ));
   }
 
@@ -103,5 +146,15 @@ class AuthorsScreen extends StatelessWidget {
               onFavoriteTap: () => vm.toggleFavorite(q.id), showReflection: true));
         }, childCount: vm.quotes.length)),
     );
+  }
+
+  SliverToBoxAdapter _buildEmptySearch(String locale) {
+    return SliverToBoxAdapter(child: Padding(
+      padding: const EdgeInsets.only(top: 40),
+      child: Center(child: Text(
+        locale == 'pt' ? 'Nenhuma frase encontrada' : locale == 'es' ? 'Ninguna frase encontrada' : 'No quotes found',
+        style: AppFonts.body.copyWith(color: AppColors.textTertiary),
+      )),
+    ));
   }
 }

@@ -9,8 +9,21 @@ import '../common/widgets/pressable_scale.dart';
 import '../common/widgets/quote_card.dart';
 import 'schools_view_model.dart';
 
-class SchoolsScreen extends StatelessWidget {
+class SchoolsScreen extends StatefulWidget {
   const SchoolsScreen({super.key});
+
+  @override
+  State<SchoolsScreen> createState() => _SchoolsScreenState();
+}
+
+class _SchoolsScreenState extends State<SchoolsScreen> {
+  final _searchController = TextEditingController();
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +33,14 @@ class SchoolsScreen extends StatelessWidget {
       body: Consumer<SchoolsViewModel>(builder: (context, vm, _) {
         return SafeArea(child: CustomScrollView(slivers: [
           _buildHeader(context, locale),
+          _buildSearchBar(vm, locale),
+          const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.md)),
           _buildSchoolsGrid(vm, locale),
           const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.lg)),
           if (vm.quotes.isNotEmpty)
             _buildQuotesList(vm, locale),
+          if (vm.quotes.isEmpty && _searchController.text.isNotEmpty)
+            _buildEmptySearch(locale),
           const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.xxl)),
         ]));
       }),
@@ -37,12 +54,38 @@ class SchoolsScreen extends StatelessWidget {
         GestureDetector(onTap: () => context.pop(),
           child: const Icon(Icons.arrow_back_ios, color: AppColors.textPrimary, size: 20)),
         const SizedBox(height: AppSpacing.md),
-        Text(locale == 'pt' ? 'Escolas Filosóficas' : locale == 'es' ? 'Escuelas Filosóficas' : 'Philosophical Schools',
+        Text(locale == 'pt' ? 'Escolas Filos\u00f3ficas' : locale == 'es' ? 'Escuelas Filos\u00f3ficas' : 'Philosophical Schools',
           style: AppFonts.largeTitle.copyWith(color: AppColors.textPrimary)),
-        const SizedBox(height: AppSpacing.xs),
-        Text(locale == 'pt' ? 'Escolha uma escola' : locale == 'es' ? 'Elige una escuela' : 'Choose a school',
-          style: AppFonts.body.copyWith(color: AppColors.textSecondary)),
       ]),
+    ));
+  }
+
+  SliverToBoxAdapter _buildSearchBar(SchoolsViewModel vm, String locale) {
+    return SliverToBoxAdapter(child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.screenPadding),
+      child: TextField(
+        controller: _searchController,
+        onChanged: (value) { setState(() {}); vm.search(value); },
+        style: AppFonts.body.copyWith(color: AppColors.textPrimary),
+        cursorColor: AppColors.primary,
+        decoration: InputDecoration(
+          hintText: locale == 'pt' ? 'Pesquisar frases...' : locale == 'es' ? 'Buscar frases...' : 'Search quotes...',
+          hintStyle: AppFonts.body.copyWith(color: AppColors.textTertiary),
+          prefixIcon: const Icon(Icons.search, color: AppColors.textTertiary, size: 22),
+          suffixIcon: _searchController.text.isNotEmpty
+              ? GestureDetector(
+                  onTap: () { _searchController.clear(); setState(() {}); vm.search(''); },
+                  child: const Icon(Icons.close, color: AppColors.textTertiary, size: 20),
+                )
+              : null,
+          filled: true,
+          fillColor: AppColors.surface,
+          contentPadding: const EdgeInsets.symmetric(horizontal: AppSpacing.md, vertical: AppSpacing.sm + 2),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: BorderSide(color: AppColors.surfaceSecondary)),
+          enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: BorderSide(color: AppColors.surfaceSecondary)),
+          focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: BorderSide(color: AppColors.primary, width: 1.5)),
+        ),
+      ),
     ));
   }
 
@@ -92,5 +135,15 @@ class SchoolsScreen extends StatelessWidget {
               onFavoriteTap: () => vm.toggleFavorite(q.id), showReflection: true));
         }, childCount: vm.quotes.length)),
     );
+  }
+
+  SliverToBoxAdapter _buildEmptySearch(String locale) {
+    return SliverToBoxAdapter(child: Padding(
+      padding: const EdgeInsets.only(top: 40),
+      child: Center(child: Text(
+        locale == 'pt' ? 'Nenhuma frase encontrada' : locale == 'es' ? 'Ninguna frase encontrada' : 'No quotes found',
+        style: AppFonts.body.copyWith(color: AppColors.textTertiary),
+      )),
+    ));
   }
 }

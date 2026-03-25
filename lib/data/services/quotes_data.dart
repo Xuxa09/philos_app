@@ -1385,12 +1385,12 @@ abstract class QuotesData {
     QuoteModel(
       id: 'q055',
       authorEn: 'Albert Camus', authorPt: 'Albert Camus', authorEs: 'Albert Camus',
-      textEn: 'The only way to deal with an unfree world is to become so absolutely free that your very existence is an act of rebellion.',
-      textPt: 'A \u00FAnica maneira de lidar com um mundo sem liberdade \u00E9 se tornar t\u00E3o absolutamente livre que sua pr\u00F3pria exist\u00EAncia seja um ato de rebeli\u00E3o.',
-      textEs: 'La \u00FAnica manera de lidiar con un mundo sin libertad es volverse tan absolutamente libre que tu propia existencia sea un acto de rebeld\u00EDa.',
-      reflectionEn: 'Your freedom is not given \u2014 it is claimed. Live authentically, even when the world demands conformity.',
-      reflectionPt: 'Sua liberdade n\u00E3o \u00E9 dada \u2014 \u00E9 conquistada. Viva autenticamente, mesmo quando o mundo exige conformidade.',
-      reflectionEs: 'Tu libertad no se da \u2014 se conquista. Vive aut\u00E9nticamente, incluso cuando el mundo exige conformidad.',
+      textEn: 'In the depth of winter, I finally learned that within me there lay an invincible summer.',
+      textPt: 'No meio do inverno, finalmente aprendi que dentro de mim havia um ver\u00E3o invenc\u00EDvel.',
+      textEs: 'En lo m\u00E1s profundo del invierno, finalmente aprend\u00ED que dentro de m\u00ED hab\u00EDa un verano invencible.',
+      reflectionEn: 'Even in the darkest moments, there is a strength within you that cannot be extinguished.',
+      reflectionPt: 'Mesmo nos momentos mais sombrios, existe uma for\u00E7a dentro de voc\u00EA que n\u00E3o pode ser extinta.',
+      reflectionEs: 'Incluso en los momentos m\u00E1s oscuros, hay una fuerza dentro de ti que no puede ser extinguida.',
       category: 'absurdism',
     ),
     QuoteModel(

@@ -6,7 +6,6 @@ import '../../core/theme/app_colors.dart';
 import '../../data/services/storage_service.dart';
 import '../../core/theme/app_fonts.dart';
 import '../../core/theme/app_spacing.dart';
-import '../common/widgets/app_button.dart';
 import '../common/widgets/quote_card.dart';
 import '../common/widgets/pressable_scale.dart';
 import '../common/widgets/random_quote_sheet.dart';
@@ -69,7 +68,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       onFavoriteTap: () => vm.toggleFavorite(vm.quoteOfDay!.id),
                       onStyleChanged: () => setState(() {}),
                     ),
-                  const SizedBox(height: AppSpacing.lg),
                 ],
               ),
             ),
@@ -95,14 +93,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.lg)),
           _buildQuotesList(vm, locale),
-          if (vm.showingMore) _buildMoreQuotesList(vm, locale),
-          if (!vm.showingMore)
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.all(AppSpacing.screenPadding),
-                child: AppButton(title: context.l10n.homeSeeMore, isOutlined: true, onTap: vm.loadMore),
-              ),
-            ),
           const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.xxl)),
         ],
       ),
@@ -122,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
               await context.push('/settings');
               if (mounted) setState(() {});
             },
-            child: const Icon(Icons.settings_outlined, color: AppColors.textSecondary, size: 28),
+            child: const Icon(Icons.settings_outlined, color: AppColors.textSecondary, size: 44),
           ),
         ]),
         const SizedBox(height: 4),
@@ -144,18 +134,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildMoreQuotesList(HomeViewModel vm, String locale) {
-    return SliverPadding(
-      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.screenPadding),
-      sliver: SliverList(delegate: SliverChildBuilderDelegate(
-        (context, index) {
-          final q = vm.moreQuotes[index];
-          return Padding(padding: const EdgeInsets.only(bottom: AppSpacing.md),
-            child: QuoteCard(quote: q, locale: locale, isFavorite: vm.isFavorite(q.id),
-              onFavoriteTap: () => vm.toggleFavorite(q.id), showReflection: true));
-        }, childCount: vm.moreQuotes.length)),
-    );
-  }
 
   Widget _buildFeatureCard(BuildContext context, {required IconData icon, required Color color, required String label, required VoidCallback onTap}) {
     return PressableScale(onTap: onTap, child: Container(

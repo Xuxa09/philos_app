@@ -83,10 +83,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
       margin: const EdgeInsets.only(bottom: 1),
       decoration: BoxDecoration(color: AppColors.surface, borderRadius: BorderRadius.circular(12)),
       child: Row(children: [
-        Icon(icon, color: AppColors.primary, size: 28),
+        Icon(icon, color: AppColors.primary, size: 44),
         const SizedBox(width: AppSpacing.md),
         Expanded(child: Text(title, style: AppFonts.body.copyWith(color: AppColors.textPrimary))),
-        trailing ?? const Icon(Icons.chevron_right, color: AppColors.textTertiary, size: 28),
+        trailing ?? const Icon(Icons.chevron_right, color: AppColors.textTertiary, size: 44),
       ])));
   }
 

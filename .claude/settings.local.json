@@ -20,7 +20,9 @@
       "Bash(grep -c \"category: ''classical''\" lib/data/services/quotes_data.dart)",
       "Bash(grep -c \"category: ''existentialism''\" lib/data/services/quotes_data.dart)",
       "Bash(grep -c \"category: ''eastern''\" lib/data/services/quotes_data.dart)",
-      "Bash(grep -c \"category: ''epicureanism''\" lib/data/services/quotes_data.dart)"
+      "Bash(grep -c \"category: ''epicureanism''\" lib/data/services/quotes_data.dart)",
+      "Bash(uniq -d -f1)",
+      "Bash(paste -d'|' - - -)"
     ]
   }
 }
