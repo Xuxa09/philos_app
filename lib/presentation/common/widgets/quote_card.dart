@@ -116,6 +116,14 @@ class _QuoteCardState extends State<QuoteCard> with SingleTickerProviderStateMix
                 ShareQuoteSheet.show(shareCtx, widget.quote, locale);
               },
             )),
+            _menuItem(
+              icon: Icons.edit_note,
+              label: locale == 'pt' ? 'Refletir' : locale == 'es' ? 'Reflexionar' : 'Reflect',
+              onTap: () {
+                Navigator.pop(ctx);
+                ReflectionSheet.show(context, locale, quote: widget.quote);
+              },
+            ),
             const SizedBox(height: AppSpacing.md),
           ],
         ),
