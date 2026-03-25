@@ -5,10 +5,15 @@ import '../../data/repositories/quote_repository.dart';
 
 class SchoolsViewModel extends ChangeNotifier {
   final QuoteRepository _repository = QuoteRepository();
-  QuoteCategory? _selectedSchool;
+  late QuoteCategory _selectedSchool;
   List<QuoteModel> _quotes = [];
 
-  QuoteCategory? get selectedSchool => _selectedSchool;
+  SchoolsViewModel() {
+    _selectedSchool = QuoteCategory.stoicism;
+    _quotes = _repository.getQuotesByCategory(_selectedSchool);
+  }
+
+  QuoteCategory get selectedSchool => _selectedSchool;
   List<QuoteModel> get quotes => _quotes;
   List<QuoteCategory> get schools => QuoteCategory.values;
 

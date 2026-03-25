@@ -100,9 +100,8 @@ class _WidgetEditorScreenState extends State<WidgetEditorScreen> {
   }
 
   bool get _isDarkBg {
-    if (_selectedBg == 'img_papel') return false;
-    if (_selectedBg.startsWith('img_')) return true;
-    return true; // all gradients are dark
+    if (_selectedBg == 'default') return false;
+    return true;
   }
 
   Color get _previewTextColor => _isDarkBg ? Colors.white : AppColors.textPrimary;
@@ -121,7 +120,7 @@ class _WidgetEditorScreenState extends State<WidgetEditorScreen> {
         image: isImage ? DecorationImage(
           image: AssetImage(_imageBackgrounds.firstWhere((i) => i.key == _selectedBg, orElse: () => _imageBackgrounds.first).asset),
           fit: BoxFit.cover,
-          colorFilter: ColorFilter.mode(Colors.black.withValues(alpha: 0.4), BlendMode.darken),
+          colorFilter: ColorFilter.mode(Colors.black.withValues(alpha: 0.35), BlendMode.darken),
         ) : null,
         gradient: !isImage ? LinearGradient(
           begin: Alignment.topLeft, end: Alignment.bottomRight,

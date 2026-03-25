@@ -34,5 +34,5 @@ abstract class AppColors {
   static const categoryPragmatism = Color(0xFF4A6B50);    // herb green
 
   // === Favorite ===
-  static const love = Color(0xFF884040);
+  static const love = Color(0xFFE05555);
 }

@@ -61,7 +61,7 @@ class AuthorsScreen extends StatelessWidget {
 
   SliverToBoxAdapter _buildAuthorsRow(AuthorsViewModel vm, List<AuthorInfo> authors) {
     return SliverToBoxAdapter(child: SizedBox(
-      height: 40,
+      height: 44,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: AppSpacing.screenPadding),

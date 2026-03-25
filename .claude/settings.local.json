@@ -15,7 +15,12 @@
       "Bash(./gradlew --stop)",
       "Bash(flutter build:*)",
       "Bash(flutter --version)",
-      "Bash(dart analyze:*)"
+      "Bash(dart analyze:*)",
+      "Bash(grep -c \"category: ''stoicism''\" lib/data/services/quotes_data.dart)",
+      "Bash(grep -c \"category: ''classical''\" lib/data/services/quotes_data.dart)",
+      "Bash(grep -c \"category: ''existentialism''\" lib/data/services/quotes_data.dart)",
+      "Bash(grep -c \"category: ''eastern''\" lib/data/services/quotes_data.dart)",
+      "Bash(grep -c \"category: ''epicureanism''\" lib/data/services/quotes_data.dart)"
     ]
   }
 }

@@ -1,0 +1,83 @@
+APP NAME (30 chars):
+Philos - Frases Filosóficas
+
+SUBTITLE (30 chars):
+Sabiduría, Reflexiones & Frases
+
+KEYWORDS (100 chars):
+frases filosoficas,filosofia,estoicismo,sabiduria,citas,reflexion,frases motivacionales,pensadores
+
+DESCRIPTION (4000 chars):
+Philos es tu compañero diario de sabiduría filosófica. Descubre frases que han atravesado siglos y sigue encontrando significado en el mundo moderno.
+
+Cada día, Philos presenta una frase cuidadosamente seleccionada para inspirar reflexión y autoconocimiento. Explora más de 160 citas de los grandes pensadores de la historia, organizadas por escuela filosófica, autor y sentimiento.
+
+¿POR QUÉ PHILOS?
+
+En el ajetreo del día a día, raramente nos detenemos a reflexionar. Philos lo simplifica entregando dosis diarias de sabiduría milenaria — lo suficientemente breves para caber en tu día, lo suficientemente profundas para transformar tu perspectiva.
+
+Ya sea que busques claridad, calma, motivación o propósito, Philos pone la frase correcta en tus manos en el momento justo.
+
+CÓMO FUNCIONA
+
+- Recibe una nueva Frase del Día, todos los días
+- Explora 160+ frases organizadas por escuela filosófica, autor y sentimiento
+- Comparte frases como texto o como imágenes personalizadas para stories
+- Guarda tus frases favoritas para acceso rápido
+- Personaliza el visual de la tarjeta destacada con colores, imágenes y fuentes
+- Añade un widget en la pantalla de inicio con frases filosóficas
+- Escribe tus propias frases y reflexiones
+
+8 ESCUELAS FILOSÓFICAS
+
+Nuestra biblioteca curada cubre las principales tradiciones del pensamiento humano. Cada escuela contiene decenas de citas de sus mayores representantes, disponibles en tres idiomas.
+
+Estoicismo — Filosofía Clásica — Existencialismo — Filosofía Oriental — Epicureísmo — Racionalismo — Absurdismo — Pragmatismo
+
+GRANDES PENSADORES
+
+Marco Aurelio, Séneca, Epicteto, Sócrates, Platón, Aristóteles, Nietzsche, Kierkegaard, Sartre, Camus, Simone de Beauvoir, Confucio, Lao Tse, Buda, Epicuro, Descartes, Spinoza, Kant, Hegel, William James, Emerson y muchos más.
+
+FRASES POR SENTIMIENTO
+
+Encuentra la frase correcta para el momento correcto. Filtra por cómo te sientes: desanimado, ansioso, frustrado, con miedo, perdido, agradecido, ambicioso o cansado.
+
+COMPARTE CON ESTILO
+
+Transforma cualquier frase en una imagen bonita para compartir en stories. Elige entre varios fondos, fuentes y colores — o usa una foto de tu galería.
+
+WIDGET PARA PANTALLA DE INICIO
+
+Añade un widget elegante en la pantalla de inicio de tu celular y recibe sabiduría filosófica sin abrir la app.
+
+DISEÑADO PARA TU REFLEXIÓN DIARIA
+
+- Interfaz elegante con tema pergamino
+- Sesiones diarias rápidas que caben en tu agenda
+- Comparte frases como texto o imagen
+- Disponible en español, inglés y portugués
+- Sin anuncios, sin distracciones — solo sabiduría
+
+Ya seas estudiante de filosofía o alguien buscando más profundidad en el día a día, Philos te encuentra donde estás.
+
+Descarga Philos hoy y deja que la sabiduría de los grandes pensadores transforme tu día, una frase a la vez.
+
+PROMOTIONAL TEXT (170 chars):
+Frases filosóficas diarias de grandes pensadores. 160+ citas en 8 escuelas. Comparte con estilo, personaliza y reflexiona. ¡Sabiduría milenaria en tu bolsillo!
+
+WHAT'S NEW:
+- 160+ frases filosóficas de grandes pensadores
+- Frase del Día con compartir y favoritos
+- Explorar por escuela filosófica, autor y sentimiento
+- Compartir como imagen personalizada para stories
+- Widget para pantalla de inicio (Android e iOS)
+- Personalización de la tarjeta destacada
+- Disponible en español, inglés y portugués
+
+SCREENSHOT DESCRIPTIONS:
+1. Descubre una nueva frase filosófica del día, cada día
+2. Explora 160+ frases en 8 escuelas filosóficas
+3. Filtra frases por sentimiento para el momento correcto
+4. Comparte frases como imágenes bonitas en stories
+5. Personaliza el visual con colores, fuentes e imágenes
+6. Diseño elegante en tema pergamino para lectura enfocada

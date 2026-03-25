@@ -31,11 +31,9 @@ class QuoteCard extends StatefulWidget {
   State<QuoteCard> createState() => _QuoteCardState();
 }
 
-class _QuoteCardState extends State<QuoteCard> with TickerProviderStateMixin {
+class _QuoteCardState extends State<QuoteCard> with SingleTickerProviderStateMixin {
   late final AnimationController _favoriteController;
   late final Animation<double> _favoriteScale;
-  late final AnimationController _shareController;
-  late final Animation<double> _shareRotation;
 
   @override
   void initState() {
@@ -48,58 +46,97 @@ class _QuoteCardState extends State<QuoteCard> with TickerProviderStateMixin {
       TweenSequenceItem(tween: Tween(begin: 1.4, end: 0.85), weight: 30),
       TweenSequenceItem(tween: Tween(begin: 0.85, end: 1.0), weight: 40),
     ]).animate(CurvedAnimation(parent: _favoriteController, curve: Curves.easeOut));
-
-    _shareController = AnimationController(
-      vsync: this, duration: const Duration(milliseconds: 350),
-    );
-    _shareRotation = TweenSequence<double>([
-      TweenSequenceItem(tween: Tween(begin: 0.0, end: -0.15), weight: 30),
-      TweenSequenceItem(tween: Tween(begin: -0.15, end: 0.1), weight: 30),
-      TweenSequenceItem(tween: Tween(begin: 0.1, end: 0.0), weight: 40),
-    ]).animate(CurvedAnimation(parent: _shareController, curve: Curves.easeOut));
   }
 
   @override
   void dispose() {
     _favoriteController.dispose();
-    _shareController.dispose();
     super.dispose();
   }
 
-  void _onFavoriteTap() {
+  void _doFavorite() {
+    if (widget.onFavoriteTap == null) return;
     HapticService.selection();
     _favoriteController.forward(from: 0);
-    widget.onFavoriteTap?.call();
+    widget.onFavoriteTap!();
   }
 
-  void _onShareTap(BuildContext ctx) {
+  void _doCopy() {
     HapticService.light();
-    _shareController.forward(from: 0);
-    ShareQuoteSheet.show(ctx, widget.quote, widget.locale);
+    final text = '"${widget.quote.text(widget.locale)}" \u2014 ${widget.quote.author(widget.locale)}';
+    Clipboard.setData(ClipboardData(text: text));
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          widget.locale == 'pt' ? 'Frase copiada!'
+              : widget.locale == 'es' ? '\u00A1Frase copiada!'
+              : 'Quote copied!',
+        ),
+        duration: const Duration(seconds: 2),
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
+  }
+
+  void _showOptionsMenu(BuildContext ctx) {
+    final locale = widget.locale;
+    showModalBottomSheet(
+      context: ctx,
+      backgroundColor: AppColors.surface,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (_) => SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const SizedBox(height: AppSpacing.sm),
+            Container(width: 40, height: 4, decoration: BoxDecoration(
+              color: AppColors.surfaceSecondary, borderRadius: BorderRadius.circular(2))),
+            const SizedBox(height: AppSpacing.md),
+            _menuItem(
+              icon: widget.isFavorite ? Icons.favorite : Icons.favorite_border,
+              color: widget.isFavorite ? AppColors.love : AppColors.textPrimary,
+              label: widget.isFavorite
+                  ? (locale == 'pt' ? 'Remover dos favoritos' : locale == 'es' ? 'Quitar de favoritos' : 'Remove from favorites')
+                  : (locale == 'pt' ? 'Curtir' : locale == 'es' ? 'Me gusta' : 'Like'),
+              onTap: () { Navigator.pop(ctx); _doFavorite(); },
+            ),
+            _menuItem(
+              icon: Icons.copy_outlined,
+              label: locale == 'pt' ? 'Copiar frase' : locale == 'es' ? 'Copiar frase' : 'Copy quote',
+              onTap: () { Navigator.pop(ctx); _doCopy(); },
+            ),
+            Builder(builder: (shareCtx) => _menuItem(
+              icon: Icons.share_outlined,
+              label: locale == 'pt' ? 'Compartilhar' : locale == 'es' ? 'Compartir' : 'Share',
+              onTap: () {
+                Navigator.pop(ctx);
+                ShareQuoteSheet.show(shareCtx, widget.quote, locale);
+              },
+            )),
+            const SizedBox(height: AppSpacing.md),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _menuItem({required IconData icon, required String label, required VoidCallback onTap, Color? color}) {
+    return ListTile(
+      leading: Icon(icon, color: color ?? AppColors.textPrimary, size: 24),
+      title: Text(label, style: AppFonts.body.copyWith(color: AppColors.textPrimary)),
+      onTap: onTap,
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return PressableScale(
       onTap: widget.onTap,
-      onDoubleTap: widget.onFavoriteTap != null ? _onFavoriteTap : null,
       onLongPress: () {
         HapticService.light();
-        final text = '"${widget.quote.text(widget.locale)}" \u2014 ${widget.quote.author(widget.locale)}';
-        Clipboard.setData(ClipboardData(text: text));
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              widget.locale == 'pt'
-                  ? 'Frase copiada!'
-                  : widget.locale == 'es'
-                      ? '\u00A1Frase copiada!'
-                      : 'Quote copied!',
-            ),
-            duration: const Duration(seconds: 2),
-            behavior: SnackBarBehavior.floating,
-          ),
-        );
+        _showOptionsMenu(context);
       },
       child: AppCard(
         child: Column(
@@ -131,51 +168,29 @@ class _QuoteCardState extends State<QuoteCard> with TickerProviderStateMixin {
             ),
           ),
         ),
-        if (widget.onFavoriteTap != null)
+        if (widget.isFavorite)
           GestureDetector(
             behavior: HitTestBehavior.opaque,
-            onTap: _onFavoriteTap,
-            child: SizedBox(
-              width: 44, height: 44,
-              child: Center(
-                child: AnimatedBuilder(
-                  animation: _favoriteScale,
-                  builder: (context, child) => Transform.scale(
-                    scale: _favoriteScale.value,
-                    child: child,
-                  ),
-                  child: AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 200),
-                    transitionBuilder: (child, anim) => FadeTransition(opacity: anim, child: child),
-                    child: Icon(
-                      widget.isFavorite ? Icons.favorite : Icons.favorite_border,
-                      key: ValueKey(widget.isFavorite),
-                      color: widget.isFavorite ? AppColors.love : AppColors.textTertiary,
-                      size: 28,
-                    ),
-                  ),
-                ),
+            onTap: _doFavorite,
+            child: AnimatedBuilder(
+              animation: _favoriteScale,
+              builder: (context, child) => Transform.scale(scale: _favoriteScale.value, child: child),
+              child: const SizedBox(
+                width: 44, height: 44,
+                child: Center(child: Icon(Icons.favorite, color: AppColors.love, size: 28)),
               ),
             ),
           ),
         Builder(builder: (ctx) => GestureDetector(
           behavior: HitTestBehavior.opaque,
-          onTap: () => _onShareTap(ctx),
-          child: SizedBox(
+          onTap: () {
+            HapticService.light();
+            _showOptionsMenu(ctx);
+          },
+          child: const SizedBox(
             width: 44, height: 44,
             child: Center(
-              child: AnimatedBuilder(
-                animation: _shareRotation,
-                builder: (context, child) => Transform.rotate(
-                  angle: _shareRotation.value,
-                  child: child,
-                ),
-                child: const Icon(
-                  Icons.share_outlined,
-                  color: AppColors.textTertiary,
-                  size: 28,
-                ),
-              ),
+              child: Icon(Icons.more_vert, color: AppColors.textTertiary, size: 28),
             ),
           ),
         )),

@@ -67,6 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       quote: vm.quoteOfDay!, locale: locale,
                       isFavorite: vm.isFavorite(vm.quoteOfDay!.id),
                       onFavoriteTap: () => vm.toggleFavorite(vm.quoteOfDay!.id),
+                      onStyleChanged: () => setState(() {}),
                     ),
                   const SizedBox(height: AppSpacing.lg),
                 ],

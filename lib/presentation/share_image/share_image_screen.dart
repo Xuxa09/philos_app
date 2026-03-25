@@ -32,10 +32,8 @@ class _ShareImageScreenState extends State<ShareImageScreen> {
   bool _isSharing = false;
 
   bool get _isDarkBg {
-    if (_selectedBg == 'custom' && _customImage != null) return true;
-    if (_selectedBg == 'img_papel') return false;
-    if (_selectedBg.startsWith('img_')) return true; // images have dark overlay
-    return true; // all gradients are dark
+    if (_selectedBg == 'default') return false;
+    return true;
   }
 
   Color get _quoteTextColor => _isDarkBg ? Colors.white : AppColors.textPrimary;
@@ -187,7 +185,7 @@ class _ShareImageScreenState extends State<ShareImageScreen> {
           image: bgImage != null ? DecorationImage(
             image: bgImage,
             fit: BoxFit.cover,
-            colorFilter: ColorFilter.mode(Colors.black.withValues(alpha: 0.5), BlendMode.darken),
+            colorFilter: ColorFilter.mode(Colors.black.withValues(alpha: 0.35), BlendMode.darken),
           ) : null,
           gradient: bgImage == null ? LinearGradient(
             begin: Alignment.topLeft, end: Alignment.bottomRight,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:go_router/go_router.dart';
 import '../../common/widgets/share_quote_sheet.dart';
 import '../../../core/constants/share_style_data.dart';
 import '../../../core/theme/app_colors.dart';
@@ -10,12 +11,12 @@ import '../../../data/models/quote_model.dart';
 import '../../../data/services/storage_service.dart';
 import '../../common/widgets/pressable_scale.dart';
 
-
 class QuoteOfDayCard extends StatefulWidget {
   final QuoteModel quote;
   final String locale;
   final bool isFavorite;
   final VoidCallback? onFavoriteTap;
+  final VoidCallback? onStyleChanged;
 
   const QuoteOfDayCard({
     super.key,
@@ -23,21 +24,20 @@ class QuoteOfDayCard extends StatefulWidget {
     required this.locale,
     this.isFavorite = false,
     this.onFavoriteTap,
+    this.onStyleChanged,
   });
 
   @override
   State<QuoteOfDayCard> createState() => _QuoteOfDayCardState();
 }
 
-class _QuoteOfDayCardState extends State<QuoteOfDayCard> with TickerProviderStateMixin {
+class _QuoteOfDayCardState extends State<QuoteOfDayCard> with SingleTickerProviderStateMixin {
   bool _expanded = false;
   bool _overflows = false;
   final _storage = StorageService.instance;
 
   late final AnimationController _favoriteController;
   late final Animation<double> _favoriteScale;
-  late final AnimationController _shareController;
-  late final Animation<double> _shareRotation;
 
   String get _bgKey => _storage.cardBackground;
   String get _fontKey => _storage.cardFontStyle;
@@ -45,8 +45,6 @@ class _QuoteOfDayCardState extends State<QuoteOfDayCard> with TickerProviderStat
   bool get _isDarkBg {
     final key = _bgKey;
     if (key == 'default') return false;
-    if (key == 'img_papel') return false;
-    // All gradients and most images have dark overlay → light text
     return true;
   }
 
@@ -64,19 +62,11 @@ class _QuoteOfDayCardState extends State<QuoteOfDayCard> with TickerProviderStat
       TweenSequenceItem(tween: Tween(begin: 1.4, end: 0.85), weight: 30),
       TweenSequenceItem(tween: Tween(begin: 0.85, end: 1.0), weight: 40),
     ]).animate(CurvedAnimation(parent: _favoriteController, curve: Curves.easeOut));
-
-    _shareController = AnimationController(vsync: this, duration: const Duration(milliseconds: 350));
-    _shareRotation = TweenSequence<double>([
-      TweenSequenceItem(tween: Tween(begin: 0.0, end: -0.15), weight: 30),
-      TweenSequenceItem(tween: Tween(begin: -0.15, end: 0.1), weight: 30),
-      TweenSequenceItem(tween: Tween(begin: 0.1, end: 0.0), weight: 40),
-    ]).animate(CurvedAnimation(parent: _shareController, curve: Curves.easeOut));
   }
 
   @override
   void dispose() {
     _favoriteController.dispose();
-    _shareController.dispose();
     super.dispose();
   }
 
@@ -87,6 +77,94 @@ class _QuoteOfDayCardState extends State<QuoteOfDayCard> with TickerProviderStat
       _expanded = false;
       _overflows = false;
     }
+  }
+
+  void _doFavorite() {
+    if (widget.onFavoriteTap == null) return;
+    HapticService.selection();
+    _favoriteController.forward(from: 0);
+    widget.onFavoriteTap!();
+  }
+
+  void _doCopy() {
+    HapticService.light();
+    final text = '"${widget.quote.text(widget.locale)}" \u2014 ${widget.quote.author(widget.locale)}';
+    Clipboard.setData(ClipboardData(text: text));
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          widget.locale == 'pt' ? 'Frase copiada!'
+              : widget.locale == 'es' ? '\u00A1Frase copiada!'
+              : 'Quote copied!',
+        ),
+        duration: const Duration(seconds: 2),
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
+  }
+
+  void _showOptionsMenu(BuildContext ctx) {
+    final locale = widget.locale;
+    showModalBottomSheet(
+      context: ctx,
+      backgroundColor: AppColors.surface,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (_) => SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const SizedBox(height: AppSpacing.sm),
+            Container(width: 40, height: 4, decoration: BoxDecoration(
+              color: AppColors.surfaceSecondary, borderRadius: BorderRadius.circular(2))),
+            const SizedBox(height: AppSpacing.md),
+            _menuItem(
+              icon: widget.isFavorite ? Icons.favorite : Icons.favorite_border,
+              color: widget.isFavorite ? AppColors.love : AppColors.textPrimary,
+              label: widget.isFavorite
+                  ? (locale == 'pt' ? 'Remover dos favoritos' : locale == 'es' ? 'Quitar de favoritos' : 'Remove from favorites')
+                  : (locale == 'pt' ? 'Curtir' : locale == 'es' ? 'Me gusta' : 'Like'),
+              onTap: () { Navigator.pop(ctx); _doFavorite(); },
+            ),
+            _menuItem(
+              icon: Icons.copy_outlined,
+              label: locale == 'pt' ? 'Copiar frase' : locale == 'es' ? 'Copiar frase' : 'Copy quote',
+              onTap: () { Navigator.pop(ctx); _doCopy(); },
+            ),
+            Builder(builder: (shareCtx) => _menuItem(
+              icon: Icons.share_outlined,
+              label: locale == 'pt' ? 'Compartilhar' : locale == 'es' ? 'Compartir' : 'Share',
+              onTap: () {
+                Navigator.pop(ctx);
+                ShareQuoteSheet.show(shareCtx, widget.quote, locale);
+              },
+            )),
+            _menuItem(
+              icon: Icons.palette_outlined,
+              label: locale == 'pt' ? 'Personalizar' : locale == 'es' ? 'Personalizar' : 'Customize',
+              onTap: () async {
+                Navigator.pop(ctx);
+                await context.push('/widget-editor');
+                if (mounted) {
+                  setState(() {});
+                  widget.onStyleChanged?.call();
+                }
+              },
+            ),
+            const SizedBox(height: AppSpacing.md),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _menuItem({required IconData icon, required String label, required VoidCallback onTap, Color? color}) {
+    return ListTile(
+      leading: Icon(icon, color: color ?? AppColors.textPrimary, size: 24),
+      title: Text(label, style: AppFonts.body.copyWith(color: AppColors.textPrimary)),
+      onTap: onTap,
+    );
   }
 
   BoxDecoration _buildCardDecoration() {
@@ -114,7 +192,7 @@ class _QuoteOfDayCardState extends State<QuoteOfDayCard> with TickerProviderStat
         image: DecorationImage(
           image: AssetImage(img.asset),
           fit: BoxFit.cover,
-          colorFilter: ColorFilter.mode(Colors.black.withValues(alpha: 0.5), BlendMode.darken),
+          colorFilter: ColorFilter.mode(Colors.black.withValues(alpha: 0.35), BlendMode.darken),
         ),
       );
     }
@@ -145,28 +223,9 @@ class _QuoteOfDayCardState extends State<QuoteOfDayCard> with TickerProviderStat
   Widget build(BuildContext context) {
     return PressableScale(
       onTap: _overflows ? () => setState(() => _expanded = !_expanded) : null,
-      onDoubleTap: widget.onFavoriteTap != null ? () {
-        HapticService.selection();
-        _favoriteController.forward(from: 0);
-        widget.onFavoriteTap!();
-      } : null,
       onLongPress: () {
         HapticService.light();
-        final text = '"${widget.quote.text(widget.locale)}" — ${widget.quote.author(widget.locale)}';
-        Clipboard.setData(ClipboardData(text: text));
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              widget.locale == 'pt'
-                  ? 'Frase copiada!'
-                  : widget.locale == 'es'
-                      ? '¡Frase copiada!'
-                      : 'Quote copied!',
-            ),
-            duration: const Duration(seconds: 2),
-            behavior: SnackBarBehavior.floating,
-          ),
-        );
+        _showOptionsMenu(context);
       },
       child: AnimatedSize(
         duration: const Duration(milliseconds: 300),
@@ -210,31 +269,16 @@ class _QuoteOfDayCardState extends State<QuoteOfDayCard> with TickerProviderStat
             ),
           ),
         ),
-        if (widget.onFavoriteTap != null)
+        if (widget.isFavorite)
           GestureDetector(
             behavior: HitTestBehavior.opaque,
-            onTap: () {
-              HapticService.selection();
-              _favoriteController.forward(from: 0);
-              widget.onFavoriteTap!();
-            },
-            child: SizedBox(
-              width: 44, height: 44,
-              child: Center(
-                child: AnimatedBuilder(
-                  animation: _favoriteScale,
-                  builder: (context, child) => Transform.scale(scale: _favoriteScale.value, child: child),
-                  child: AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 200),
-                    transitionBuilder: (child, anim) => FadeTransition(opacity: anim, child: child),
-                    child: Icon(
-                      widget.isFavorite ? Icons.favorite : Icons.favorite_border,
-                      key: ValueKey(widget.isFavorite),
-                      color: widget.isFavorite ? AppColors.love : _iconColor,
-                      size: 28,
-                    ),
-                  ),
-                ),
+            onTap: _doFavorite,
+            child: AnimatedBuilder(
+              animation: _favoriteScale,
+              builder: (context, child) => Transform.scale(scale: _favoriteScale.value, child: child),
+              child: const SizedBox(
+                width: 44, height: 44,
+                child: Center(child: Icon(Icons.favorite, color: AppColors.love, size: 28)),
               ),
             ),
           ),
@@ -242,17 +286,12 @@ class _QuoteOfDayCardState extends State<QuoteOfDayCard> with TickerProviderStat
           behavior: HitTestBehavior.opaque,
           onTap: () {
             HapticService.light();
-            _shareController.forward(from: 0);
-            ShareQuoteSheet.show(ctx, widget.quote, widget.locale);
+            _showOptionsMenu(ctx);
           },
           child: SizedBox(
             width: 44, height: 44,
             child: Center(
-              child: AnimatedBuilder(
-                animation: _shareRotation,
-                builder: (context, child) => Transform.rotate(angle: _shareRotation.value, child: child),
-                child: Icon(Icons.share_outlined, color: _iconColor, size: 28),
-              ),
+              child: Icon(Icons.more_vert, color: _iconColor, size: 28),
             ),
           ),
         )),

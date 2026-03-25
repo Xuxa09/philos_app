@@ -8,6 +8,14 @@ class AuthorsViewModel extends ChangeNotifier {
   String? _selectedAuthor;
   List<QuoteModel> _quotes = [];
 
+  AuthorsViewModel() {
+    final authors = _repository.getUniqueAuthors();
+    if (authors.isNotEmpty) {
+      _selectedAuthor = authors.first;
+      _quotes = _repository.getQuotesByAuthor(_selectedAuthor!);
+    }
+  }
+
   String? get selectedAuthor => _selectedAuthor;
   List<QuoteModel> get quotes => _quotes;
 

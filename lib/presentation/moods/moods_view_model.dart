@@ -6,10 +6,15 @@ import '../../data/services/moods_data.dart';
 
 class MoodsViewModel extends ChangeNotifier {
   final QuoteRepository _repository = QuoteRepository();
-  MoodType? _selectedMood;
+  late MoodType _selectedMood;
   List<QuoteModel> _quotes = [];
 
-  MoodType? get selectedMood => _selectedMood;
+  MoodsViewModel() {
+    _selectedMood = MoodType.unmotivated;
+    _quotes = MoodsData.moods[_selectedMood.name] ?? [];
+  }
+
+  MoodType get selectedMood => _selectedMood;
   List<QuoteModel> get quotes => _quotes;
   List<MoodType> get moods => MoodType.values;
 
