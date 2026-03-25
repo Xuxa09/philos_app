@@ -70,7 +70,7 @@ class _CardEditorSheetContentState extends State<_CardEditorSheetContent> {
   late String _selectedBg;
   late String _selectedFont;
 
-  static const _defaultBg = BgOption(key: 'default', label: 'Padrão', colors: [Color(0xFF0A84FF), Color(0xFF0060CC)]);
+  static const _defaultBg = BgOption(key: 'default', label: 'Padrão', colors: [Color(0xFF6B4226), Color(0xFF523218)]);
 
   @override
   void initState() {
@@ -84,6 +84,17 @@ class _CardEditorSheetContentState extends State<_CardEditorSheetContent> {
     await _storage.setCardFontStyle(_selectedFont);
     widget.onChanged();
   }
+
+  bool get _isDarkBg {
+    final key = _selectedBg;
+    if (key == 'default') return false;
+    if (key == 'img_papel') return false;
+    return true;
+  }
+
+  Color get _previewTextColor => _isDarkBg ? Colors.white : AppColors.textPrimary;
+  Color get _previewSubtextColor => _isDarkBg ? Colors.white.withValues(alpha: 0.7) : AppColors.textSecondary;
+  Color get _previewAccentColor => _isDarkBg ? Colors.white : AppColors.primary;
 
   BoxDecoration _previewDecoration() {
     final key = _selectedBg;
@@ -136,18 +147,18 @@ class _CardEditorSheetContentState extends State<_CardEditorSheetContent> {
           decoration: _previewDecoration(),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Row(children: [
-              Icon(Icons.format_quote, size: 18, color: AppColors.primary),
+              Icon(Icons.format_quote, size: 18, color: _previewAccentColor),
               const SizedBox(width: AppSpacing.sm),
               Text(
                 widget.locale == 'pt' ? 'Frase do Dia' : widget.locale == 'es' ? 'Frase del Día' : 'Quote of the Day',
-                style: AppFonts.caption.copyWith(color: AppColors.primary, fontWeight: FontWeight.w600, letterSpacing: 0.5),
+                style: AppFonts.caption.copyWith(color: _previewAccentColor, fontWeight: FontWeight.w600, letterSpacing: 0.5),
               ),
             ]),
             const SizedBox(height: AppSpacing.md),
             Text(
               '\u201C${widget.quote.text(widget.locale)}\u201D',
               style: TextStyle(
-                color: AppColors.textPrimary, fontSize: 17,
+                color: _previewTextColor, fontSize: 17,
                 fontFamily: font.family, fontStyle: font.style,
                 fontWeight: FontWeight.w600, height: 1.5,
               ),
@@ -155,7 +166,7 @@ class _CardEditorSheetContentState extends State<_CardEditorSheetContent> {
             ),
             const SizedBox(height: AppSpacing.sm),
             Text('\u2014 ${widget.quote.author(widget.locale)}',
-              style: AppFonts.footnote.copyWith(color: AppColors.textSecondary)),
+              style: AppFonts.footnote.copyWith(color: _previewSubtextColor)),
           ]),
         ),
 

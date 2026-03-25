@@ -67,7 +67,7 @@ class StorageService {
       _prefs.setString(StorageKeys.widgetFontStyle, value);
 
   // === Card Customization ===
-  String get cardBackground => _prefs.getString(StorageKeys.cardBackground) ?? 'default';
+  String get cardBackground => _prefs.getString(StorageKeys.cardBackground) ?? 'gradient';
 
   Future<void> setCardBackground(String value) =>
       _prefs.setString(StorageKeys.cardBackground, value);

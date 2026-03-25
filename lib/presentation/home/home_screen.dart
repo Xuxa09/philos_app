@@ -112,11 +112,11 @@ class _HomeScreenState extends State<HomeScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(children: [
-          Text(greetingText, style: AppFonts.subheadline.copyWith(color: AppColors.textSecondary)),
+          Text(greetingText, style: AppFonts.title2.copyWith(color: AppColors.textSecondary)),
           const Spacer(),
           GestureDetector(
             onTap: () => context.push('/settings'),
-            child: const Icon(Icons.settings_outlined, color: AppColors.textSecondary, size: 24),
+            child: const Icon(Icons.settings_outlined, color: AppColors.textSecondary, size: 28),
           ),
         ]),
         const SizedBox(height: 4),

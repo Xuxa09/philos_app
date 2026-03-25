@@ -31,6 +31,18 @@ class _ShareImageScreenState extends State<ShareImageScreen> {
   File? _customImage;
   bool _isSharing = false;
 
+  bool get _isDarkBg {
+    if (_selectedBg == 'custom' && _customImage != null) return true;
+    if (_selectedBg == 'img_papel') return false;
+    if (_selectedBg.startsWith('img_')) return true; // images have dark overlay
+    return true; // all gradients are dark
+  }
+
+  Color get _quoteTextColor => _isDarkBg ? Colors.white : AppColors.textPrimary;
+  Color get _authorColor => _isDarkBg ? AppColors.accent : AppColors.primary;
+  Color get _brandColor => _isDarkBg ? Colors.white.withValues(alpha: 0.5) : AppColors.textTertiary;
+  Color get _quoteMarkColor => _isDarkBg ? AppColors.accent : AppColors.primary;
+
   Future<void> _pickImage(ImageSource source) async {
     final picked = await _picker.pickImage(source: source, maxWidth: 1920, maxHeight: 1920, imageQuality: 90);
     if (picked != null) {
@@ -185,14 +197,14 @@ class _ShareImageScreenState extends State<ShareImageScreen> {
         padding: const EdgeInsets.all(28),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Row(children: [
-            Text('\u275D', style: TextStyle(color: AppColors.primary, fontSize: 20)),
-            Text('  Philos', style: TextStyle(color: Colors.white.withValues(alpha: 0.5), fontSize: 12, fontWeight: FontWeight.w500, letterSpacing: 0.5)),
+            Text('\u275D', style: TextStyle(color: _quoteMarkColor, fontSize: 20)),
+            Text('  Philos', style: TextStyle(color: _brandColor, fontSize: 12, fontWeight: FontWeight.w500, letterSpacing: 0.5)),
           ]),
           const SizedBox(height: 24),
           Expanded(child: Center(child: Text(
             '\u201C${widget.quote.text(widget.locale)}\u201D',
             style: TextStyle(
-              color: Colors.white, fontSize: 18,
+              color: _quoteTextColor, fontSize: 18,
               fontFamily: fontOpt.family,
               fontStyle: fontOpt.style, height: 1.5,
             ),
@@ -201,7 +213,7 @@ class _ShareImageScreenState extends State<ShareImageScreen> {
           const SizedBox(height: 20),
           Center(child: Text(
             '— ${widget.quote.author(widget.locale)}',
-            style: TextStyle(color: AppColors.primary, fontSize: 14, fontWeight: FontWeight.w600),
+            style: TextStyle(color: _authorColor, fontSize: 14, fontWeight: FontWeight.w600),
           )),
         ]),
       ),

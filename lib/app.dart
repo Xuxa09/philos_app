@@ -26,9 +26,8 @@ class _AppState extends State<App> {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Philos',
-      theme: AppTheme.dark,
-      darkTheme: AppTheme.dark,
-      themeMode: ThemeMode.dark,
+      theme: AppTheme.light,
+      themeMode: ThemeMode.light,
       routerConfig: _router,
       locale: settingsVm.locale,
       localizationsDelegates: AppLocalizations.localizationsDelegates,

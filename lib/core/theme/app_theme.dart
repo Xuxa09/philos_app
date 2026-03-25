@@ -1,15 +1,16 @@
 // === App Theme ===
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'app_colors.dart';
 
 abstract class AppTheme {
-  // === Dark Theme ===
-  static ThemeData get dark => ThemeData(
+  // === Light Theme (Elegant / Philosophical) ===
+  static ThemeData get light => ThemeData(
     useMaterial3: true,
-    brightness: Brightness.dark,
+    brightness: Brightness.light,
     scaffoldBackgroundColor: AppColors.background,
-    colorScheme: const ColorScheme.dark(
+    colorScheme: const ColorScheme.light(
       primary: AppColors.primary,
       secondary: AppColors.secondary,
       surface: AppColors.surface,
@@ -17,7 +18,8 @@ abstract class AppTheme {
     ),
     navigationBarTheme: NavigationBarThemeData(
       backgroundColor: AppColors.surface,
-      indicatorColor: AppColors.primary.withValues(alpha: 0.2),
+      surfaceTintColor: Colors.transparent,
+      indicatorColor: AppColors.primary.withValues(alpha: 0.12),
       labelTextStyle: WidgetStateProperty.resolveWith((states) {
         if (states.contains(WidgetState.selected)) {
           return const TextStyle(fontSize: 12, color: AppColors.primary);
@@ -35,6 +37,7 @@ abstract class AppTheme {
       backgroundColor: Colors.transparent,
       elevation: 0,
       scrolledUnderElevation: 0,
+      systemOverlayStyle: SystemUiOverlayStyle.dark,
     ),
     cardTheme: CardThemeData(
       color: AppColors.surface,

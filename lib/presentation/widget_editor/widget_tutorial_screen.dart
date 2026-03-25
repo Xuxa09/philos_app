@@ -63,8 +63,6 @@ class WidgetTutorialScreen extends StatelessWidget {
           PressableScale(
             onTap: () {
               HapticService.light();
-              // Pop back to settings (pop tutorial + pop editor)
-              context.pop();
               context.pop();
             },
             child: Container(

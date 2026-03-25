@@ -21,12 +21,12 @@ class FontOption {
 
 abstract class ShareStyleData {
   static const backgrounds = [
-    BgOption(key: 'gradient', label: 'Gradiente', colors: [Color(0xFF1C1C1E), Color(0xFF0A84FF)]),
-    BgOption(key: 'dark', label: 'Escuro', colors: [Color(0xFF000000), Color(0xFF1C1C1E)]),
-    BgOption(key: 'gold', label: 'Dourado', colors: [Color(0xFF1C1C1E), Color(0x60D4A843)]),
-    BgOption(key: 'purple', label: 'Roxo', colors: [Color(0xFF5E2D91), Color(0xFFBF5AF2)]),
-    BgOption(key: 'green', label: 'Verde', colors: [Color(0xFF1C1C1E), Color(0x5030D158)]),
-    BgOption(key: 'wine', label: 'Vinho', colors: [Color(0xFF2A0A1B), Color(0xFF8B1A4A)]),
+    BgOption(key: 'gradient', label: 'Sépia', colors: [Color(0xFF3A2A1A), Color(0xFF6B4226)]),
+    BgOption(key: 'dark', label: 'Noturno', colors: [Color(0xFF1A1410), Color(0xFF3A2A1A)]),
+    BgOption(key: 'gold', label: 'Dourado', colors: [Color(0xFF3A2A1A), Color(0xFF8B6B28)]),
+    BgOption(key: 'purple', label: 'Violeta', colors: [Color(0xFF2D1B3D), Color(0xFF6B4888)]),
+    BgOption(key: 'green', label: 'Oliva', colors: [Color(0xFF1A2418), Color(0xFF4A6848)]),
+    BgOption(key: 'wine', label: 'Carmesim', colors: [Color(0xFF2A0A1B), Color(0xFF884848)]),
   ];
 
   static const imageBackgrounds = [

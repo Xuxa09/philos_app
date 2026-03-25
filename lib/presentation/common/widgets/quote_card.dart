@@ -9,7 +9,7 @@ import '../../../data/models/quote_model.dart';
 import 'app_card.dart';
 import 'pressable_scale.dart';
 
-class QuoteCard extends StatelessWidget {
+class QuoteCard extends StatefulWidget {
   final QuoteModel quote;
   final String locale;
   final bool isFavorite;
@@ -28,19 +28,71 @@ class QuoteCard extends StatelessWidget {
   });
 
   @override
+  State<QuoteCard> createState() => _QuoteCardState();
+}
+
+class _QuoteCardState extends State<QuoteCard> with TickerProviderStateMixin {
+  late final AnimationController _favoriteController;
+  late final Animation<double> _favoriteScale;
+  late final AnimationController _shareController;
+  late final Animation<double> _shareRotation;
+
+  @override
+  void initState() {
+    super.initState();
+    _favoriteController = AnimationController(
+      vsync: this, duration: const Duration(milliseconds: 400),
+    );
+    _favoriteScale = TweenSequence<double>([
+      TweenSequenceItem(tween: Tween(begin: 1.0, end: 1.4), weight: 30),
+      TweenSequenceItem(tween: Tween(begin: 1.4, end: 0.85), weight: 30),
+      TweenSequenceItem(tween: Tween(begin: 0.85, end: 1.0), weight: 40),
+    ]).animate(CurvedAnimation(parent: _favoriteController, curve: Curves.easeOut));
+
+    _shareController = AnimationController(
+      vsync: this, duration: const Duration(milliseconds: 350),
+    );
+    _shareRotation = TweenSequence<double>([
+      TweenSequenceItem(tween: Tween(begin: 0.0, end: -0.15), weight: 30),
+      TweenSequenceItem(tween: Tween(begin: -0.15, end: 0.1), weight: 30),
+      TweenSequenceItem(tween: Tween(begin: 0.1, end: 0.0), weight: 40),
+    ]).animate(CurvedAnimation(parent: _shareController, curve: Curves.easeOut));
+  }
+
+  @override
+  void dispose() {
+    _favoriteController.dispose();
+    _shareController.dispose();
+    super.dispose();
+  }
+
+  void _onFavoriteTap() {
+    HapticService.selection();
+    _favoriteController.forward(from: 0);
+    widget.onFavoriteTap?.call();
+  }
+
+  void _onShareTap(BuildContext ctx) {
+    HapticService.light();
+    _shareController.forward(from: 0);
+    ShareQuoteSheet.show(ctx, widget.quote, widget.locale);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return PressableScale(
-      onTap: onTap,
+      onTap: widget.onTap,
+      onDoubleTap: widget.onFavoriteTap != null ? _onFavoriteTap : null,
       onLongPress: () {
         HapticService.light();
-        final text = '"${quote.text(locale)}" \u2014 ${quote.author(locale)}';
+        final text = '"${widget.quote.text(widget.locale)}" \u2014 ${widget.quote.author(widget.locale)}';
         Clipboard.setData(ClipboardData(text: text));
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              locale == 'pt'
+              widget.locale == 'pt'
                   ? 'Frase copiada!'
-                  : locale == 'es'
+                  : widget.locale == 'es'
                       ? '\u00A1Frase copiada!'
                       : 'Quote copied!',
             ),
@@ -56,7 +108,7 @@ class QuoteCard extends StatelessWidget {
             _buildHeader(),
             const SizedBox(height: AppSpacing.sm),
             _buildQuoteText(),
-            if (showReflection) ...[
+            if (widget.showReflection) ...[
               const SizedBox(height: AppSpacing.md),
               _buildReflection(),
             ],
@@ -66,13 +118,12 @@ class QuoteCard extends StatelessWidget {
     );
   }
 
-  // === Subviews ===
   Widget _buildHeader() {
     return Row(
       children: [
         Expanded(
           child: Text(
-            quote.author(locale),
+            widget.quote.author(widget.locale),
             style: AppFonts.callout.copyWith(
               color: AppColors.primary,
               fontWeight: FontWeight.w600,
@@ -80,37 +131,50 @@ class QuoteCard extends StatelessWidget {
             ),
           ),
         ),
-        if (onFavoriteTap != null)
+        if (widget.onFavoriteTap != null)
           GestureDetector(
             behavior: HitTestBehavior.opaque,
-            onTap: () {
-              HapticService.selection();
-              onFavoriteTap!();
-            },
+            onTap: _onFavoriteTap,
             child: SizedBox(
               width: 44, height: 44,
               child: Center(
-                child: Icon(
-                  isFavorite ? Icons.favorite : Icons.favorite_border,
-                  color: isFavorite ? AppColors.love : AppColors.textTertiary,
-                  size: 22,
+                child: AnimatedBuilder(
+                  animation: _favoriteScale,
+                  builder: (context, child) => Transform.scale(
+                    scale: _favoriteScale.value,
+                    child: child,
+                  ),
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 200),
+                    transitionBuilder: (child, anim) => FadeTransition(opacity: anim, child: child),
+                    child: Icon(
+                      widget.isFavorite ? Icons.favorite : Icons.favorite_border,
+                      key: ValueKey(widget.isFavorite),
+                      color: widget.isFavorite ? AppColors.love : AppColors.textTertiary,
+                      size: 28,
+                    ),
+                  ),
                 ),
               ),
             ),
           ),
         Builder(builder: (ctx) => GestureDetector(
           behavior: HitTestBehavior.opaque,
-          onTap: () {
-            HapticService.light();
-            ShareQuoteSheet.show(ctx, quote, locale);
-          },
-          child: const SizedBox(
+          onTap: () => _onShareTap(ctx),
+          child: SizedBox(
             width: 44, height: 44,
             child: Center(
-              child: Icon(
-                Icons.share_outlined,
-                color: AppColors.textTertiary,
-                size: 20,
+              child: AnimatedBuilder(
+                animation: _shareRotation,
+                builder: (context, child) => Transform.rotate(
+                  angle: _shareRotation.value,
+                  child: child,
+                ),
+                child: const Icon(
+                  Icons.share_outlined,
+                  color: AppColors.textTertiary,
+                  size: 28,
+                ),
               ),
             ),
           ),
@@ -121,7 +185,7 @@ class QuoteCard extends StatelessWidget {
 
   Widget _buildQuoteText() {
     return Text(
-      '\u201C${quote.text(locale)}\u201D',
+      '\u201C${widget.quote.text(widget.locale)}\u201D',
       style: AppFonts.body.copyWith(
         color: AppColors.textPrimary,
         fontStyle: FontStyle.italic,
@@ -146,9 +210,9 @@ class QuoteCard extends StatelessWidget {
               const Icon(Icons.lightbulb_outline, size: 18, color: AppColors.accent),
               const SizedBox(width: AppSpacing.xs),
               Text(
-                locale == 'pt'
+                widget.locale == 'pt'
                     ? 'Reflex\u00E3o'
-                    : locale == 'es'
+                    : widget.locale == 'es'
                         ? 'Reflexi\u00F3n'
                         : 'Reflection',
                 style: AppFonts.subheadline.copyWith(
@@ -160,7 +224,7 @@ class QuoteCard extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.xs),
           Text(
-            quote.reflection(locale),
+            widget.quote.reflection(widget.locale),
             style: AppFonts.body.copyWith(
               color: AppColors.textSecondary,
               height: 1.5,

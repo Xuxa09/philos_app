@@ -54,9 +54,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
       _buildSectionTitle(_widgetSectionTitle(vm.selectedLocale)),
       const SizedBox(height: AppSpacing.sm),
       _buildSettingsTile(
-        icon: Icons.widgets_outlined,
-        title: vm.selectedLocale == 'pt' ? 'Personalizar Widget' : vm.selectedLocale == 'es' ? 'Personalizar Widget' : 'Customize Widget',
+        icon: Icons.palette_outlined,
+        title: vm.selectedLocale == 'pt' ? 'Personalizar' : vm.selectedLocale == 'es' ? 'Personalizar' : 'Customize',
         onTap: () => context.push('/widget-editor'),
+      ),
+      _buildSettingsTile(
+        icon: Icons.widgets_outlined,
+        title: vm.selectedLocale == 'pt' ? 'Adicionar Widget' : vm.selectedLocale == 'es' ? 'Añadir Widget' : 'Add Widget',
+        onTap: () => context.push('/widget-tutorial'),
       ),
       const SizedBox(height: AppSpacing.lg),
       _buildSectionTitle(context.l10n.settingsLegal),
@@ -78,10 +83,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
       margin: const EdgeInsets.only(bottom: 1),
       decoration: BoxDecoration(color: AppColors.surface, borderRadius: BorderRadius.circular(12)),
       child: Row(children: [
-        Icon(icon, color: AppColors.primary, size: 22),
+        Icon(icon, color: AppColors.primary, size: 28),
         const SizedBox(width: AppSpacing.md),
         Expanded(child: Text(title, style: AppFonts.body.copyWith(color: AppColors.textPrimary))),
-        trailing ?? const Icon(Icons.chevron_right, color: AppColors.textTertiary, size: 20),
+        trailing ?? const Icon(Icons.chevron_right, color: AppColors.textTertiary, size: 28),
       ])));
   }
 

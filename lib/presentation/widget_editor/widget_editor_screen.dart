@@ -20,11 +20,11 @@ class _WidgetEditorScreenState extends State<WidgetEditorScreen> {
   late String _selectedFont;
 
   static const _backgrounds = [
-    _BgOption(key: 'gradient', label: 'Gradiente', colors: [Color(0xFF1C1C1E), Color(0xFF0A84FF)]),
-    _BgOption(key: 'dark', label: 'Escuro', colors: [Color(0xFF000000), Color(0xFF1C1C1E)]),
-    _BgOption(key: 'gold', label: 'Dourado', colors: [Color(0xFF1C1C1E), Color(0x60D4A843)]),
-    _BgOption(key: 'purple', label: 'Roxo', colors: [Color(0xFF5E2D91), Color(0xFFBF5AF2)]),
-    _BgOption(key: 'green', label: 'Verde', colors: [Color(0xFF1C1C1E), Color(0x5030D158)]),
+    _BgOption(key: 'gradient', label: 'Sépia', colors: [Color(0xFF3A2A1A), Color(0xFF6B4226)]),
+    _BgOption(key: 'dark', label: 'Noturno', colors: [Color(0xFF1A1410), Color(0xFF3A2A1A)]),
+    _BgOption(key: 'gold', label: 'Dourado', colors: [Color(0xFF3A2A1A), Color(0xFF8B6B28)]),
+    _BgOption(key: 'purple', label: 'Violeta', colors: [Color(0xFF2D1B3D), Color(0xFF6B4888)]),
+    _BgOption(key: 'green', label: 'Oliva', colors: [Color(0xFF1A2418), Color(0xFF4A6848)]),
   ];
 
   static const _imageBackgrounds = [
@@ -44,13 +44,15 @@ class _WidgetEditorScreenState extends State<WidgetEditorScreen> {
   @override
   void initState() {
     super.initState();
-    _selectedBg = _storage.widgetBackground;
-    _selectedFont = _storage.widgetFontStyle;
+    _selectedBg = _storage.cardBackground;
+    _selectedFont = _storage.cardFontStyle;
   }
 
   Future<void> _save() async {
     await _storage.setWidgetBackground(_selectedBg);
     await _storage.setWidgetFontStyle(_selectedFont);
+    await _storage.setCardBackground(_selectedBg);
+    await _storage.setCardFontStyle(_selectedFont);
     await WidgetService.updateStyle();
   }
 
@@ -91,11 +93,22 @@ class _WidgetEditorScreenState extends State<WidgetEditorScreen> {
         GestureDetector(onTap: () => context.pop(),
           child: const Icon(Icons.arrow_back_ios, color: AppColors.textPrimary, size: 20)),
         const SizedBox(width: AppSpacing.sm),
-        Text(locale == 'pt' ? 'Personalizar Widget' : locale == 'es' ? 'Personalizar Widget' : 'Customize Widget',
+        Text(locale == 'pt' ? 'Personalizar' : locale == 'es' ? 'Personalizar' : 'Customize',
           style: AppFonts.title2.copyWith(color: AppColors.textPrimary)),
       ]),
     );
   }
+
+  bool get _isDarkBg {
+    if (_selectedBg == 'img_papel') return false;
+    if (_selectedBg.startsWith('img_')) return true;
+    return true; // all gradients are dark
+  }
+
+  Color get _previewTextColor => _isDarkBg ? Colors.white : AppColors.textPrimary;
+  Color get _previewAuthorColor => _isDarkBg ? AppColors.accent : AppColors.primary;
+  Color get _previewBrandColor => _isDarkBg ? Colors.white.withValues(alpha: 0.5) : AppColors.textTertiary;
+  Color get _previewMarkColor => _isDarkBg ? AppColors.accent : AppColors.primary;
 
   Widget _buildPreview() {
     final isImage = _selectedBg.startsWith('img_');
@@ -118,21 +131,21 @@ class _WidgetEditorScreenState extends State<WidgetEditorScreen> {
       padding: const EdgeInsets.all(20),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Row(children: [
-          Text('❝', style: TextStyle(color: AppColors.primary, fontSize: 16)),
-          Text('  Philos', style: TextStyle(color: AppColors.textTertiary, fontSize: 11, fontWeight: FontWeight.w500, letterSpacing: 0.5)),
+          Text('❝', style: TextStyle(color: _previewMarkColor, fontSize: 16)),
+          Text('  Philos', style: TextStyle(color: _previewBrandColor, fontSize: 11, fontWeight: FontWeight.w500, letterSpacing: 0.5)),
         ]),
         const SizedBox(height: 10),
         Expanded(child: Center(child: Text(
           '\u201CA felicidade depende da qualidade dos seus pensamentos.\u201D',
           style: TextStyle(
-            color: Colors.white, fontSize: 14,
+            color: _previewTextColor, fontSize: 14,
             fontFamily: fontOpt.family,
             fontStyle: fontOpt.style, height: 1.4,
           ),
           maxLines: 3, overflow: TextOverflow.ellipsis,
         ))),
         Align(alignment: Alignment.centerRight,
-          child: Text('— Marco Aurélio', style: TextStyle(color: AppColors.primary, fontSize: 12, fontWeight: FontWeight.w500))),
+          child: Text('— Marco Aurélio', style: TextStyle(color: _previewAuthorColor, fontSize: 12, fontWeight: FontWeight.w500))),
       ]),
     ));
   }
@@ -245,7 +258,7 @@ class _WidgetEditorScreenState extends State<WidgetEditorScreen> {
     return PressableScale(
       onTap: () {
         HapticService.light();
-        context.push('/widget-tutorial');
+        context.pop();
       },
       child: Container(
         width: double.infinity,
@@ -255,7 +268,7 @@ class _WidgetEditorScreenState extends State<WidgetEditorScreen> {
           borderRadius: BorderRadius.circular(14),
         ),
         child: Center(child: Text(
-          locale == 'pt' ? 'Adicionar Widget' : locale == 'es' ? 'Añadir Widget' : 'Add Widget',
+          locale == 'pt' ? 'Salvar' : locale == 'es' ? 'Guardar' : 'Save',
           style: AppFonts.body.copyWith(color: Colors.white, fontWeight: FontWeight.w600),
         )),
       ),

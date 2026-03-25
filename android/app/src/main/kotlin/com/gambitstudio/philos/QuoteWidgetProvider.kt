@@ -36,10 +36,10 @@ class QuoteWidgetProvider : HomeWidgetProvider() {
 
                 // Apply background color tint on author based on theme
                 val authorColor = when (background) {
-                    "gold" -> Color.parseColor("#D4A843")
-                    "purple" -> Color.parseColor("#BF5AF2")
-                    "green" -> Color.parseColor("#30D158")
-                    else -> Color.parseColor("#0A84FF")
+                    "gold" -> Color.parseColor("#8B6B28")
+                    "purple" -> Color.parseColor("#6B4888")
+                    "green" -> Color.parseColor("#4A6848")
+                    else -> Color.parseColor("#6B4226")
                 }
                 setTextColor(R.id.quote_author, authorColor)
 

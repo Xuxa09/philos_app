@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 
 enum MoodType {
   // === Values ===
-  unmotivated(Icons.battery_1_bar, Color(0xFF0A84FF)),
-  anxious(Icons.psychology_alt, Color(0xFFFF9F0A)),
-  frustrated(Icons.sentiment_dissatisfied, Color(0xFFBF5AF2)),
-  fearful(Icons.shield, Color(0xFFFF453A)),
-  lost(Icons.explore_off, Color(0xFF64D2FF)),
-  grateful(Icons.favorite, Color(0xFFFF375F)),
-  ambitious(Icons.rocket_launch, Color(0xFF30D158)),
-  tired(Icons.bedtime, Color(0xFFFFD60A));
+  unmotivated(Icons.battery_1_bar, Color(0xFF3E6278)),
+  anxious(Icons.psychology_alt, Color(0xFF8B6B28)),
+  frustrated(Icons.sentiment_dissatisfied, Color(0xFF6B4888)),
+  fearful(Icons.shield, Color(0xFF884848)),
+  lost(Icons.explore_off, Color(0xFF4A7070)),
+  grateful(Icons.favorite, Color(0xFF884040)),
+  ambitious(Icons.rocket_launch, Color(0xFF4A6848)),
+  tired(Icons.bedtime, Color(0xFF7A6B28));
 
   // === Properties ===
   final IconData icon;

@@ -4,7 +4,8 @@ class PressableScale extends StatefulWidget {
   final Widget child;
   final VoidCallback? onTap;
   final VoidCallback? onLongPress;
-  const PressableScale({super.key, required this.child, this.onTap, this.onLongPress});
+  final VoidCallback? onDoubleTap;
+  const PressableScale({super.key, required this.child, this.onTap, this.onLongPress, this.onDoubleTap});
 
   @override
   State<PressableScale> createState() => _PressableScaleState();
@@ -23,6 +24,7 @@ class _PressableScaleState extends State<PressableScale> {
       },
       onTapCancel: () => setState(() => _isPressed = false),
       onLongPress: widget.onLongPress,
+      onDoubleTap: widget.onDoubleTap,
       child: AnimatedScale(
         scale: _isPressed ? 0.95 : 1.0,
         duration: const Duration(milliseconds: 150),

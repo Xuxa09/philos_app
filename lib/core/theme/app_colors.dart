@@ -3,36 +3,36 @@
 import 'package:flutter/material.dart';
 
 abstract class AppColors {
-  // === Dark Theme ===
-  static const background = Color(0xFF000000);
-  static const surface = Color(0xFF1C1C1E);
-  static const surfaceSecondary = Color(0xFF2C2C2E);
+  // === Light Theme (Parchment / Ancient Manuscript) ===
+  static const background = Color(0xFFF5EFE0); // warm parchment
+  static const surface = Color(0xFFFFF8ED);     // ivory manuscript
+  static const surfaceSecondary = Color(0xFFD4C4A8); // sand border
 
-  // === Primary (Blue/Cyan) ===
-  static const primary = Color(0xFF0A84FF);
-  static const secondary = Color(0xFF0060CC);
-  static const accent = Color(0xFF64D2FF);
+  // === Primary (Sepia Ink) ===
+  static const primary = Color(0xFF6B4226);     // sepia ink
+  static const secondary = Color(0xFF523218);   // dark sepia
+  static const accent = Color(0xFF8B6B42);       // aged bronze
 
   // === Semantic ===
-  static const error = Color(0xFFFF453A);
-  static const success = Color(0xFF30D158);
-  static const warning = Color(0xFFFF9F0A);
+  static const error = Color(0xFF8B3030);
+  static const success = Color(0xFF3E6B4A);
+  static const warning = Color(0xFF8B7020);
 
   // === Text ===
-  static const textPrimary = Colors.white;
-  static const textSecondary = Color(0xFF8E8E93);
-  static const textTertiary = Color(0xFF636366);
+  static const textPrimary = Color(0xFF3A2A1A);  // ink brown
+  static const textSecondary = Color(0xFF6B5840); // faded ink
+  static const textTertiary = Color(0xFF9A8A6E);  // aged text
 
   // === Categories (Philosophical Schools) ===
-  static const categoryStoicism = Color(0xFF30D158);
-  static const categoryClassical = Color(0xFFFF9F0A);
-  static const categoryExistentialism = Color(0xFFBF5AF2);
-  static const categoryEastern = Color(0xFF0A84FF);
-  static const categoryEpicureanism = Color(0xFF64D2FF);
-  static const categoryRationalism = Color(0xFFFF375F);
-  static const categoryAbsurdism = Color(0xFFFFD60A);
-  static const categoryPragmatism = Color(0xFF5CE1E6);
+  static const categoryStoicism = Color(0xFF4A6848);     // olive leaf
+  static const categoryClassical = Color(0xFF8B6B28);    // old gold
+  static const categoryExistentialism = Color(0xFF6B4888); // aged violet
+  static const categoryEastern = Color(0xFF3E6278);       // ink blue
+  static const categoryEpicureanism = Color(0xFF4A7070);  // verdigris
+  static const categoryRationalism = Color(0xFF884848);   // faded crimson
+  static const categoryAbsurdism = Color(0xFF7A6B28);     // mustard
+  static const categoryPragmatism = Color(0xFF4A6B50);    // herb green
 
   // === Favorite ===
-  static const love = Color(0xFFFF375F);
+  static const love = Color(0xFF884040);
 }
