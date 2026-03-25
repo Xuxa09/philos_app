@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../core/extensions/context_extensions.dart';
 import '../../core/theme/app_colors.dart';
+import '../../data/services/storage_service.dart';
 import '../../core/theme/app_fonts.dart';
 import '../../core/theme/app_spacing.dart';
 import '../common/widgets/app_button.dart';
@@ -62,6 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   const SizedBox(height: AppSpacing.lg),
                   if (vm.quoteOfDay != null)
                     QuoteOfDayCard(
+                      key: ValueKey('qod_${StorageService.instance.cardBackground}_${StorageService.instance.cardFontStyle}'),
                       quote: vm.quoteOfDay!, locale: locale,
                       isFavorite: vm.isFavorite(vm.quoteOfDay!.id),
                       onFavoriteTap: () => vm.toggleFavorite(vm.quoteOfDay!.id),
@@ -115,7 +117,10 @@ class _HomeScreenState extends State<HomeScreen> {
           Text(greetingText, style: AppFonts.title2.copyWith(color: AppColors.textSecondary)),
           const Spacer(),
           GestureDetector(
-            onTap: () => context.push('/settings'),
+            onTap: () async {
+              await context.push('/settings');
+              if (mounted) setState(() {});
+            },
             child: const Icon(Icons.settings_outlined, color: AppColors.textSecondary, size: 28),
           ),
         ]),
