@@ -23,15 +23,18 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     final settingsVm = context.watch<SettingsViewModel>();
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      title: 'Philos',
-      theme: AppTheme.light,
-      themeMode: ThemeMode.light,
-      routerConfig: _router,
-      locale: settingsVm.locale,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
+        title: 'Philos',
+        theme: AppTheme.light,
+        themeMode: ThemeMode.light,
+        routerConfig: _router,
+        locale: settingsVm.locale,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+      ),
     );
   }
 }

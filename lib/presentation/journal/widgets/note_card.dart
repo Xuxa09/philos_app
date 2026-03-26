@@ -21,15 +21,15 @@ class NoteCard extends StatelessWidget {
       onLongPress: () { HapticService.selection(); _showOptionsSheet(context); },
       child: AppCard(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Row(children: [
-          Icon(note.isReflection ? Icons.format_quote : Icons.edit_note, size: 20, color: AppColors.accent),
+          Icon(note.isReflection ? Icons.format_quote : Icons.edit_note, size: 28, color: AppColors.accent),
           const SizedBox(width: AppSpacing.sm),
           Expanded(child: Text(
             note.isReflection ? '${_reflectionLabel(locale)} \u2014 ${_formatDate(note.createdAt, locale)}' : _formatDate(note.createdAt, locale),
             style: AppFonts.subheadline.copyWith(color: AppColors.textSecondary))),
           GestureDetector(
             onTap: () { HapticService.selection(); _showOptionsSheet(context); },
-            child: Container(width: 44, height: 44, alignment: Alignment.centerRight, color: Colors.transparent,
-              child: const Icon(Icons.more_vert, size: 20, color: AppColors.textTertiary))),
+            child: Container(width: 44, height: 44, alignment: Alignment.center, color: Colors.transparent,
+              child: const Icon(Icons.more_vert, size: 28, color: AppColors.textTertiary))),
         ]),
         if (note.isReflection) ...[
           const SizedBox(height: AppSpacing.sm),
@@ -72,7 +72,7 @@ class NoteCard extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md, vertical: AppSpacing.md),
         decoration: BoxDecoration(color: color.withValues(alpha: 0.08), borderRadius: BorderRadius.circular(12)),
         child: Row(children: [
-          Icon(icon, color: color, size: 22),
+          Icon(icon, color: color, size: 28),
           const SizedBox(width: AppSpacing.md),
           Text(label, style: AppFonts.body.copyWith(color: color, fontWeight: FontWeight.w600)),
         ])));

@@ -20,6 +20,7 @@ class _PressableScaleState extends State<PressableScale> {
       onTapDown: (_) => setState(() => _isPressed = true),
       onTapUp: (_) {
         setState(() => _isPressed = false);
+        FocusManager.instance.primaryFocus?.unfocus();
         widget.onTap?.call();
       },
       onTapCancel: () => setState(() => _isPressed = false),

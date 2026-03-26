@@ -22,7 +22,10 @@
       "Bash(grep -c \"category: ''eastern''\" lib/data/services/quotes_data.dart)",
       "Bash(grep -c \"category: ''epicureanism''\" lib/data/services/quotes_data.dart)",
       "Bash(uniq -d -f1)",
-      "Bash(paste -d'|' - - -)"
+      "Bash(paste -d'|' - - -)",
+      "Bash(grep -c \"id: ''q1[6-9][0-9]\\\\|id: ''q2[0-3][0-9]\\\\|id: ''q240''\" lib/data/services/quotes_data.dart)",
+      "Bash(grep -c \"id: ''q2[4-9][0-9]''\" C:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart)",
+      "Bash(grep -c \"id: ''q250''\" C:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart)"
     ]
   }
 }

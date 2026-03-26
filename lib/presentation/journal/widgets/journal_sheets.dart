@@ -93,7 +93,7 @@ class _TextSheetContent extends StatelessWidget {
     final bottomInset = MediaQuery.of(context).viewInsets.bottom;
     return GestureDetector(onTap: () => Navigator.pop(context), behavior: HitTestBehavior.opaque,
       child: DraggableScrollableSheet(initialChildSize: 0.85, minChildSize: 0.5, maxChildSize: 0.95,
-        builder: (sheetContext, scrollController) => GestureDetector(onTap: () {},
+        builder: (sheetContext, scrollController) => GestureDetector(onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
           child: Container(
             decoration: const BoxDecoration(color: AppColors.background, borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
             child: Column(children: [

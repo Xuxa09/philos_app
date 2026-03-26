@@ -55,7 +55,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
   // === Hub (default view) ===
   Widget _buildHub(BuildContext context, ExploreViewModel vm, String locale) {
     return SafeArea(
-      child: CustomScrollView(slivers: [
+      child: CustomScrollView(keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag, slivers: [
         // Title
         SliverToBoxAdapter(child: Padding(
           padding: const EdgeInsets.fromLTRB(AppSpacing.screenPadding, AppSpacing.screenPadding, AppSpacing.screenPadding, AppSpacing.sm),
@@ -168,7 +168,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
   // === Search results view ===
   Widget _buildSearchResults(ExploreViewModel vm, String locale) {
     return SafeArea(
-      child: CustomScrollView(slivers: [
+      child: CustomScrollView(keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag, slivers: [
         SliverToBoxAdapter(child: Padding(
           padding: const EdgeInsets.fromLTRB(AppSpacing.screenPadding, AppSpacing.screenPadding, AppSpacing.screenPadding, AppSpacing.sm),
           child: _buildSearchBar(vm, locale),

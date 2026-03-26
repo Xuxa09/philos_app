@@ -29,8 +29,10 @@ class _MoodsScreenState extends State<MoodsScreen> {
     final locale = Localizations.localeOf(context).languageCode;
     return Scaffold(
       backgroundColor: AppColors.background,
-      body: Consumer<MoodsViewModel>(builder: (context, vm, _) {
-        return SafeArea(child: CustomScrollView(slivers: [
+      body: GestureDetector(
+        onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+        child: Consumer<MoodsViewModel>(builder: (context, vm, _) {
+        return SafeArea(child: CustomScrollView(keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag, slivers: [
           _buildHeader(context, locale),
           _buildSearchBar(vm, locale),
           const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.md)),
@@ -42,7 +44,7 @@ class _MoodsScreenState extends State<MoodsScreen> {
             _buildEmptySearch(locale),
           const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.xxl)),
         ]));
-      }),
+      })),
     );
   }
 
@@ -109,7 +111,7 @@ class _MoodsScreenState extends State<MoodsScreen> {
       sliver: SliverList(delegate: SliverChildBuilderDelegate(
         (context, index) {
           final q = vm.quotes[index];
-          return Padding(padding: const EdgeInsets.only(bottom: AppSpacing.md),
+          return Padding(key: ValueKey(q.id), padding: const EdgeInsets.only(bottom: AppSpacing.md),
             child: QuoteCard(quote: q, locale: locale, isFavorite: vm.isFavorite(q.id),
               onFavoriteTap: () => vm.toggleFavorite(q.id), showReflection: true));
         }, childCount: vm.quotes.length)),

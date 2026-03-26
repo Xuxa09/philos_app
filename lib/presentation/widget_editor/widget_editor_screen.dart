@@ -2,6 +2,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:path/path.dart' as p;
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_fonts.dart';
 import '../../core/theme/app_spacing.dart';
@@ -69,8 +71,11 @@ class _WidgetEditorScreenState extends State<WidgetEditorScreen> {
   Future<void> _pickImage(ImageSource source) async {
     final picked = await _picker.pickImage(source: source, maxWidth: 1920, maxHeight: 1920, imageQuality: 90);
     if (picked != null) {
+      final appDir = await getApplicationDocumentsDirectory();
+      final fileName = 'card_bg_${DateTime.now().millisecondsSinceEpoch}${p.extension(picked.path)}';
+      final savedFile = await File(picked.path).copy('${appDir.path}/$fileName');
       setState(() {
-        _customImage = File(picked.path);
+        _customImage = savedFile;
         _selectedBg = 'custom';
       });
       _save();

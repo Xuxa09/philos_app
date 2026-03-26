@@ -30,9 +30,11 @@ class _AuthorsScreenState extends State<AuthorsScreen> {
     final locale = Localizations.localeOf(context).languageCode;
     return Scaffold(
       backgroundColor: AppColors.background,
-      body: Consumer<AuthorsViewModel>(builder: (context, vm, _) {
+      body: GestureDetector(
+        onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+        child: Consumer<AuthorsViewModel>(builder: (context, vm, _) {
         final authors = vm.getAuthors(locale);
-        return SafeArea(child: CustomScrollView(slivers: [
+        return SafeArea(child: CustomScrollView(keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag, slivers: [
           _buildHeader(context, locale),
           _buildSearchBar(vm, locale),
           const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.md)),
@@ -56,7 +58,7 @@ class _AuthorsScreenState extends State<AuthorsScreen> {
             _buildEmptySearch(locale),
           const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.xxl)),
         ]));
-      }),
+      })),
     );
   }
 
@@ -141,7 +143,7 @@ class _AuthorsScreenState extends State<AuthorsScreen> {
       sliver: SliverList(delegate: SliverChildBuilderDelegate(
         (context, index) {
           final q = vm.quotes[index];
-          return Padding(padding: const EdgeInsets.only(bottom: AppSpacing.md),
+          return Padding(key: ValueKey(q.id), padding: const EdgeInsets.only(bottom: AppSpacing.md),
             child: QuoteCard(quote: q, locale: locale, isFavorite: vm.isFavorite(q.id),
               onFavoriteTap: () => vm.toggleFavorite(q.id), showReflection: true));
         }, childCount: vm.quotes.length)),

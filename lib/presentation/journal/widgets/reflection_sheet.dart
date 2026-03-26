@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../core/theme/app_colors.dart';
@@ -61,7 +62,7 @@ class _ReflectionSheetState extends State<ReflectionSheet> {
     final locale = widget.locale;
     return GestureDetector(onTap: () => Navigator.pop(context), behavior: HitTestBehavior.opaque,
       child: DraggableScrollableSheet(initialChildSize: 0.85, minChildSize: 0.5, maxChildSize: 0.95,
-        builder: (context, scrollController) => GestureDetector(onTap: () {},
+        builder: (context, scrollController) => GestureDetector(onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
           child: Container(
             decoration: const BoxDecoration(color: AppColors.background, borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
             child: Column(children: [
@@ -149,7 +150,8 @@ class _ReflectionSheetState extends State<ReflectionSheet> {
   }
 
   Widget _buildSuggestions(JournalViewModel vm, String locale) {
-    final suggestions = (vm.quotes.toList()..shuffle()).take(5).toList();
+    final seed = DateTime.now().day + DateTime.now().month + DateTime.now().year;
+    final suggestions = (vm.quotes.toList()..shuffle(Random(seed))).take(5).toList();
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(locale == 'pt' ? 'Sugest\u00F5es' : locale == 'es' ? 'Sugerencias' : 'Suggestions',
         style: AppFonts.subheadline.copyWith(color: AppColors.textSecondary, fontWeight: FontWeight.w600)),
@@ -176,6 +178,7 @@ class _ReflectionSheetState extends State<ReflectionSheet> {
       Row(children: [
         Expanded(child: Text(locale == 'pt' ? 'Frase selecionada' : locale == 'es' ? 'Frase seleccionada' : 'Selected quote',
           style: AppFonts.headline.copyWith(color: AppColors.textPrimary))),
+        if (widget.preselectedQuote == null)
         GestureDetector(onTap: () { HapticService.light(); setState(() => _selectedQuote = null); },
           child: Container(constraints: const BoxConstraints(minHeight: 44), alignment: Alignment.centerRight,
             color: Colors.transparent, padding: const EdgeInsets.symmetric(horizontal: AppSpacing.sm),
