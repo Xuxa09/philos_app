@@ -25,7 +25,9 @@
       "Bash(paste -d'|' - - -)",
       "Bash(grep -c \"id: ''q1[6-9][0-9]\\\\|id: ''q2[0-3][0-9]\\\\|id: ''q240''\" lib/data/services/quotes_data.dart)",
       "Bash(grep -c \"id: ''q2[4-9][0-9]''\" C:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart)",
-      "Bash(grep -c \"id: ''q250''\" C:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart)"
+      "Bash(grep -c \"id: ''q250''\" C:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart)",
+      "Bash(grep -c \"id: ''q[3][0-9][0-9]''\" \"c:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart\")",
+      "Bash(grep -c \"id: ''q29[6-9]''\" \"c:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart\")"
     ]
   }
 }

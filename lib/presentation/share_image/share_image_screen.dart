@@ -257,7 +257,7 @@ class _ShareImageScreenState extends State<ShareImageScreen> {
     final customSelected = _selectedBg == 'custom' && _customImage != null;
     return SizedBox(height: 80, child: ListView.separated(
       scrollDirection: Axis.horizontal,
-      itemCount: ShareStyleData.imageBackgrounds.length + 1,
+      itemCount: ShareStyleData.shareImageBackgrounds.length + 1,
       separatorBuilder: (_, __) => const SizedBox(width: AppSpacing.sm),
       itemBuilder: (_, index) {
         // First item: pick from device
@@ -291,7 +291,7 @@ class _ShareImageScreenState extends State<ShareImageScreen> {
         }
 
         final imgIndex = index - 1;
-        final img = ShareStyleData.imageBackgrounds[imgIndex];
+        final img = ShareStyleData.shareImageBackgrounds[imgIndex];
         final selected = _selectedBg == img.key;
         return PressableScale(
           onTap: () { HapticService.selection(); setState(() => _selectedBg = img.key); },

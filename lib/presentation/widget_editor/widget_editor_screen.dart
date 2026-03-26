@@ -38,6 +38,7 @@ class _WidgetEditorScreenState extends State<WidgetEditorScreen> {
     _ImgBgOption(key: 'img_biblioteca', label: 'Biblioteca', asset: 'assets/images/backgrouns_cards_biblioteca.jpg'),
     _ImgBgOption(key: 'img_escultura', label: 'Escultura', asset: 'assets/images/backgrouns_cards_escultura.jpg'),
     _ImgBgOption(key: 'img_papel', label: 'Papel', asset: 'assets/images/backgrouns_cards_papel_velho.jpg'),
+    _ImgBgOption(key: 'img_estatua', label: 'Est\u00e1tua', asset: 'assets/images/background_card_estatua.jpg'),
   ];
 
   static const _fonts = [

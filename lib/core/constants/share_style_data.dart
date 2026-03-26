@@ -34,6 +34,15 @@ abstract class ShareStyleData {
     ImgBgOption(key: 'img_biblioteca', label: 'Biblioteca', asset: 'assets/images/backgrouns_cards_biblioteca.jpg'),
     ImgBgOption(key: 'img_escultura', label: 'Escultura', asset: 'assets/images/backgrouns_cards_escultura.jpg'),
     ImgBgOption(key: 'img_papel', label: 'Papel', asset: 'assets/images/backgrouns_cards_papel_velho.jpg'),
+    ImgBgOption(key: 'img_estatua', label: 'Est\u00e1tua', asset: 'assets/images/background_card_estatua.jpg'),
+    ImgBgOption(key: 'img_pensador', label: 'Pensador', asset: 'assets/images/background_card_pensador.png'),
+  ];
+
+  static const shareImageBackgrounds = [
+    ImgBgOption(key: 'img_biblioteca', label: 'Biblioteca', asset: 'assets/images/backgrouns_cards_biblioteca.jpg'),
+    ImgBgOption(key: 'img_escultura', label: 'Escultura', asset: 'assets/images/backgrouns_cards_escultura.jpg'),
+    ImgBgOption(key: 'img_estatua', label: 'Est\u00e1tua', asset: 'assets/images/background_card_estatua.jpg'),
+    ImgBgOption(key: 'img_pensador', label: 'Pensador', asset: 'assets/images/background_card_pensador.png'),
   ];
 
   static const fonts = [
