@@ -165,7 +165,6 @@ class _RandomQuoteSheetState extends State<RandomQuoteSheet> {
           color: AppColors.textSecondary,
           onTap: () {
             HapticService.light();
-            Navigator.pop(ctx);
             ShareQuoteSheet.show(ctx, _quote, locale);
           },
         )),
@@ -181,12 +180,12 @@ class _RandomQuoteSheetState extends State<RandomQuoteSheet> {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 48, height: 48,
+        width: 44, height: 44,
         decoration: const BoxDecoration(
           color: AppColors.surfaceSecondary,
           shape: BoxShape.circle,
         ),
-        child: Icon(icon, color: color, size: 22),
+        child: Icon(icon, color: color, size: 28),
       ),
     );
   }
