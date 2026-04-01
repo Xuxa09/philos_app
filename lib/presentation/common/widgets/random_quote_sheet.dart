@@ -2,6 +2,7 @@
 
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'share_quote_sheet.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_fonts.dart';
@@ -10,6 +11,7 @@ import '../../../core/utils/haptic_service.dart';
 import '../../../data/models/quote_model.dart';
 import '../../../data/services/mock_data_provider.dart';
 import '../../../data/repositories/quote_repository.dart';
+import '../../journal/widgets/reflection_sheet.dart';
 import 'app_button.dart';
 
 class RandomQuoteSheet extends StatefulWidget {
@@ -161,14 +163,67 @@ class _RandomQuoteSheetState extends State<RandomQuoteSheet> {
         ),
         const SizedBox(width: AppSpacing.lg),
         Builder(builder: (ctx) => _buildActionButton(
-          icon: Icons.share_outlined,
+          icon: Icons.more_horiz,
           color: AppColors.textSecondary,
           onTap: () {
             HapticService.light();
-            ShareQuoteSheet.show(ctx, _quote, locale);
+            _showOptionsMenu(ctx, locale);
           },
         )),
       ],
+    );
+  }
+
+  void _showOptionsMenu(BuildContext ctx, String locale) {
+    showModalBottomSheet(
+      context: ctx,
+      backgroundColor: AppColors.surface,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (_) => SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const SizedBox(height: AppSpacing.sm),
+            Container(width: 40, height: 4, decoration: BoxDecoration(
+              color: AppColors.surfaceSecondary, borderRadius: BorderRadius.circular(2))),
+            const SizedBox(height: AppSpacing.md),
+            ListTile(
+              leading: const Icon(Icons.copy_outlined, color: AppColors.textPrimary, size: 24),
+              title: Text(
+                locale == 'pt' ? 'Copiar frase' : locale == 'es' ? 'Copiar frase' : 'Copy quote',
+                style: AppFonts.body.copyWith(color: AppColors.textPrimary)),
+              onTap: () {
+                Navigator.pop(ctx);
+                Clipboard.setData(ClipboardData(text: '${_quote.text(locale)} \u2014 ${_quote.author(locale)}'));
+                HapticService.selection();
+              },
+            ),
+            Builder(builder: (shareCtx) => ListTile(
+              leading: const Icon(Icons.share_outlined, color: AppColors.textPrimary, size: 24),
+              title: Text(
+                locale == 'pt' ? 'Compartilhar' : locale == 'es' ? 'Compartir' : 'Share',
+                style: AppFonts.body.copyWith(color: AppColors.textPrimary)),
+              onTap: () {
+                Navigator.pop(ctx);
+                ShareQuoteSheet.show(shareCtx, _quote, locale);
+              },
+            )),
+            ListTile(
+              leading: const Icon(Icons.edit_note, color: AppColors.textPrimary, size: 24),
+              title: Text(
+                locale == 'pt' ? 'Refletir' : locale == 'es' ? 'Reflexionar' : 'Reflect',
+                style: AppFonts.body.copyWith(color: AppColors.textPrimary)),
+              onTap: () {
+                Navigator.pop(ctx);
+                ReflectionSheet.show(context, locale, quote: _quote);
+              },
+            ),
+            const SizedBox(height: AppSpacing.md),
+          ],
+        ),
+      ),
     );
   }
 

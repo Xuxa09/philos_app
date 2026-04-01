@@ -27,7 +27,24 @@
       "Bash(grep -c \"id: ''q2[4-9][0-9]''\" C:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart)",
       "Bash(grep -c \"id: ''q250''\" C:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart)",
       "Bash(grep -c \"id: ''q[3][0-9][0-9]''\" \"c:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart\")",
-      "Bash(grep -c \"id: ''q29[6-9]''\" \"c:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart\")"
+      "Bash(grep -c \"id: ''q29[6-9]''\" \"c:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart\")",
+      "Bash(python3 -c:*)",
+      "Bash(grep -n \"category: ''''rationalism''''\" lib/data/services/quotes_data.dart)",
+      "Bash(grep -n \"category: ''''eastern''''\" lib/data/services/quotes_data.dart)",
+      "Bash(grep -n \"category: ''''existentialism''''\" lib/data/services/quotes_data.dart)",
+      "Bash(grep -c \"category: ''rationalism''\" lib/data/services/quotes_data.dart)",
+      "Bash(grep -c \"category: ''absurdism''\" lib/data/services/quotes_data.dart)",
+      "Bash(grep -c \"category: ''pragmatism''\" lib/data/services/quotes_data.dart)",
+      "Bash(grep -c \"id: ''q\" lib/data/services/quotes_data.dart)",
+      "Bash(grep -c \"id: ''q\" \"C:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart\")",
+      "Bash(grep -c \"id: ''q2[1-7][0-9]''\" \"C:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart\")",
+      "Bash(grep -oP \"id: ''''q\\\\d+''''\" lib/data/services/quotes_data.dart)",
+      "Bash(grep -c \"category: ''stoicism''\" \"C:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart\")",
+      "Bash(grep -c \"category: ''classical''\" \"C:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart\")",
+      "Bash(grep -c \"category: ''existentialism''\" \"C:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart\")",
+      "Bash(grep -c \"category: ''eastern''\" \"C:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart\")",
+      "Bash(grep -c \"category: ''epicureanism''\" \"C:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart\")",
+      "Read(//c/SRC/**)"
     ]
   }
 }
