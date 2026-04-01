@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/lalli/Flutter/coach_phrase_app/**)",
+      "Bash(python csv_to_dart.py)"
+    ]
+  }
+}

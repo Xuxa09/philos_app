@@ -4,7 +4,7 @@ import '../models/quote_model.dart';
 import 'quotes_data.dart';
 
 abstract class MockDataProvider {
-  // === All Quotes (24 total — 8 philosophical schools) ===
+  // === All Quotes (3625 total — 8 philosophical schools) ===
   static const List<QuoteModel> quotes = [
     ...QuotesData.stoicism,
     ...QuotesData.classical,

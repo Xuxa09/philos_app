@@ -44,7 +44,10 @@
       "Bash(grep -c \"category: ''existentialism''\" \"C:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart\")",
       "Bash(grep -c \"category: ''eastern''\" \"C:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart\")",
       "Bash(grep -c \"category: ''epicureanism''\" \"C:/Users/lalli/Flutter/coach_phrase_app/lib/data/services/quotes_data.dart\")",
-      "Read(//c/SRC/**)"
+      "Read(//c/SRC/**)",
+      "Bash(ls \"c:/Users/lalli/Flutter/coach_phrase_app/\"*.csv)",
+      "Read(//c/Users/lalli/Flutter/**)",
+      "Read(//c/Users/lalli/Flutter/coach_phrase_app/**)"
     ]
   }
 }
