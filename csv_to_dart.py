@@ -328,6 +328,17 @@ def main():
             random.seed(42)
             quotes_by_category[cat] = random.sample(quotes_by_category[cat], limit)
 
+    # Remove untranslated quotes from categories that require translations
+    REQUIRE_TRANSLATION = {"epicureanism", "rationalism", "absurdism"}
+    for cat in REQUIRE_TRANSLATION:
+        before = len(quotes_by_category[cat])
+        quotes_by_category[cat] = [
+            q for q in quotes_by_category[cat] if q["text"] in ALL_TRANSLATIONS
+        ]
+        removed = before - len(quotes_by_category[cat])
+        if removed > 0:
+            print(f"Removed {removed} untranslated quotes from {cat}")
+
     # Generate Dart file
     lines = []
     lines.append("// === Quotes Data ===")
