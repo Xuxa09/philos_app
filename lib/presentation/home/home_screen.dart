@@ -76,17 +76,18 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: AppSpacing.screenPadding),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  _buildFeatureCard(context, icon: Icons.mood, color: AppColors.primary,
+                  Expanded(child: _buildFeatureCard(context, icon: Icons.mood, color: AppColors.primary,
                     label: locale == 'pt' ? 'Humor' : locale == 'es' ? 'Estado' : 'Moods',
-                    onTap: () => context.push('/moods')),
-                  _buildFeatureCard(context, icon: Icons.edit_note, color: AppColors.primary,
+                    onTap: () => context.push('/moods'))),
+                  const SizedBox(width: AppSpacing.sm),
+                  Expanded(child: _buildFeatureCard(context, icon: Icons.edit_note, color: AppColors.primary,
                     label: locale == 'pt' ? 'Di\u00E1rio' : locale == 'es' ? 'Diario' : 'Journal',
-                    onTap: () => context.push('/journal')),
-                  _buildFeatureCard(context, icon: Icons.auto_awesome, color: AppColors.primary,
+                    onTap: () => context.push('/journal'))),
+                  const SizedBox(width: AppSpacing.sm),
+                  Expanded(child: _buildFeatureCard(context, icon: Icons.auto_awesome, color: AppColors.primary,
                     label: locale == 'pt' ? 'Aleat\u00F3rio' : locale == 'es' ? 'Aleatorio' : 'Random',
-                    onTap: () => _showRandomQuote(context)),
+                    onTap: () => _showRandomQuote(context))),
                 ],
               ),
             ),
@@ -140,7 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildFeatureCard(BuildContext context, {required IconData icon, required Color color, required String label, required VoidCallback onTap}) {
     return PressableScale(onTap: onTap, child: Container(
-      width: 110, padding: const EdgeInsets.all(AppSpacing.sm + 4),
+      padding: const EdgeInsets.all(AppSpacing.sm + 4),
       decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(14),
         border: Border.all(color: color.withValues(alpha: 0.3))),
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [

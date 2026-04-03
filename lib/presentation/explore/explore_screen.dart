@@ -127,14 +127,20 @@ class _ExploreScreenState extends State<ExploreScreen> {
       ),
     ];
 
-    return GridView.count(
-      crossAxisCount: 2,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      mainAxisSpacing: AppSpacing.sm,
-      crossAxisSpacing: AppSpacing.sm,
-      childAspectRatio: 1.8,
-      children: items.map((item) => _buildCategoryCard(context, item)).toList(),
+    return Column(
+      children: [
+        Row(children: [
+          Expanded(child: SizedBox(height: 94, child: _buildCategoryCard(context, items[0]))),
+          const SizedBox(width: AppSpacing.sm),
+          Expanded(child: SizedBox(height: 94, child: _buildCategoryCard(context, items[1]))),
+        ]),
+        const SizedBox(height: AppSpacing.sm),
+        Row(children: [
+          Expanded(child: SizedBox(height: 94, child: _buildCategoryCard(context, items[2]))),
+          const SizedBox(width: AppSpacing.sm),
+          Expanded(child: SizedBox(height: 94, child: _buildCategoryCard(context, items[3]))),
+        ]),
+      ],
     );
   }
 

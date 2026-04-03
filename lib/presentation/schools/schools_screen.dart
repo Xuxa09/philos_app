@@ -96,7 +96,7 @@ class _SchoolsScreenState extends State<SchoolsScreen> {
       padding: const EdgeInsets.symmetric(horizontal: AppSpacing.screenPadding),
       sliver: SliverGrid(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3, mainAxisSpacing: AppSpacing.sm, crossAxisSpacing: AppSpacing.sm, childAspectRatio: 1.1),
+          crossAxisCount: 4, mainAxisSpacing: AppSpacing.sm, crossAxisSpacing: AppSpacing.sm, childAspectRatio: 1.3),
         delegate: SliverChildBuilderDelegate(
           (context, index) {
             final school = vm.schools[index];
@@ -105,14 +105,14 @@ class _SchoolsScreenState extends State<SchoolsScreen> {
               onTap: () { HapticService.selection(); vm.selectSchool(school); },
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 250),
-                padding: const EdgeInsets.all(AppSpacing.sm + 2),
+                padding: const EdgeInsets.all(AppSpacing.xs + 2),
                 decoration: BoxDecoration(
                   color: selected ? school.color.withValues(alpha: 0.15) : AppColors.surface,
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(color: selected ? school.color : AppColors.surfaceSecondary, width: selected ? 1.5 : 1),
                 ),
                 child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Icon(school.icon, color: school.color, size: 24),
+                  Icon(school.icon, color: school.color, size: 20),
                   const SizedBox(height: AppSpacing.xs),
                   Flexible(child: Text(school.localizedName(locale),
                     style: AppFonts.caption.copyWith(color: selected ? school.color : AppColors.textSecondary,
