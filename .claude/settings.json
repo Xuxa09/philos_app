@@ -11,7 +11,12 @@
       "Bash(python apply_translations.py)",
       "Bash(python3)",
       "Bash(python add_stoic_translations.py)",
-      "Bash(python find_missing_stoic.py)"
+      "Bash(python find_missing_stoic.py)",
+      "Bash(python add_missing_stoic.py)",
+      "Bash(python3 find_missing_stoic.py)",
+      "Bash(python add_final_stoic.py)",
+      "Bash(python find_missing_classical.py)",
+      "Bash(python gen_classical_translations.py)"
     ]
   }
 }
