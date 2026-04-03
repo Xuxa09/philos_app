@@ -16,7 +16,15 @@
       "Bash(python3 find_missing_stoic.py)",
       "Bash(python add_final_stoic.py)",
       "Bash(python find_missing_classical.py)",
-      "Bash(python gen_classical_translations.py)"
+      "Bash(python gen_classical_translations.py)",
+      "Bash(python add_classical_batch2.py)",
+      "Bash(python add_classical_batch3.py)",
+      "Bash(python add_classical_final.py)",
+      "Bash(python find_missing_exist.py)",
+      "Bash(python add_exist_batch1.py)",
+      "Bash(python add_exist_batch2.py)",
+      "Bash(python add_exist_batch3.py)",
+      "Bash(python add_exist_batch4.py)"
     ]
   }
 }

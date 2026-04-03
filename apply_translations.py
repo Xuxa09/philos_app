@@ -11,6 +11,7 @@ for path in [
     'c:/Users/lalli/Flutter/coach_phrase_app/translations_extra.json',
     'c:/Users/lalli/Flutter/coach_phrase_app/translations_stoicism.json',
     'c:/Users/lalli/Flutter/coach_phrase_app/translations_classical.json',
+    'c:/Users/lalli/Flutter/coach_phrase_app/translations_exist.json',
 ]:
     try:
         with open(path, 'r', encoding='utf-8') as f:
