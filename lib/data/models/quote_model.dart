@@ -13,6 +13,7 @@ class QuoteModel {
   final String reflectionPt;
   final String reflectionEs;
   final String category;
+  final List<String> moods;
 
   // === Constructor ===
   const QuoteModel({
@@ -27,6 +28,7 @@ class QuoteModel {
     required this.reflectionPt,
     required this.reflectionEs,
     required this.category,
+    this.moods = const [],
   });
 
   // === Localized Getters ===
@@ -64,4 +66,10 @@ class QuoteModel {
   }
 
   String get reference => authorEn;
+
+  // === Translation Check ===
+  bool isTranslated(String locale) {
+    if (locale == 'en') return true;
+    return text(locale) != textEn;
+  }
 }

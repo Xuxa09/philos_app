@@ -24,7 +24,32 @@
       "Bash(python add_exist_batch1.py)",
       "Bash(python add_exist_batch2.py)",
       "Bash(python add_exist_batch3.py)",
-      "Bash(python add_exist_batch4.py)"
+      "Bash(python add_exist_batch4.py)",
+      "Bash(python add_exist_batch5.py)",
+      "Bash(python find_missing_prag.py)",
+      "Bash(python add_prag_batch1.py)",
+      "Bash(python add_prag_batch2.py)",
+      "Bash(python find_missing_eastern.py)",
+      "Bash(python add_eastern_batch1.py)",
+      "Bash(python extract_absurdism.py)",
+      "Bash(python gen_reflections_absurdism.py)",
+      "Bash(python apply_reflections.py)",
+      "Bash(python extract_category.py rationalism)",
+      "Bash(python gen_reflections_rationalism.py)",
+      "Bash(python extract_category.py epicureanism)",
+      "Bash(python gen_reflections_epicureanism.py)",
+      "Bash(python extract_category.py eastern)",
+      "Bash(python gen_reflections_eastern.py)",
+      "Bash(python extract_category.py stoicism)",
+      "Bash(python gen_reflections_stoicism.py)",
+      "Bash(python extract_category.py existentialism)",
+      "Bash(python gen_reflections_existentialism.py)",
+      "Bash(python extract_category.py classical)",
+      "Bash(python gen_reflections_classical.py)",
+      "Bash(python extract_category.py pragmatism)",
+      "Bash(python gen_reflections_pragmatism.py)",
+      "Bash(python gen_moods.py)",
+      "Bash(python apply_moods.py)"
     ]
   }
 }

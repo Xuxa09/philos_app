@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../../data/models/quote_model.dart';
 import '../../data/models/mood_model.dart';
 import '../../data/repositories/quote_repository.dart';
-import '../../data/services/moods_data.dart';
 
 class MoodsViewModel extends ChangeNotifier {
   final QuoteRepository _repository = QuoteRepository();
@@ -12,7 +11,7 @@ class MoodsViewModel extends ChangeNotifier {
 
   MoodsViewModel() {
     _selectedMood = MoodType.unmotivated;
-    _quotes = MoodsData.moods[_selectedMood.name] ?? [];
+    _quotes = _repository.getQuotesByMood(_selectedMood);
   }
 
   MoodType get selectedMood => _selectedMood;
@@ -39,7 +38,7 @@ class MoodsViewModel extends ChangeNotifier {
 
   void selectMood(MoodType mood) {
     _selectedMood = mood;
-    _quotes = MoodsData.moods[mood.name] ?? [];
+    _quotes = _repository.getQuotesByMood(mood);
     notifyListeners();
   }
 

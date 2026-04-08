@@ -5,16 +5,22 @@ import '../models/quote_model.dart';
 import '../models/category_model.dart';
 import '../models/mood_model.dart';
 import '../services/mock_data_provider.dart';
-import '../services/moods_data.dart';
 import '../services/storage_service.dart';
 
 class QuoteRepository {
   // === Dependencies ===
   final _storage = StorageService.instance;
 
+  // === Locale-aware quotes ===
+  String get _currentLocale => _storage.selectedLocale ?? 'pt';
+
+  List<QuoteModel> get _quotes => MockDataProvider.quotes
+      .where((q) => q.isTranslated(_currentLocale))
+      .toList();
+
   // === Public Methods ===
   List<QuoteModel> getDailyQuotes() {
-    final allQuotes = MockDataProvider.quotes;
+    final allQuotes = _quotes;
     final seed =
         DateTime.now().day + DateTime.now().month + DateTime.now().year;
     final shuffled = List<QuoteModel>.from(allQuotes)
@@ -23,22 +29,22 @@ class QuoteRepository {
   }
 
   QuoteModel getQuoteOfDay() {
-    final allQuotes = MockDataProvider.quotes;
+    final allQuotes = _quotes;
     final index =
         (DateTime.now().day + DateTime.now().month) % allQuotes.length;
     return allQuotes[index];
   }
 
   List<QuoteModel> getQuotesByCategory(QuoteCategory category) {
-    return MockDataProvider.quotes
+    return _quotes
         .where((q) => q.category == category.name)
         .toList();
   }
 
-  List<QuoteModel> getAllQuotes() => MockDataProvider.quotes;
+  List<QuoteModel> getAllQuotes() => _quotes;
 
   List<QuoteModel> getMoreQuotes(int offset) {
-    final all = MockDataProvider.quotes;
+    final all = _quotes;
     if (offset >= all.length) return [];
     return all.sublist(offset);
   }
@@ -60,7 +66,7 @@ class QuoteRepository {
 
   List<QuoteModel> getFavoriteQuotes() {
     final ids = _storage.favoriteIds;
-    return MockDataProvider.quotes
+    return _quotes
         .where((q) => ids.contains(q.id))
         .toList();
   }
@@ -68,25 +74,29 @@ class QuoteRepository {
   // === Philosopher Filtering ===
   List<String> getUniqueAuthors() {
     final authors = <String>{};
-    for (final q in MockDataProvider.quotes) {
+    for (final q in _quotes) {
       authors.add(q.authorEn);
     }
     return authors.toList()..sort();
   }
 
   List<QuoteModel> getQuotesByAuthor(String authorEn) {
-    return MockDataProvider.quotes
+    return _quotes
         .where((q) => q.authorEn == authorEn)
         .toList();
   }
 
   // === Mood Filtering ===
   List<QuoteModel> getQuotesByMood(MoodType mood) {
-    return MoodsData.moods[mood.name] ?? [];
+    return _quotes
+        .where((q) => q.moods.contains(mood.name))
+        .toList();
   }
 
   List<QuoteModel> getAllMoodQuotes() {
-    return MoodsData.moods.values.expand((list) => list).toList();
+    return _quotes
+        .where((q) => q.moods.isNotEmpty)
+        .toList();
   }
 
   // === Search ===

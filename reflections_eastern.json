@@ -1,0 +1,912 @@
+{
+  "Being deeply loved by someone gives you strength, while loving someone deeply gives you courage.": {
+    "en": "Love is both a source of strength and an act of courage. Practice it as both gift and discipline.",
+    "pt": "O amor é ao mesmo tempo fonte de força e ato de coragem. Pratique-o como presente e disciplina.",
+    "es": "El amor es a la vez fuente de fuerza y acto de coraje. Practiícalo como regalo y disciplina."
+  },
+  "It is easy to hate and it is difficult to love. This is how the whole scheme of things works. All good things are difficult to achieve and bad things are very easy to get.": {
+    "en": "Good things require effort, bad things only inertia. Choose the harder, more rewarding path today.",
+    "pt": "Coisas boas exigem esforço, coisas ruins apenas inércia. Escolha o caminho mais difícil e gratificante hoje.",
+    "es": "Las cosas buenas requieren esfuerzo, las malas solo inercia. Elige el camino más difícil y gratificante hoy."
+  },
+  "We join spokes together in a wheel, but it is the center hole that makes the wagon move.We shape clay into a pot, but it is the emptiness insidethat holds whatever we want.We hammer wood for a house, but it is the inner spacethat makes it livable.We work with being, but non-being is what we use.": {
+    "en": "What is empty is what makes things useful. Honor the spaces in your life as much as the substance.",
+    "pt": "O que está vazio é o que torna as coisas úteis. Honre os espaços em sua vida tanto quanto a substância.",
+    "es": "Lo vacío es lo que hace útiles las cosas. Honra los espacios en tu vida tanto como la sustancia."
+  },
+  "Because of a great love, one is courageous.": {
+    "en": "Love is both a source of strength and an act of courage. Practice it as both gift and discipline.",
+    "pt": "O amor é ao mesmo tempo fonte de força e ato de coragem. Pratique-o como presente e disciplina.",
+    "es": "El amor es a la vez fuente de fuerza y acto de coraje. Practiícalo como regalo y disciplina."
+  },
+  "A good traveler has no fixed plans and is not intent on arriving.": {
+    "en": "True travel is openness, not destination. Wander your day without insisting on outcomes.",
+    "pt": "O verdadeiro viajar é abertura, não destino. Vagueie pelo seu dia sem insistir em resultados.",
+    "es": "El verdadero viajar es apertura, no destino. Deambula tu día sin insistir en resultados."
+  },
+  "It does not matter how slowly you go as long as you do not stop.": {
+    "en": "Pace matters less than direction. Keep moving toward what matters and the distance closes itself.",
+    "pt": "O ritmo importa menos que a direção. Continue avançando para o que importa e a distância se fecha sozinha.",
+    "es": "El ritmo importa menos que la dirección. Sigue avanzando hacia lo que importa y la distancia se cierra sola."
+  },
+  "Forget injuries, never forget kindnesses.": {
+    "en": "Holding grudges drains us; remembering kindness nourishes us. Choose what to keep alive in memory.",
+    "pt": "Guardar rancores nos drena; lembrar da gentileza nos nutre. Escolha o que manter vivo na memória.",
+    "es": "Guardar rencores nos drena; recordar la amabilidad nos nutre. Elige qué mantener vivo en la memoria."
+  },
+  "Give a bowl of rice to a man and you will feed him for a day. Teach him how to grow his own rice and you will save his life.": {
+    "en": "Lasting help is teaching, not giving. Offer skills before charity whenever you can.",
+    "pt": "A ajuda duradoura é ensinar, não dar. Ofereça habilidades antes de caridade sempre que puder.",
+    "es": "La ayuda duradera es enseñar, no dar. Ofrece habilidades antes que caridad siempre que puedas."
+  },
+  "In dwelling, live close to the ground. In thinking, keep to the simple. In conflict, be fair and generous. In governing, don't try to control. In work, do what you enjoy. In family life, be completely present.": {
+    "en": "Life is simple when we stop adding to it. Subtract before you add today.",
+    "pt": "A vida é simples quando paramos de adicionar a ela. Subtraia antes de adicionar hoje.",
+    "es": "La vida es simple cuando dejamos de añadirle cosas. Resta antes de añadir hoy."
+  },
+  "In the end,The treasure of life is missed by those who hold on and gained by those who let go.": {
+    "en": "Holding tightly often loses what we want to keep. Release with open hands and see what remains.",
+    "pt": "Segurar com força frequentemente perde o que queremos manter. Solte com mãos abertas e veja o que permanece.",
+    "es": "Sostener con fuerza a menudo pierde lo que queremos guardar. Suelta con manos abiertas y mira lo que queda."
+  },
+  "If you make a mistake and do not correct it, this is called a mistake.": {
+    "en": "Mistakes are only mistakes when uncorrected. Notice yours and adjust without shame.",
+    "pt": "Os erros só são erros quando não corrigidos. Note os seus e ajuste sem vergonha.",
+    "es": "Los errores solo son errores cuando no se corrigen. Nota los tuyos y ajusta sin vergüenza."
+  },
+  "When I let go of what I am, I become what I might be.": {
+    "en": "Holding tightly often loses what we want to keep. Release with open hands and see what remains.",
+    "pt": "Segurar com força frequentemente perde o que queremos manter. Solte com mãos abertas e veja o que permanece.",
+    "es": "Sostener con fuerza a menudo pierde lo que queremos guardar. Suelta con manos abiertas y mira lo que queda."
+  },
+  "When you see a good person, think of becoming like her/him. When you see someone not so good, reflect on your own weak points.": {
+    "en": "Others are mirrors for your growth. Let good people inspire you and difficult people teach you.",
+    "pt": "Os outros são espelhos para seu crescimento. Deixe pessoas boas o inspirarem e pessoas difíceis o ensinarem.",
+    "es": "Los demás son espejos para tu crecimiento. Deja que las personas buenas te inspiren y las difíciles te enseñen."
+  },
+  "It is not the failure of others to appreciate your abilities that should trouble you, but rather your failure to appreciate theirs.": {
+    "en": "Failing to appreciate others is a deeper poverty than being unappreciated. Practice generous attention.",
+    "pt": "Falhar em apreciar os outros é uma pobreza mais profunda do que não ser apreciado. Pratique a atenção generosa.",
+    "es": "Fallar en apreciar a los demás es una pobreza más profunda que no ser apreciado. Practica la atención generosa."
+  },
+  "Your own positive future begins in this moment. All you have is right now. Every goal is possible from here.": {
+    "en": "The present moment is all you ever truly have. Inhabit it fully before reaching for the next.",
+    "pt": "O momento presente é tudo que você realmente tem. Habite-o plenamente antes de buscar o próximo.",
+    "es": "El momento presente es todo lo que verdaderamente tienes. Habítalo plenamente antes de alcanzar el próximo."
+  },
+  "The Man who says he can, and the man who says he can not.. Are both correct": {
+    "en": "Belief shapes reality more than circumstance. Watch what you tell yourself you can or cannot do.",
+    "pt": "A crença molda a realidade mais que a circunstância. Observe o que você diz a si mesmo que pode ou não fazer.",
+    "es": "La creencia moldea la realidad más que la circunstancia. Observa lo que te dices que puedes o no puedes hacer."
+  },
+  "There isa time to liveand a time to diebut never to reject the moment.": {
+    "en": "The present moment is all you ever truly have. Inhabit it fully before reaching for the next.",
+    "pt": "O momento presente é tudo que você realmente tem. Habite-o plenamente antes de buscar o próximo.",
+    "es": "El momento presente es todo lo que verdaderamente tienes. Habítalo plenamente antes de alcanzar el próximo."
+  },
+  "Do your work, then step back. The only path to serenity.": {
+    "en": "Serenity comes after the work, not instead of it. Do what is yours, then let go of the result.",
+    "pt": "A serenidade vem depois do trabalho, não em vez dele. Faça o que é seu, depois solte o resultado.",
+    "es": "La serenidad viene después del trabajo, no en su lugar. Haz lo que es tuyo, luego suelta el resultado."
+  },
+  "There is no illusion greater than fear.": {
+    "en": "Fear is largely an illusion built by imagination. Examine what you fear and watch it shrink.",
+    "pt": "O medo é em grande parte uma ilusão construída pela imaginação. Examine o que você teme e veja-o encolher.",
+    "es": "El miedo es en gran parte una ilusión construida por la imaginación. Examina lo que temes y míralo encogerse."
+  },
+  "The journey of a thousand miles begins with a single step. Watch your step.": {
+    "en": "Pace matters less than direction. Keep moving toward what matters and the distance closes itself.",
+    "pt": "O ritmo importa menos que a direção. Continue avançando para o que importa e a distância se fecha sozinha.",
+    "es": "El ritmo importa menos que la dirección. Sigue avanzando hacia lo que importa y la distancia se cierra sola."
+  },
+  "He who defends with love will be secure; Heaven will save him, and protect him with love.": {
+    "en": "Love is both a source of strength and an act of courage. Practice it as both gift and discipline.",
+    "pt": "O amor é ao mesmo tempo fonte de força e ato de coragem. Pratique-o como presente e disciplina.",
+    "es": "El amor es a la vez fuente de fuerza y acto de coraje. Practiícalo como regalo y disciplina."
+  },
+  "Great acts are made up of small deeds.": {
+    "en": "Big things are made of small ones. Care for the small details and the great deeds will follow.",
+    "pt": "Grandes coisas são feitas de pequenas. Cuide dos pequenos detalhes e os grandes feitos seguirão.",
+    "es": "Las grandes cosas están hechas de pequeñas. Cuida los pequeños detalles y las grandes hazañas seguirán."
+  },
+  "Learn as if you were not reaching your goal and as though you were scared of missing it": {
+    "en": "Learn with humility, urgency, and reverence. Treat every lesson as precious and fleeting.",
+    "pt": "Aprenda com humildade, urgência e reverência. Trate cada lição como preciosa e fugaz.",
+    "es": "Aprende con humildad, urgencia y reverencia. Trata cada lección como preciosa y efímera."
+  },
+  "Life is really simple, but we insist on making it complicated.": {
+    "en": "Life is simple when we stop adding to it. Subtract before you add today.",
+    "pt": "A vida é simples quando paramos de adicionar a ela. Subtraia antes de adicionar hoje.",
+    "es": "La vida es simple cuando dejamos de añadirle cosas. Resta antes de añadir hoy."
+  },
+  "Even the finest sword plunged into salt water will eventually rust.": {
+    "en": "All tools wear with use, even the finest. Care for what you cherish and accept its limits.",
+    "pt": "Todas as ferramentas se desgastam com o uso, mesmo as melhores. Cuide do que estima e aceite seus limites.",
+    "es": "Todas las herramientas se desgastan con el uso, incluso las mejores. Cuida lo que aprecias y acepta sus límites."
+  },
+  "Doing nothing is better than being busy doing nothing.": {
+    "en": "Action without purpose wastes more than rest. Pause and ask if your busyness serves anything real.",
+    "pt": "Ação sem propósito desperdiça mais que o descanso. Pause e pergunte se sua ocupação serve a algo real.",
+    "es": "La acción sin propósito desperdicia más que el descanso. Detente y pregunta si tu ocupación sirve a algo real."
+  },
+  "As soon as you have made a thought, laugh at it.": {
+    "en": "Take your thoughts lightly; even the serious ones. Laughter loosens the grip of obsession.",
+    "pt": "Leve seus pensamentos levemente; mesmo os sérios. O riso solta o aperto da obsessão.",
+    "es": "Toma tus pensamientos con ligereza, incluso los serios. La risa afloja el agarre de la obsesión."
+  },
+  "If your desire is for good, the people will be good.": {
+    "en": "What you wish for the world begins to appear in those around you. Wish well, broadly.",
+    "pt": "O que você deseja para o mundo começa a aparecer naqueles ao seu redor. Deseje o bem, amplamente.",
+    "es": "Lo que deseas para el mundo comienza a aparecer en quienes te rodean. Desea el bien, ampliamente."
+  },
+  "He who conquers himself is the mightiest warrior.": {
+    "en": "Conquering yourself is harder and more lasting than conquering others. Begin within.",
+    "pt": "Conquistar a si mesmo é mais difícil e mais duradouro do que conquistar os outros. Comece por dentro.",
+    "es": "Conquistarse a uno mismo es más difícil y duradero que conquistar a otros. Comienza por dentro."
+  },
+  "Existence is beyond the power of wordsTo define:Terms may be usedBut are none of them absolute.In the beginning of heaven and earth there were no words,Words came out of the womb of matter;And whether a man dispassionatelySees to the core of lifeOr passionatelySees the surface,The core and the surfaceAre essentially the same,Words making them seem differentOnly to express appearance.If name be needed, wonder names them both:From wonder into wonderExistence opens.": {
+    "en": "Words define what is beyond words. Use them gently and know their limits.",
+    "pt": "As palavras definem o que está além das palavras. Use-as com gentileza e conheça seus limites.",
+    "es": "Las palabras definen lo que está más allá de las palabras. Úsalas con gentileza y conoce sus límites."
+  },
+  "Klar sieht, wer von ferne sieht, nebelhaft, wer Anteil nimmt.": {
+    "en": "Distance brings clarity that involvement obscures. Step back when stuck.",
+    "pt": "A distância traz a clareza que o envolvimento obscurece. Recue quando estiver preso.",
+    "es": "La distancia trae la claridad que la implicación oscurece. Da un paso atrás cuando estés atascado."
+  },
+  "If lightning is the anger of the gods, then the gods are concerned mostly about trees.": {
+    "en": "Most divine wrath we imagine is just nature acting on the tallest things. Stop assigning meaning to randomness.",
+    "pt": "A maior parte da ira divina que imaginamos é apenas a natureza agindo nas coisas mais altas. Pare de atribuir sentido ao acaso.",
+    "es": "La mayoría de la ira divina que imaginamos es solo la naturaleza actuando sobre lo más alto. Deja de asignar sentido al azar."
+  },
+  "By three methods we may learn wisdom: First, by reflection, which is noblest; Second, by imitation, which is easiest; and third by experience, which is the bitterest.": {
+    "en": "Reflection is the noblest path to wisdom. Spend more time thinking than acquiring.",
+    "pt": "A reflexão é o caminho mais nobre para a sabedoria. Passe mais tempo pensando do que adquirindo.",
+    "es": "La reflexión es el camino más noble hacia la sabiduría. Pasa más tiempo pensando que adquiriendo."
+  },
+  "He who knows all the answers has not been asked all the questions.": {
+    "en": "Knowing is incomplete until questioned from many sides. Stay curious about what you think you know.",
+    "pt": "O conhecimento é incompleto até ser questionado de vários lados. Mantenha-se curioso sobre o que você pensa que sabe.",
+    "es": "El conocimiento es incompleto hasta ser cuestionado desde varios lados. Manténte curioso sobre lo que crees que sabes."
+  },
+  "The way out is through the door. Why is it that no one will use this method?": {
+    "en": "The simplest answers are usually overlooked. Look at what is in plain sight.",
+    "pt": "As respostas mais simples geralmente são ignoradas. Olhe para o que está à vista.",
+    "es": "Las respuestas más simples son usualmente pasadas por alto. Mira lo que está a la vista."
+  },
+  "Only the wisest and stupidest of men never change.": {
+    "en": "Most people resist change even when it would save them. Decide which kind of person you want to be.",
+    "pt": "A maioria resiste à mudança mesmo quando ela os salvaria. Decida que tipo de pessoa você quer ser.",
+    "es": "La mayoría resiste el cambio incluso cuando los salvaría. Decide qué tipo de persona quieres ser."
+  },
+  "Water is the softest thing, yet it can penetrate mountains and earth. This shows clearly the principle ofsoftness overcoming hardness.": {
+    "en": "What is soft outlasts what is hard. Yield where rigid things break.",
+    "pt": "O que é macio dura mais que o que é duro. Ceda onde coisas rígidas quebram.",
+    "es": "Lo blando dura más que lo duro. Cede donde las cosas rígidas se rompen."
+  },
+  "Time flows away like the water in the river.": {
+    "en": "Time cannot be stopped or recovered. Use this hour as if it were your only one.",
+    "pt": "O tempo não pode ser detido ou recuperado. Use esta hora como se fosse a única.",
+    "es": "El tiempo no puede ser detenido ni recuperado. Usa esta hora como si fuera la única."
+  },
+  "He who acts, spoils; he who grasps, lets slip.": {
+    "en": "Holding tightly often loses what we want to keep. Release with open hands and see what remains.",
+    "pt": "Segurar com força frequentemente perde o que queremos manter. Solte com mãos abertas e veja o que permanece.",
+    "es": "Sostener con fuerza a menudo pierde lo que queremos guardar. Suelta con manos abiertas y mira lo que queda."
+  },
+  "Knowledge is merely brilliance in organization of ideas and not wisdom. The truly wise person goes beyond knowledge.": {
+    "en": "Wisdom is not stored knowledge but living understanding. Practice it in the smallest decisions.",
+    "pt": "A sabedoria não é conhecimento armazenado, mas entendimento vivo. Pratique-a nas menores decisões.",
+    "es": "La sabiduría no es conocimiento almacenado sino comprensión viva. Practícala en las decisiones más pequeñas."
+  },
+  "The Master said, “A true teacher is one who, keeping the past alive, is also able to understand the present.”(Analects 2.11)": {
+    "en": "True teachers connect past to present, tradition to today. Learn from those who do both.",
+    "pt": "Verdadeiros mestres conectam passado e presente, tradição e hoje. Aprenda com aqueles que fazem ambos.",
+    "es": "Los verdaderos maestros conectan pasado y presente, tradición y hoy. Aprende de quienes hacen ambos."
+  },
+  "Without feelings of respect, what is there to distinguish men from beasts?": {
+    "en": "Respect is what separates us from animals. Cultivate it for yourself, others, and life itself.",
+    "pt": "O respeito é o que nos separa dos animais. Cultive-o por si mesmo, pelos outros e pela própria vida.",
+    "es": "El respeto es lo que nos separa de los animales. Cultívalo por ti mismo, por los demás y por la vida misma."
+  },
+  "he who will not economize will have to agonize": {
+    "en": "Frugality today saves agony tomorrow. Live below your means and gain peace.",
+    "pt": "A frugalidade hoje poupa a agonia de amanhã. Viva abaixo dos seus meios e ganhe paz.",
+    "es": "La frugalidad hoy ahorra la agonía de mañana. Vive por debajo de tus medios y gana paz."
+  },
+  "A good traveler leaves no tracks. Good speech lacks fault-finding.": {
+    "en": "Move through the world without leaving wounds. Speak without diminishing others.",
+    "pt": "Mova-se pelo mundo sem deixar feridas. Fale sem diminuir os outros.",
+    "es": "Muévete por el mundo sin dejar heridas. Habla sin disminuir a otros."
+  },
+  "The Master said, “What a worthy man was Yan Hui! Living in a narrow alley, subsisting upon meager bits of rice and water—other people could not have borne such hardship, and yet it never spoiled Hui’s joy. What a worthy man was Hui!”(Analects 6.11)": {
+    "en": "Contentment is the rare wealth that no fortune can buy. Cultivate it in what you already have.",
+    "pt": "O contentamento é a rara riqueza que nenhuma fortuna pode comprar. Cultive-o no que você já tem.",
+    "es": "El contentamiento es la rara riqueza que ninguna fortuna puede comprar. Cultívalo en lo que ya tienes."
+  },
+  "Wisdom, compassion, and courage are the three universally recognized moral qualities of man.": {
+    "en": "Wisdom is not stored knowledge but living understanding. Practice it in the smallest decisions.",
+    "pt": "A sabedoria não é conhecimento armazenado, mas entendimento vivo. Pratique-a nas menores decisões.",
+    "es": "La sabiduría no es conocimiento almacenado sino comprensión viva. Practícala en las decisiones más pequeñas."
+  },
+  "Wenn du weißt, behaupte, dass du es weißt. Und wenn du etwas nicht weißt, gib zu, dass du es nicht weißt. Das ist Wissen.": {
+    "en": "Honesty about what you know and don't know is the foundation of real knowledge.",
+    "pt": "A honestidade sobre o que você sabe e não sabe é a base do conhecimento real.",
+    "es": "La honestidad sobre lo que sabes y no sabes es la base del conocimiento real."
+  },
+  "One hundred victories in one hundred battles is not the most skillful, subduing the other's military without battle is the most skillful.": {
+    "en": "Winning without fighting is the greatest skill. Find ways to resolve conflict before it begins.",
+    "pt": "Vencer sem lutar é a maior habilidade. Encontre maneiras de resolver o conflito antes que começe.",
+    "es": "Vencer sin luchar es la mayor habilidad. Encuentra formas de resolver el conflicto antes de que empiece."
+  },
+  "The past has no power to stop youfrom being present now.Only your grievance aboutthe past can do that.What is grievance?The baggage of oldthought and emotion.": {
+    "en": "The present moment is all you ever truly have. Inhabit it fully before reaching for the next.",
+    "pt": "O momento presente é tudo que você realmente tem. Habite-o plenamente antes de buscar o próximo.",
+    "es": "El momento presente es todo lo que verdaderamente tienes. Habítalo plenamente antes de alcanzar el próximo."
+  },
+  "He who speaks without modesty will find it difficult to make his words good.": {
+    "en": "Modesty makes words trustworthy. Speak less of yourself and more will reach others.",
+    "pt": "A modestia torna as palavras confiáveis. Fale menos de si mesmo e mais alcançará os outros.",
+    "es": "La modestia hace las palabras confiables. Habla menos de ti mismo y más llegará a otros."
+  },
+  "Wherever you go, go with all your heart.": {
+    "en": "Half-presence is the modern disease. Wherever you go, bring your full attention.",
+    "pt": "A meia presença é a doença moderna. Onde quer que você vá, leve sua atenção plena.",
+    "es": "La media presencia es la enfermedad moderna. Adondequiera que vayas, lleva tu atención plena."
+  },
+  "The power of intuitive understanding will protect you from harm until the end of your days.": {
+    "en": "Wisdom is not stored knowledge but living understanding. Practice it in the smallest decisions.",
+    "pt": "A sabedoria não é conhecimento armazenado, mas entendimento vivo. Pratique-a nas menores decisões.",
+    "es": "La sabiduría no es conocimiento almacenado sino comprensión viva. Practícala en las decisiones más pequeñas."
+  },
+  "We should keep the dead before our eyes, and honor them as though still living": {
+    "en": "Honoring those who came before keeps us grounded. Let your ancestors guide your steps.",
+    "pt": "Honrar aqueles que vieram antes nos mantém enraizados. Deixe seus ancestrais guiarem seus passos.",
+    "es": "Honrar a quienes vinieron antes nos mantiene arraigados. Deja que tus ancestros guíen tus pasos."
+  },
+  "What the superior man seeks is in himself what the small man seeks is in others.": {
+    "en": "Look inside before you look outside. The change you seek begins where you stand.",
+    "pt": "Olhe para dentro antes de olhar para fora. A mudança que você busca começa onde você está.",
+    "es": "Mira dentro antes de mirar fuera. El cambio que buscas comienza donde estás."
+  },
+  "To study and constantly, is this not a pleasure? To have friends come from far away places, is this not a joy? If people do not recognize your worth, but this does not worry you, are you not a true gentleman?": {
+    "en": "Constant practice and deep friendships are the truest joys. Cultivate both daily.",
+    "pt": "A prática constante e amizades profundas são as alegrias mais verdadeiras. Cultive ambas diariamente.",
+    "es": "La práctica constante y las amistades profundas son las alegrías más verdaderas. Cultiva ambas diariamente."
+  },
+  "The hardest thing of all is to find a black cat in a dark room, especially if there is no cat.": {
+    "en": "Stop searching for what isn't there. Trust your senses and look at what is.",
+    "pt": "Pare de procurar o que não está lá. Confie em seus sentidos e olhe para o que está.",
+    "es": "Deja de buscar lo que no está. Confía en tus sentidos y mira lo que está."
+  },
+  "Ist eine Lehre zur Satzung erstarrt, hat sie geendet.": {
+    "en": "When teachings become rigid rules, they lose their life. Keep your understanding flexible.",
+    "pt": "Quando os ensinamentos se tornam regras rígidas, perdem sua vida. Mantenha seu entendimento flexível.",
+    "es": "Cuando las enseñanzas se vuelven reglas rígidas, pierden su vida. Mantén tu comprensión flexible."
+  },
+  "I do not concern myself with gods and spirits either good or evil nor do I serve any.": {
+    "en": "Concern yourself less with what cannot be known. Focus on living well today.",
+    "pt": "Preocupe-se menos com o que não pode ser conhecido. Foque em viver bem hoje.",
+    "es": "Preocúpate menos por lo que no puede conocerse. Enfócate en vivir bien hoy."
+  },
+  "To know that you do not know is the best.To think you know when you do not is a disease.Recognizing this disease as a disease is to be free of it.": {
+    "en": "Recognizing your own ignorance is the first step toward wisdom. Cherish your unknowing.",
+    "pt": "Reconhecer sua própria ignorância é o primeiro passo para a sabedoria. Estime seu não-saber.",
+    "es": "Reconocer tu propia ignorancia es el primer paso hacia la sabiduría. Aprecia tu no-saber."
+  },
+  "Knowledge is a treasure, but practice is the key to it.": {
+    "en": "Knowledge without practice is empty. Apply today what you learned yesterday.",
+    "pt": "Conhecimento sem prática é vazio. Aplique hoje o que aprendeu ontem.",
+    "es": "El conocimiento sin práctica está vacío. Aplica hoy lo que aprendiste ayer."
+  },
+  "In pursuit of knowledge, every day something is acquired. In pursuit of wisdom, every day something is dropped.": {
+    "en": "Wisdom is not stored knowledge but living understanding. Practice it in the smallest decisions.",
+    "pt": "A sabedoria não é conhecimento armazenado, mas entendimento vivo. Pratique-a nas menores decisões.",
+    "es": "La sabiduría no es conocimiento almacenado sino comprensión viva. Practícala en las decisiones más pequeñas."
+  },
+  "When you have faults, do not fear to abandon them.": {
+    "en": "Mistakes are only mistakes when uncorrected. Notice yours and adjust without shame.",
+    "pt": "Os erros só são erros quando não corrigidos. Note os seus e ajuste sem vergonha.",
+    "es": "Los errores solo son errores cuando no se corrigen. Nota los tuyos y ajusta sin vergüenza."
+  },
+  "Education breeds confidence. Confidence breeds hope. Hope breeds peace.": {
+    "en": "Education leads to confidence, hope, and peace in that order. Begin with learning to find peace.",
+    "pt": "A educação leva à confiança, esperança e paz nessa ordem. Comece aprendendo para encontrar paz.",
+    "es": "La educación lleva a la confianza, esperanza y paz en ese orden. Comienza con el aprendizaje para encontrar la paz."
+  },
+  "Learning without thought is labor lost thought without learning is perilous.": {
+    "en": "Learning and thinking must accompany each other. Read with reflection, reflect with reading.",
+    "pt": "O aprendizado e o pensamento devem se acompanhar. Leia com reflexão, reflita com leitura.",
+    "es": "El aprendizaje y el pensamiento deben acompañarse. Lee con reflexión, reflexiona con lectura."
+  },
+  "Time is a created thing. To say 'I don't have time,' is like saying, 'I don't want to.": {
+    "en": "Time is created by how we use it. Stop saying you have none and start choosing what matters.",
+    "pt": "O tempo é criado por como o usamos. Pare de dizer que não tem e comece a escolher o que importa.",
+    "es": "El tiempo se crea por cómo lo usamos. Deja de decir que no lo tienes y empieza a elegir lo que importa."
+  },
+  "The funniest people are the saddest ones": {
+    "en": "Behind humor often lies sorrow. Be gentle with those who make you laugh; they may be hurting.",
+    "pt": "Por trás do humor frequentemente está a tristeza. Seja gentil com aqueles que o fazem rir; podem estar sofrendo.",
+    "es": "Detrás del humor a menudo se esconde la tristeza. Sé gentil con quienes te hacen reír; pueden estar sufriendo."
+  },
+  "You cannot open a book without learning something.": {
+    "en": "Books open doors that experience never could. Read something new today.",
+    "pt": "Os livros abrem portas que a experiência jamais poderia. Leia algo novo hoje.",
+    "es": "Los libros abren puertas que la experiencia jamás podría. Lee algo nuevo hoy."
+  },
+  "Mastering others is strength. Mastering oneself makes you fearless.": {
+    "en": "Conquering yourself is harder and more lasting than conquering others. Begin within.",
+    "pt": "Conquistar a si mesmo é mais difícil e mais duradouro do que conquistar os outros. Comece por dentro.",
+    "es": "Conquistarse a uno mismo es más difícil y duradero que conquistar a otros. Comienza por dentro."
+  },
+  "Where words lose their meaning, people lose their lives.": {
+    "en": "Words have power; they shape lives and societies. Choose them with care.",
+    "pt": "As palavras têm poder; moldam vidas e sociedades. Escolha-as com cuidado.",
+    "es": "Las palabras tienen poder; moldean vidas y sociedades. Elígelas con cuidado."
+  },
+  "To know your Enemy, you must become your Enemy.": {
+    "en": "Understanding your enemy requires empathy. The same is true for those you love.",
+    "pt": "Entender seu inimigo exige empatia. O mesmo vale para aqueles que você ama.",
+    "es": "Entender a tu enemigo requiere empatía. Lo mismo vale para quienes amas."
+  },
+  "One mark of a great soldier is that he fight on his own terms or fights not at all.": {
+    "en": "Choose your battles, and choose how to fight them. Some are best refused entirely.",
+    "pt": "Escolha suas batalhas e escolha como lutá-las. Algumas é melhor recusar inteiramente.",
+    "es": "Elige tus batallas y elige cómo lucharlas. Algunas es mejor rechazarlas por completo."
+  },
+  "When one treats people with benevolence, justice, and righteoousness, and reposes confidence in them, the army will be united in mind and all will be happy to serve their leaders'.": {
+    "en": "Kindness costs little and creates much. Practice it especially with those who do not return it.",
+    "pt": "A gentileza custa pouco e cria muito. Pratique-a especialmente com aqueles que não a retribuem.",
+    "es": "La amabilidad cuesta poco y crea mucho. Practícala especialmente con quienes no la devuelven."
+  },
+  "Be where your enemy is not.": {
+    "en": "Avoid direct confrontation when you can. Move around obstacles rather than through them.",
+    "pt": "Evite confronto direto quando puder. Contorne obstáculos em vez de atravessá-los.",
+    "es": "Evita la confrontación directa cuando puedas. Rodea los obstáculos en lugar de atravesarlos."
+  },
+  "The slaying of multitudes should be mourned with sorrow. A victory should be celebrated with the funeral rite.": {
+    "en": "Even victory in war should be mourned, not celebrated. Avoid every conflict that can be avoided.",
+    "pt": "Até a vitória na guerra deve ser lamentada, não celebrada. Evite todo conflito que possa ser evitado.",
+    "es": "Incluso la victoria en la guerra debe ser lamentada, no celebrada. Evita todo conflicto que pueda evitarse."
+  },
+  "Be careful what you water your dreams with. Water them with worry and fear and you will produce weeds that choke the life from your dream. Water them with optimism and solutions and you will cultivate success. Always be on the lookout for ways to turn a problem into an opportunity for success. Always be on the lookout for ways to nurture your dream.": {
+    "en": "What you nourish your dreams with matters. Feed them optimism and possibility, not worry.",
+    "pt": "O que você alimenta seus sonhos importa. Alimente-os com otimismo e possibilidade, não preocupação.",
+    "es": "Con qué alimentas tus sueños importa. Aliméntalos con optimismo y posibilidad, no preocupación."
+  },
+  "Everything has beauty, but not everyone sees it.": {
+    "en": "Beauty is everywhere for those who learn to see. Practice seeing it today.",
+    "pt": "A beleza está em toda parte para aqueles que aprendem a ver. Pratique vê-la hoje.",
+    "es": "La belleza está en todas partes para quienes aprenden a ver. Practica verla hoy."
+  },
+  "So the unwanting soulsees what's hidden,and the ever-wanting soulsees only what it wants.": {
+    "en": "What you seek determines what you find. Want less and you will see more.",
+    "pt": "O que você busca determina o que você encontra. Deseje menos e você verá mais.",
+    "es": "Lo que buscas determina lo que encuentras. Desea menos y verás más."
+  },
+  "I have three precious things which I hold fast and prize. The first is gentleness; the second is frugality; the third is humility, which keeps me from putting myself before others. Be gentle and you can be bold; be frugal and you can be liberal; avoid putting yourself before others and you can become a leader among men.": {
+    "en": "Gentleness, frugality, and humility are the three treasures. Cultivate them and become a true leader.",
+    "pt": "Gentileza, frugalidade e humildade são os três tesouros. Cultive-os e torne-se um verdadeiro líder.",
+    "es": "La gentileza, la frugalidad y la humildad son los tres tesoros. Cultívalos y conviertete en un verdadero líder."
+  },
+  "Go to the people. Live with them. Learn from them. Love them. Startwith what they know. Build with what they have. But with the bestleaders, when the work is done, the task accomplished, the people willsay 'We have done this ourselves.": {
+    "en": "True leadership empowers others to feel ownership. Step back so they can shine.",
+    "pt": "A verdadeira liderança empodera os outros a se sentirem donos. Recue para que eles possam brilhar.",
+    "es": "El verdadero liderazgo empodera a otros a sentirse dueños. Déjate atrás para que ellos puedan brillar."
+  },
+  "The ruler attains wholeness in the correct governance of the people.": {
+    "en": "Rule yourself well before trying to govern others. Inner order creates outer order.",
+    "pt": "Governe-se bem antes de tentar governar os outros. A ordem interior cria a ordem exterior.",
+    "es": "Gobiérnate bien antes de intentar gobernar a otros. El orden interior crea el orden exterior."
+  },
+  "To lead people, you must follow behind.": {
+    "en": "The best leaders serve. Lead by walking behind, not in front.",
+    "pt": "Os melhores líderes servem. Lidere caminhando atrás, não à frente.",
+    "es": "Los mejores líderes sirven. Lidera caminando detrás, no delante."
+  },
+  "Let yourself be silently drawn by the stronger pull of what you really love.Don’t grieve. Anything you lose comes round in another form.The wound is the place where the Light enters you.": {
+    "en": "What you love guides you more truly than reason. Listen to your deepest pull.",
+    "pt": "O que você ama o guia mais verdadeiramente do que a razão. Escute seu chamado mais profundo.",
+    "es": "Lo que amas te guía más verdaderamente que la razón. Escucha tu llamado más profundo."
+  },
+  "Study the past if you would define the future.": {
+    "en": "The past illuminates the future. Study what came before to see clearly what comes next.",
+    "pt": "O passado ilumina o futuro. Estude o que veio antes para ver claramente o que vem a seguir.",
+    "es": "El pasado ilumina el futuro. Estudia lo que vino antes para ver claramente lo que viene después."
+  },
+  "Think of tomorrow, the past can't be mended.": {
+    "en": "The present moment is all you ever truly have. Inhabit it fully before reaching for the next.",
+    "pt": "O momento presente é tudo que você realmente tem. Habite-o plenamente antes de buscar o próximo.",
+    "es": "El momento presente es todo lo que verdaderamente tienes. Habítalo plenamente antes de alcanzar el próximo."
+  },
+  "If there is righteousness in the heart, there will be beauty in the character.If there is beauty in the character, there will be harmony in the home.If there is harmony in the home, there will be order in the nations.When there is order in the nations, there will peace in the world.": {
+    "en": "Inner virtue ripples outward through family, community, and world. Begin with your own heart.",
+    "pt": "A virtude interior se irradia para fora através da família, comunidade e mundo. Comece com seu próprio coração.",
+    "es": "La virtud interior se irradia hacia afuera a través de la familia, la comunidad y el mundo. Comienza con tu propio corazón."
+  },
+  "Music in the soul can be heard by the universe.": {
+    "en": "Music speaks across all boundaries. Listen as a way of touching the universe.",
+    "pt": "A música fala através de todas as fronteiras. Escute como um modo de tocar o universo.",
+    "es": "La música habla a través de todas las fronteras. Escucha como una forma de tocar el universo."
+  },
+  "If one should desire to know whether a kingdom is well governed, if its morals are good or bad, the quality of its music will furnish the answer.": {
+    "en": "Culture reveals what laws cannot. Listen to the music of a place to know its soul.",
+    "pt": "A cultura revela o que as leis não podem. Escute a música de um lugar para conhecer sua alma.",
+    "es": "La cultura revela lo que las leyes no pueden. Escucha la música de un lugar para conocer su alma."
+  },
+  "The gentleman understands what is moral. The small man understands what is profitable.": {
+    "en": "Wisdom is not stored knowledge but living understanding. Practice it in the smallest decisions.",
+    "pt": "A sabedoria não é conhecimento armazenado, mas entendimento vivo. Pratique-a nas menores decisões.",
+    "es": "La sabiduría no es conocimiento almacenado sino comprensión viva. Practícala en las decisiones más pequeñas."
+  },
+  "Love is of all the passions the strongest, for it attacks simultaneously the head, the heart, and the senses.": {
+    "en": "Love is both a source of strength and an act of courage. Practice it as both gift and discipline.",
+    "pt": "O amor é ao mesmo tempo fonte de força e ato de coragem. Pratique-o como presente e disciplina.",
+    "es": "El amor es a la vez fuente de fuerza y acto de coraje. Practiícalo como regalo y disciplina."
+  },
+  "Words are the voice of the heart.": {
+    "en": "Words reveal more than they say. Listen to the heart that speaks them.",
+    "pt": "As palavras revelam mais do que dizem. Escute o coração que as fala.",
+    "es": "Las palabras revelan más de lo que dicen. Escucha al corazón que las habla."
+  },
+  "The more man meditates upon good thoughts, the better will be his world and the world at large.": {
+    "en": "Your inner thoughts shape outer reality. Tend the garden of your mind carefully.",
+    "pt": "Seus pensamentos interiores moldam a realidade exterior. Cuide do jardim da sua mente cuidadosamente.",
+    "es": "Tus pensamientos interiores moldean la realidad exterior. Cuida el jardín de tu mente cuidadosamente."
+  },
+  "To rank the effort above the prize may be called love.": {
+    "en": "Love is both a source of strength and an act of courage. Practice it as both gift and discipline.",
+    "pt": "O amor é ao mesmo tempo fonte de força e ato de coragem. Pratique-o como presente e disciplina.",
+    "es": "El amor es a la vez fuente de fuerza y acto de coraje. Practiícalo como regalo y disciplina."
+  },
+  "Do you imagine the universe is agitated? Go into the desert at night and look at the stars. This practice should answer the question.": {
+    "en": "Stillness reveals what motion hides. Be quiet and the universe answers.",
+    "pt": "A quietude revela o que o movimento esconde. Fique quieto e o universo responde.",
+    "es": "La quietud revela lo que el movimiento oculta. Quédate quieto y el universo responde."
+  },
+  "There is nothing more real than what cannot be seen and there is nothing more certain than what cannot be heard.": {
+    "en": "The most real things cannot be touched. Honor the invisible as much as the visible.",
+    "pt": "As coisas mais reais não podem ser tocadas. Honre o invisível tanto quanto o visível.",
+    "es": "Las cosas más reales no pueden tocarse. Honra lo invisible tanto como lo visible."
+  },
+  "Half of life is lost in charming others.The other half is lost in going through anxieties caused by others.Leave this play. You have played enough.": {
+    "en": "Stop performing for others or fearing them. Reclaim your hours for what is your own.",
+    "pt": "Pare de performar para os outros ou de temê-los. Recupere suas horas para o que é seu.",
+    "es": "Deja de actuar para los demás o temerlos. Recupera tus horas para lo que es tuyo."
+  },
+  "Watch your thoughts, they become your words; watch your words, they become your actions; watch your actions, they become your habits; watch your habits, they become your character; watch your character, it becomes your destiny.": {
+    "en": "Thoughts become words, words become acts, acts become character. Begin at the source.",
+    "pt": "Pensamentos se tornam palavras, palavras se tornam atos, atos se tornam caráter. Comece pela fonte.",
+    "es": "Los pensamientos se vuelven palabras, las palabras se vuelven actos, los actos se vuelven carácter. Comienza por la fuente."
+  },
+  "Without knowing the force of words, it is impossible to know more.": {
+    "en": "Words shape perception. Without language, knowledge cannot grow.",
+    "pt": "As palavras moldam a percepção. Sem linguagem, o conhecimento não pode crescer.",
+    "es": "Las palabras moldean la percepción. Sin lenguaje, el conocimiento no puede crecer."
+  },
+  "Writing cannot express all words, words cannot encompass all ideas.": {
+    "en": "Some things slip through every form of expression. Sit with mysteries that words cannot hold.",
+    "pt": "Algumas coisas escapam de toda forma de expressão. Sente-se com mistérios que as palavras não podem conter.",
+    "es": "Algunas cosas escapan a toda forma de expresión. Siéntate con misterios que las palabras no pueden contener."
+  },
+  "If you don’t stand sincere by your wordshow sincere can the people be?Take great care over words, treasure them.1.17": {
+    "en": "Your word is your worth. Keep promises and society will trust you.",
+    "pt": "Sua palavra é seu valor. Cumpra promessas e a sociedade confiará em você.",
+    "es": "Tu palabra es tu valor. Cumple promesas y la sociedad confiará en ti."
+  },
+  "The Master doesn't try to be powerful;thus he is truly powerful.The ordinary man keeps reaching for power;thus he never has enough.The Master does nothing,yet he leaves nothing undone.The ordinary man is always ding things,yet many more are left to be done.[…]Therefore the Master concerns himselfWith the depths and not the surface,With the fruit and not the flower.[…]Teaching without words,Performing without actions:That is the Master’s way.[…]The Master arrives without leaving,Sees the light without looking,Achieves without doing a thing.[…]The Master is above the people,And no one feels oppressed.She goes ahead of the people,And no feels manipulated.The whole world is grateful to her.Because she completes with no one,No one can complete with her.": {
+    "en": "True power does not seek itself. Practice doing without trying.",
+    "pt": "O verdadeiro poder não se busca. Pratique fazer sem tentar.",
+    "es": "El verdadero poder no se busca a sí mismo. Practica hacer sin intentar."
+  },
+  "Understand both yourself and your enemy, and you shall always emerge victorious": {
+    "en": "Conquering yourself is harder and more lasting than conquering others. Begin within.",
+    "pt": "Conquistar a si mesmo é mais difícil e mais duradouro do que conquistar os outros. Comece por dentro.",
+    "es": "Conquistarse a uno mismo es más difícil y duradero que conquistar a otros. Comienza por dentro."
+  },
+  "At fifteen I set my heart upon learning. At thirty, I had planted my feet firm upon the ground. At forty, I no longer suffered from perplexities. At fifty, I knew what were the biddings of Heaven. At sixty, I heard them with docile ear. At seventy, I could follow the dictates of my own heart; for what I desired no longer overstepped the boundaries of right.": {
+    "en": "A life unfolds in stages. Honor where you are without rushing the next decade.",
+    "pt": "Uma vida se desdobra em estágios. Honre onde você está sem apressar a próxima década.",
+    "es": "Una vida se despliega en etapas. Honra donde estás sin apresurar la próxima década."
+  },
+  "The Way to do is to be.": {
+    "en": "The way to do is to be. Stop trying so hard and let your nature guide you.",
+    "pt": "O caminho do fazer é ser. Pare de se esforçar tanto e deixe sua natureza guiá-lo.",
+    "es": "El camino para hacer es ser. Deja de esforzarte tanto y deja que tu naturaleza te guíe."
+  },
+  "When there is silence one finds the anchor of the universe within oneself": {
+    "en": "Silence is where the deepest truths emerge. Make room for it daily.",
+    "pt": "O silêncio é onde as verdades mais profundas emergem. Faça espaço para ele diariamente.",
+    "es": "El silencio es donde las verdades más profundas emergen. Haz espacio para él diariamente."
+  },
+  "It is more shameful to distrust our friends than to be deceived by them.": {
+    "en": "Suspicion poisons relationships more than betrayal. Trust freely, accept the cost.",
+    "pt": "A suspeita envenena as relações mais que a traição. Confie livremente, aceite o custo.",
+    "es": "La sospecha envenena las relaciones más que la traición. Confía libremente, acepta el costo."
+  },
+  "If you are untrustworthy, people will not trust you.": {
+    "en": "Trustworthiness is earned by being trustworthy. Match your inside to your outside.",
+    "pt": "A confiabilidade é conquistada sendo confiável. Combine seu interior com seu exterior.",
+    "es": "La confiabilidad se gana siendo confiable. Iguala tu interior con tu exterior."
+  },
+  "To be wronged is nothing, unless you continue to remember it.": {
+    "en": "Old wounds only sting if you pick at them. Let healing replace remembering.",
+    "pt": "Velhas feridas só doem se você as cutuca. Deixe a cura substituir a lembrança.",
+    "es": "Las viejas heridas solo duelen si las hurgas. Deja que la sanación reemplace al recuerdo."
+  },
+  "If a person seems wicked, do not cast him away. Awaken him with your words, elevate him with your deeds, repay his injury with your kindness. Do not cast him away; cast away his wickedness.": {
+    "en": "Kindness costs little and creates much. Practice it especially with those who do not return it.",
+    "pt": "A gentileza custa pouco e cria muito. Pratique-a especialmente com aqueles que não a retribuem.",
+    "es": "La amabilidad cuesta poco y crea mucho. Practícala especialmente con quienes no la devuelven."
+  },
+  "Revere the unity of all-that-iscarry out your daily activities with compassion;if you do not limit your compassion,you yourself will not be limited.": {
+    "en": "Kindness costs little and creates much. Practice it especially with those who do not return it.",
+    "pt": "A gentileza custa pouco e cria muito. Pratique-a especialmente com aqueles que não a retribuem.",
+    "es": "La amabilidad cuesta poco y crea mucho. Practícala especialmente con quienes no la devuelven."
+  },
+  "Heaven’s Tao is impartial,yet those who follow its compassionate waywill always be nourished": {
+    "en": "Kindness costs little and creates much. Practice it especially with those who do not return it.",
+    "pt": "A gentileza custa pouco e cria muito. Pratique-a especialmente com aqueles que não a retribuem.",
+    "es": "La amabilidad cuesta poco y crea mucho. Practícala especialmente con quienes no la devuelven."
+  },
+  "Kindness in words creates confidence. Kindness in thinking creates profoundness. Kindness in giving creates love.": {
+    "en": "Kindness costs little and creates much. Practice it especially with those who do not return it.",
+    "pt": "A gentileza custa pouco e cria muito. Pratique-a especialmente com aqueles que não a retribuem.",
+    "es": "La amabilidad cuesta poco y crea mucho. Practícala especialmente con quienes no la devuelven."
+  },
+  "The wise man does not lay up his own treasures.The more he gives to others,the more he has for his own.": {
+    "en": "Generosity multiplies what is given. The more you share, the more you have.",
+    "pt": "A generosidade multiplica o que é dado. Quanto mais você compartilha, mais você tem.",
+    "es": "La generosidad multiplica lo que se da. Cuanto más compartes, más tienes."
+  },
+  "With those who are kindthe sage is kindWith those who are not kindthe sage is also kindbecause the way of Tao is kindness": {
+    "en": "Kindness costs little and creates much. Practice it especially with those who do not return it.",
+    "pt": "A gentileza custa pouco e cria muito. Pratique-a especialmente com aqueles que não a retribuem.",
+    "es": "La amabilidad cuesta poco y crea mucho. Practícala especialmente con quienes no la devuelven."
+  },
+  "The journey of a thousand miles begins with a single step.": {
+    "en": "Pace matters less than direction. Keep moving toward what matters and the distance closes itself.",
+    "pt": "O ritmo importa menos que a direção. Continue avançando para o que importa e a distância se fecha sozinha.",
+    "es": "El ritmo importa menos que la dirección. Sigue avanzando hacia lo que importa y la distancia se cierra sola."
+  },
+  "Highly evolved people have their own conscience as pure law.": {
+    "en": "Inner conscience is the highest law. Live by what is right, not by what is allowed.",
+    "pt": "A consciência interior é a lei mais alta. Viva pelo que é certo, não pelo que é permitido.",
+    "es": "La conciencia interior es la ley más alta. Vive por lo que es correcto, no por lo que está permitido."
+  },
+  "Health is the greatest possession. Contentment is the greatest treasure. Confidence is the greatest friend.": {
+    "en": "Health, contentment, and confidence are the truest possessions. Cultivate all three.",
+    "pt": "Saúde, contentamento e confiança são as posses mais verdadeiras. Cultive as três.",
+    "es": "Salud, contentamiento y confianza son las posesiones más verdaderas. Cultiva las tres."
+  },
+  "free from desire, you realize the mysterycaught in the desire, you see only the manifestations.": {
+    "en": "Desire blinds; freedom from desire reveals. Practice wanting nothing in this moment.",
+    "pt": "O desejo cega; a liberdade do desejo revela. Pratique não querer nada neste momento.",
+    "es": "El deseo ciega; la libertad del deseo revela. Practica no querer nada en este momento."
+  },
+  "He who searches for evil, must first look at his own reflection.": {
+    "en": "What you seek in others lives first in yourself. Mirror inward before pointing outward.",
+    "pt": "O que você procura nos outros vive primeiro em si mesmo. Espelhe para dentro antes de apontar para fora.",
+    "es": "Lo que buscas en otros vive primero en ti mismo. Refleja hacia dentro antes de señalar hacia afuera."
+  },
+  "The best fighter is never angry.": {
+    "en": "Anger held longer harms you more than its target. Drop the burning coal from your hand.",
+    "pt": "A raiva mantida por mais tempo o machuca mais que seu alvo. Solte o carvão em brasa da sua mão.",
+    "es": "La ira sostenida más tiempo te daña más que a su blanco. Suelta el carbón encendido de tu mano."
+  },
+  "For this reason the gentleman will employ a man on a distant mission and observe his degree of loyalty, will employ him close at hand and observe his degree of respect. He will hand him troublesome affairs and observe how well he manages them, will suddenly ask his advice and observe how wisely he answers. He will exact some difficult promise from him and see how well he keeps it, turn over funds to him and see with what benevolence he dispenses them, inform him of the danger he is in and note how faithful he is to his duties. He will get him drunk with wine and observe how well he handles himself, place him in mixed company and see what effect beauty has upon him. By applying these nine tests, you may determine who is the unworthy man.": {
+    "en": "Test others through small situations to know them deeply. Pay attention to what reveals character.",
+    "pt": "Teste os outros através de pequenas situações para conhecê-los profundamente. Preste atenção ao que revela o caráter.",
+    "es": "Prueba a otros a través de pequeñas situaciones para conocerlos profundamente. Presta atención a lo que revela el carácter."
+  },
+  "Stop thinking, and end your problems.": {
+    "en": "Some problems only thinking creates. Stop the loop and many will dissolve.",
+    "pt": "Alguns problemas só o pensar cria. Pare o ciclo e muitos se dissolverão.",
+    "es": "Algunos problemas solo el pensar los crea. Detente el ciclo y muchos se disolverán."
+  },
+  "The gentleman does not promote people merely on the basis of their words, nor does he reject words merely because of the person who uttered them.": {
+    "en": "Judge ideas on their own merit, not by who says them. Truth has no master.",
+    "pt": "Julgue as ideias por seu próprio mérito, não por quem as diz. A verdade não tem dono.",
+    "es": "Juzga las ideas por su propio mérito, no por quién las dice. La verdad no tiene amo."
+  },
+  "Silence is a source of Great Strength.": {
+    "en": "Silence is where the deepest truths emerge. Make room for it daily.",
+    "pt": "O silêncio é onde as verdades mais profundas emergem. Faça espaço para ele diariamente.",
+    "es": "El silencio es donde las verdades más profundas emergen. Haz espacio para él diariamente."
+  },
+  "The more laws and restrictions there are,The poorer people become....The more rules and regulations,The more thieves and robbers.": {
+    "en": "Excessive rules create rebellion. The lighter the touch, the more harmonious the order.",
+    "pt": "Regras excessivas criam rebelião. Quanto mais leve o toque, mais harmoniosa a ordem.",
+    "es": "Las reglas excesivas crean rebelión. Cuanto más ligero el toque, más armonioso el orden."
+  },
+  "Better a diamond with a flaw than a pebble without.": {
+    "en": "Imperfection is part of value. A flawed treasure is worth more than a flawless trifle.",
+    "pt": "A imperfeição faz parte do valor. Um tesouro imperfeito vale mais que uma trivialidade perfeita.",
+    "es": "La imperfección es parte del valor. Un tesoro imperfecto vale más que una trivialidad perfecta."
+  },
+  "Lao Tzu \"The key to growth is the introductionof higher dimensions of consciousnessinto our awareness.": {
+    "en": "Growth requires expanding your awareness. Open to dimensions you have not yet seen.",
+    "pt": "O crescimento exige expandir sua consciência. Abra-se a dimensões que você ainda não viu.",
+    "es": "El crecimiento requiere expandir tu conciencia. Ábrete a dimensiones que aún no has visto."
+  },
+  "As to the roaming of sages,They move in utter emptiness,Let their minds meander in the great nothingness;They run beyond conventionAnd go through where there is no gateway.They listen to the soundlessAnd look at the formless,They are not constrained by societyAnd not bound to its customs.- Lao-tzu": {
+    "en": "Wandering freely is its own kind of arrival. Stop forcing every step to lead somewhere.",
+    "pt": "Vaguear livremente é sua própria forma de chegada. Pare de forçar cada passo para levar a algum lugar.",
+    "es": "Vagar libremente es su propia forma de llegada. Deja de forzar cada paso para que lleve a algún lugar."
+  },
+  "The Master, by residing in the Tao,sets an example for all beings.Because he doesn't display himself,people can see his light.Because he has nothing to prove,people can trust his": {
+    "en": "Wisdom is not stored knowledge but living understanding. Practice it in the smallest decisions.",
+    "pt": "A sabedoria não é conhecimento armazenado, mas entendimento vivo. Pratique-a nas menores decisões.",
+    "es": "La sabiduría no es conocimiento almacenado sino comprensión viva. Practícala en las decisiones más pequeñas."
+  },
+  "Heaven's net is wide, but its mesh is fine": {
+    "en": "Subtle laws catch what obvious rules miss. Trust the natural justice of things.",
+    "pt": "Leis sutis pegam o que regras óbvias deixam escapar. Confie na justiça natural das coisas.",
+    "es": "Las leyes sutiles atrapan lo que las reglas obvias pasan por alto. Confía en la justicia natural de las cosas."
+  },
+  "No one can insult me, because I do not want respect.No one can defeat me, because I have given up the idea of winning.How can you defeat me? You can only defeat someone who wants to win.": {
+    "en": "Not seeking approval makes insults harmless. Free yourself from the need to be respected.",
+    "pt": "Não buscar aprovação torna os insultos inofensivos. Liberte-se da necessidade de ser respeitado.",
+    "es": "No buscar aprobación hace inofensivos los insultos. Libérate de la necesidad de ser respetado."
+  },
+  "To speak little is natural. Therefore a gale does not blow a whole morning nor does a downpour last a whole day.": {
+    "en": "Speak only when necessary. Brevity is the natural way of wisdom.",
+    "pt": "Fale apenas quando necessário. A brevidade é o caminho natural da sabedoria.",
+    "es": "Habla solo cuando sea necesario. La brevedad es el camino natural de la sabiduría."
+  },
+  "Because one believes in oneself, one doesn't try to convince others. Because one is content with oneself, one doesn't need others' approval. Because one accepts oneself, the whole world accepts him or her.": {
+    "en": "Self-acceptance attracts the world's acceptance. Begin within and the rest follows.",
+    "pt": "A autoaceitação atrai a aceitação do mundo. Comece por dentro e o resto segue.",
+    "es": "La autoaceptación atrae la aceptación del mundo. Comienza por dentro y el resto sigue."
+  },
+  "Allow the heart to empty itself of all turmoil! Retrieve the utter tranquility of the mind from which you issued.Although all forms are dynamic,and we all grow and transform,each of us is compelled to return to our root. Our root is quietude.": {
+    "en": "Return to stillness as a tree returns to its root. Quietude is your true home.",
+    "pt": "Retorne à quietude como uma árvore retorna à sua raiz. A quietude é sua verdadeira casa.",
+    "es": "Vuelve a la quietud como un árbol vuelve a su raíz. La quietud es tu verdadero hogar."
+  },
+  "If quick, I survive.If not quick, I am lost.This is \"death.": {
+    "en": "Speed sometimes saves and sometimes loses; wisdom knows when. Cultivate timing.",
+    "pt": "A velocidade às vezes salva e às vezes perde; a sabedoria sabe quando. Cultive o timing.",
+    "es": "La velocidad a veces salva y a veces pierde; la sabiduría sabe cuándo. Cultiva el timing."
+  },
+  "Knowing others is Wisdom, knowing yourself is Enlightenment": {
+    "en": "Knowing yourself is the deepest knowing. Look inward as carefully as outward.",
+    "pt": "Conhecer a si mesmo é o conhecimento mais profundo. Olhe para dentro com tanto cuidado quanto para fora.",
+    "es": "Conocerse a uno mismo es el conocimiento más profundo. Mira hacia dentro con tanto cuidado como hacia fuera."
+  },
+  "The Master said, “A true gentleman is one who has set his heart upon the Way. A fellow who is ashamed merely of shabby clothing or modest meals is not even worth conversing with.”(Analects 4.9)": {
+    "en": "Set your heart on the Way, not on appearances. Focus on what is essential to your becoming.",
+    "pt": "Coloque seu coração no Caminho, não nas aparências. Foque no que é essencial para o seu tornar-se.",
+    "es": "Pon tu corazón en el Camino, no en las apariencias. Enfócate en lo que es esencial para tu llegar a ser."
+  },
+  "The Master said, “If your conduct is determined solely by considerations of profit you will arouse great resentment.": {
+    "en": "Profit-driven action breeds resentment. Let purpose guide you instead of gain.",
+    "pt": "A ação movida pelo lucro gera ressentimento. Deixe o propósito guiá-lo em vez do ganho.",
+    "es": "La acción motivada por el beneficio engendra resentimiento. Deja que el propósito te guíe en vez de la ganancia."
+  },
+  "The Master said, “The gentleman understands what is right, whereas the petty man understands profit.”(Analects 4.16)": {
+    "en": "The noble person sees what is right; the small person sees what is profitable. Choose your vision.",
+    "pt": "A pessoa nobre vê o que é certo; a pessoa pequena vê o que é lucrativo. Escolha sua visão.",
+    "es": "La persona noble ve lo que es correcto; la persona pequeña ve lo que es lucrativo. Elige tu visión."
+  },
+  "The Master said, “Wealth and honor are things that all people desire, and yet unless they are acquired in the proper way I will not abide them. Poverty and disgrace are things that all people hate, and yet unless they are avoided in the proper way I will not despise them. “If the gentleman abandons ren, how can he be worthy of that name? The gentleman does not violate ren even for the amount of time required to eat a meal. Even in times of urgency or distress, he does not depart from it.”(Analects 4.5)": {
+    "en": "Wealth and honor must be acquired rightly to be worth having. Means matter as much as ends.",
+    "pt": "Riqueza e honra devem ser adquiridas corretamente para valerem. Os meios importam tanto quanto os fins.",
+    "es": "Riqueza y honor deben adquirirse correctamente para valer la pena. Los medios importan tanto como los fines."
+  },
+  "The Master said, “The gentleman does not serve as a vessel.”(Analects 2.12)": {
+    "en": "A noble person cannot be reduced to a function. Refuse to be used as a mere tool.",
+    "pt": "Uma pessoa nobre não pode ser reduzida a uma função. Recuse ser usado como mera ferramenta.",
+    "es": "Una persona noble no puede ser reducida a una función. Recházate ser usado como mera herramienta."
+  },
+  "The difficult problems in life always start off being simple. Great affairs always start off being small.": {
+    "en": "Big problems begin small. Solve issues while they are still tiny.",
+    "pt": "Grandes problemas começam pequenos. Resolva questões enquanto ainda são minúsculas.",
+    "es": "Los grandes problemas comienzan pequeños. Resuelve los asuntos mientras aún son diminutos."
+  },
+  "He who is concerned only with the purity of his own life ruins the great human relations.": {
+    "en": "Excessive purity isolates you from others. Engage with the world rather than retreating from it.",
+    "pt": "A pureza excessiva o isola dos outros. Engaje-se com o mundo em vez de se afastar dele.",
+    "es": "La pureza excesiva te aísla de los demás. Comprometéte con el mundo en lugar de retirarte de él."
+  },
+  "Be content with what you have;rejoice in the way things are.When you realize there is nothing lacking,the whole world belongs to you.": {
+    "en": "Contentment is the rare wealth that no fortune can buy. Cultivate it in what you already have.",
+    "pt": "O contentamento é a rara riqueza que nenhuma fortuna pode comprar. Cultive-o no que você já tem.",
+    "es": "El contentamiento es la rara riqueza que ninguna fortuna puede comprar. Cultívalo en lo que ya tienes."
+  },
+  "He who wishes to secure the good of others, has already secured his own.": {
+    "en": "Securing the good of others secures your own. Practice generosity as enlightened self-interest.",
+    "pt": "Assegurar o bem dos outros assegura o seu próprio. Pratique a generosidade como interesse próprio esclarecido.",
+    "es": "Asegurar el bien de los demás asegura el tuyo propio. Practica la generosidad como interés propio iluminado."
+  },
+  "The way of the superior person is threefold; virtuous, they are free from anxieties; wise they are free from perplexities; and bold they are free from fear.": {
+    "en": "Virtue, wisdom, and courage free you from anxiety, perplexity, and fear. Cultivate all three.",
+    "pt": "Virtude, sabedoria e coragem o libertam da ansiedade, perplexidade e medo. Cultive os três.",
+    "es": "Virtud, sabiduría y coraje te liberan de la ansiedad, la perplejidad y el miedo. Cultiva los tres."
+  },
+  "The Master said of Gong Yechang, “He is marriageable. Although he was once imprisoned and branded as a criminal, he was in fact innocent of any crime.” The Master gave him his daughter in marriage.(Analects 5.1)": {
+    "en": "Past wrongdoing does not define a person. Look at who someone is now.",
+    "pt": "Erros passados não definem uma pessoa. Olhe para quem alguém é agora.",
+    "es": "Los errores pasados no definen a una persona. Mira quién es alguien ahora."
+  },
+  "Material and infinite are inseparableAppreciating their interconnectednessis the gateway to understanding": {
+    "en": "Material and infinite are inseparable. Honor both the visible and invisible.",
+    "pt": "O material e o infinito são inseparáveis. Honre tanto o visível quanto o invisível.",
+    "es": "Lo material y lo infinito son inseparables. Honra tanto lo visible como lo invisible."
+  },
+  "Manifest plainness,Embrace simplicity,Reduce selfishness,Have few desires.": {
+    "en": "Life is simple when we stop adding to it. Subtract before you add today.",
+    "pt": "A vida é simples quando paramos de adicionar a ela. Subtraia antes de adicionar hoje.",
+    "es": "La vida es simple cuando dejamos de añadirle cosas. Resta antes de añadir hoy."
+  },
+  "To be able under all circumstances to practice five things constitutes perfect virtue; these five things are gravity, generosity of soul, sincerity, earnestness and kindness.": {
+    "en": "Five virtues complete a person: gravity, generosity, sincerity, earnestness, and kindness.",
+    "pt": "Cinco virtudes completam uma pessoa: gravidade, generosidade, sinceridade, ardor e gentileza.",
+    "es": "Cinco virtudes completan a una persona: gravedad, generosidad, sinceridad, fervor y amabilidad."
+  },
+  "If equally matched, we can offer battle; if slightly inferior in numbers, we can avoid the enemy; if quite unequal in every way, we can flee from him. Though an obstinate fight may be made by a small force, in the end it must be captured by the larger force.": {
+    "en": "Even victory in war should be mourned, not celebrated. Avoid every conflict that can be avoided.",
+    "pt": "Até a vitória na guerra deve ser lamentada, não celebrada. Evite todo conflito que possa ser evitado.",
+    "es": "Incluso la victoria en la guerra debe ser lamentada, no celebrada. Evita todo conflicto que pueda evitarse."
+  },
+  "The art of war is the art of deception.": {
+    "en": "Strategy depends on accurate self-knowledge. Start by knowing your real strengths.",
+    "pt": "A estratégia depende de autoconhecimento preciso. Comece por conhecer suas reais forças.",
+    "es": "La estrategia depende del autoconocimiento preciso. Comienza por conocer tus reales fortalezas."
+  },
+  "If he is taking his ease, give him no rest. If his forces are united, separate them.": {
+    "en": "Even victory in war should be mourned, not celebrated. Avoid every conflict that can be avoided.",
+    "pt": "Até a vitória na guerra deve ser lamentada, não celebrada. Evite todo conflito que possa ser evitado.",
+    "es": "Incluso la victoria en la guerra debe ser lamentada, no celebrada. Evita todo conflicto que pueda evitarse."
+  },
+  "One need not destroy one's enemy. One need only destroy his willingness to engage.": {
+    "en": "The skilled tactician disrupts what their opponent has carefully arranged. Find the loose thread.",
+    "pt": "O tático habilidoso desfaz o que seu oponente arranjou cuidadosamente. Encontre o fio solto.",
+    "es": "El táctico hábil deshace lo que su oponente ha arreglado cuidadosamente. Encuentra el hilo suelto."
+  },
+  "A common man marvels at uncommon things. A wise man marvels at the commonplace.": {
+    "en": "Common minds wonder at the rare; wise minds wonder at the everyday. Look at the ordinary closely.",
+    "pt": "Mentes comuns se maravilham com o raro; mentes sábias se maravilham com o cotidiano. Olhe o comum de perto.",
+    "es": "Las mentes comunes se maravillan con lo raro; las mentes sabias con lo cotidiano. Mira lo ordinario de cerca."
+  },
+  "The Master, by residing in the Tao,sets an example for all beings.Because he doesn't display himself,people can see his light.Because he has nothing to prove,people can trust his words.Because he doesn't know who he is,people recognize themselves in him.Because he has no goal in mind,everything he does succeeds.": {
+    "en": "True power does not seek itself. Practice doing without trying.",
+    "pt": "O verdadeiro poder não se busca. Pratique fazer sem tentar.",
+    "es": "El verdadero poder no se busca a sí mismo. Practica hacer sin intentar."
+  },
+  "If you wish to be out front, then act as if you were behind.": {
+    "en": "To lead is to serve from behind. Put others in front of you and watch growth happen.",
+    "pt": "Liderar é servir de trás. Coloque os outros à sua frente e veja o crescimento acontecer.",
+    "es": "Liderar es servir desde atrás. Pon a los demás delante de ti y observa crécer."
+  },
+  "Be content with what you have; rejoice in the way things are.When you realize there is nothing lacking, the whole world belongs to you.": {
+    "en": "Contentment is the rare wealth that no fortune can buy. Cultivate it in what you already have.",
+    "pt": "O contentamento é a rara riqueza que nenhuma fortuna pode comprar. Cultive-o no que você já tem.",
+    "es": "El contentamiento es la rara riqueza que ninguna fortuna puede comprar. Cultívalo en lo que ya tienes."
+  },
+  "Every battle is won before it is fought.": {
+    "en": "True victory comes before the fight begins. Win by preparation and avoidance.",
+    "pt": "A verdadeira vitória vem antes da luta começar. Vença pela preparação e evitação.",
+    "es": "La verdadera victoria viene antes de que comience la lucha. Vence por preparación y evitación."
+  },
+  "Attack the evil that is within yourself, rather than attacking the evil that is in others.": {
+    "en": "The evil you should fight is the one within. Begin every reform at home.",
+    "pt": "O mal que você deve combater é o que está dentro. Comece toda reforma em casa.",
+    "es": "El mal que debes combatir es el que está dentro. Comienza toda reforma en casa."
+  },
+  "The best of all leaders is the one who helps people so that eventually they don’t need him.": {
+    "en": "True leaders make themselves unnecessary. Empower others until they no longer need you.",
+    "pt": "Verdadeiros líderes se tornam desnecessários. Empodere os outros até que não precisem mais de você.",
+    "es": "Los verdaderos líderes se vuelven innecesarios. Empodera a otros hasta que ya no te necesiten."
+  },
+  "The snow goose need not bathe to make itself white. Neither need you do anything but be yourself.": {
+    "en": "You do not need to perform to be valuable. Simply being yourself is enough.",
+    "pt": "Você não precisa performar para ter valor. Simplesmente ser você mesmo é suficiente.",
+    "es": "No necesitas actuar para tener valor. Simplemente ser tú mismo es suficiente."
+  },
+  "Too much thinking causes confusion and anxietybetter to stick with the simplicity of Tao": {
+    "en": "Life is simple when we stop adding to it. Subtract before you add today.",
+    "pt": "A vida é simples quando paramos de adicionar a ela. Subtraia antes de adicionar hoje.",
+    "es": "La vida es simple cuando dejamos de añadirle cosas. Resta antes de añadir hoy."
+  },
+  "Let go of rousing speechand identification with thoughtsUntil your endyou will never be jaded": {
+    "en": "Identification with thoughts is exhausting. Watch them pass without becoming them.",
+    "pt": "A identificação com pensamentos é exaustiva. Observe-os passar sem se tornar eles.",
+    "es": "La identificación con pensamientos es agotadora. Obsérvalos pasar sin convertirte en ellos."
+  },
+  "The grass must bend when the wind blows across it.": {
+    "en": "What is soft outlasts what is hard. Yield where rigid things break.",
+    "pt": "O que é macio dura mais que o que é duro. Ceda onde coisas rígidas quebram.",
+    "es": "Lo blando dura más que lo duro. Cede donde las cosas rígidas se rompen."
+  },
+  "Looking at small advantages prevents great affairs from being accomplished.": {
+    "en": "Small advantages distract from great achievements. Keep your eyes on what truly matters.",
+    "pt": "Pequenas vantagens distraem das grandes conquistas. Mantenha seus olhos no que verdadeiramente importa.",
+    "es": "Las pequeñas ventajas distraen de los grandes logros. Mantén los ojos en lo que verdaderamente importa."
+  },
+  "The superior man is modest in his speech  but excels in his actions.": {
+    "en": "Speak less, do more. Let your actions complete what your words begin.",
+    "pt": "Fale menos, faça mais. Deixe suas ações completarem o que suas palavras começaram.",
+    "es": "Habla menos, haz más. Deja que tus acciones completen lo que tus palabras comenzaron."
+  },
+  "The gem cannot be polished without friction  nor man perfected without trials.": {
+    "en": "Friction polishes; trials perfect. Welcome resistance as part of becoming.",
+    "pt": "A fricção pole; as provas aperfeiçoam. Acolha a resistência como parte do tornar-se.",
+    "es": "La fricción pule; las pruebas perfeccionan. Acoge la resistencia como parte del llegar a ser."
+  },
+  "Let the beauty you love be what you do. There are a thousand ways to kneel and kiss the earth.": {
+    "en": "Let what you love be how you spend your hours. There are countless ways to honor life.",
+    "pt": "Que o que você ama seja como passa suas horas. Há incontáveis modos de honrar a vida.",
+    "es": "Que lo que amas sea como pasas tus horas. Hay innumerables formas de honrar la vida."
+  },
+  "The cautious seldom err.": {
+    "en": "Caution prevents most errors. Pause briefly before each consequential choice.",
+    "pt": "A cautela previne a maioria dos erros. Pause brevemente antes de cada escolha consequente.",
+    "es": "La cautela previene la mayoría de los errores. Pausa brevemente antes de cada elección consecuente."
+  },
+  "The superior man makes the difficulty to be overcome his first interest  success comes only later.": {
+    "en": "Pursue the difficult first; success follows naturally. Stop chasing easy wins.",
+    "pt": "Persiga o difícil primeiro; o sucesso segue naturalmente. Pare de perseguir vitórias fáceis.",
+    "es": "Persigue lo difícil primero; el éxito sigue naturalmente. Deja de perseguir victorias fáciles."
+  },
+  "To see what is right  and not do it  is want of courage.": {
+    "en": "Knowing without doing is its own kind of failure. Act on what you already know.",
+    "pt": "Saber sem fazer é seu próprio tipo de fracasso. Aja sobre o que você já sabe.",
+    "es": "Saber sin hacer es su propio tipo de fracaso. Actúa sobre lo que ya sabes."
+  },
+  "To know what is right and not do it is the worst cowardice.": {
+    "en": "The worst cowardice is knowing what is right and not doing it. Live up to your understanding.",
+    "pt": "A pior covardia é saber o que é certo e não fazer. Viva à altura do seu entendimento.",
+    "es": "La peor cobardía es saber lo que es correcto y no hacerlo. Vive a la altura de tu comprensión."
+  },
+  "He who will not economize will have to agonize.": {
+    "en": "Frugality today saves agony tomorrow. Live below your means and gain peace.",
+    "pt": "A frugalidade hoje poupa a agonia de amanhã. Viva abaixo dos seus meios e ganhe paz.",
+    "es": "La frugalidad hoy ahorra la agonía de mañana. Vive por debajo de tus medios y gana paz."
+  },
+  "Through zeal  knowledge is gotten  through lack of zeal  knowledge is lost.": {
+    "en": "Zeal builds knowledge; lukewarmness loses it. Bring fire to what you study.",
+    "pt": "O zelo constrói conhecimento; a tibieza o perde. Traga fogo ao que você estuda.",
+    "es": "El celo construye conocimiento; la tibieza lo pierde. Trae fuego a lo que estudias."
+  },
+  "A man who has committed a mistake and doesn't correct it is committing another mistake.": {
+    "en": "Mistakes are only mistakes when uncorrected. Notice yours and adjust without shame.",
+    "pt": "Os erros só são erros quando não corrigidos. Note os seus e ajuste sem vergonha.",
+    "es": "Los errores solo son errores cuando no se corrigen. Nota los tuyos y ajusta sin vergüenza."
+  },
+  "If a man take no thought about what is distant  he will find sorrow near at hand.": {
+    "en": "Long-term thinking prevents near-term sorrow. Plan ahead even when comfortable.",
+    "pt": "O pensamento de longo prazo previne tristezas próximas. Planeje com antecedência mesmo quando confortável.",
+    "es": "El pensamiento a largo plazo previene tristezas cercanas. Planifica con anticipación incluso cuando estés cómodo."
+  },
+  "To be wronged is nothing unless you continue to remember it.": {
+    "en": "Old wounds only sting if you pick at them. Let healing replace remembering.",
+    "pt": "Velhas feridas só doem se você as cutuca. Deixe a cura substituir a lembrança.",
+    "es": "Las viejas heridas solo duelen si las hurgas. Deja que la sanación reemplace al recuerdo."
+  },
+  "Holding on to anger is like grasping a hot coal with the intent of throwing it at someone else  you are the one who gets burned.": {
+    "en": "Anger held longer harms you more than its target. Drop the burning coal from your hand.",
+    "pt": "A raiva mantida por mais tempo o machuca mais que seu alvo. Solte o carvão em brasa da sua mão.",
+    "es": "La ira sostenida más tiempo te daña más que a su blanco. Suelta el carbón encendido de tu mano."
+  },
+  "Those who are free of resentful thoughts surely find peace.": {
+    "en": "Releasing resentment brings the peace it withheld from you. Forgive for your own sake.",
+    "pt": "Soltar o ressentimento traz a paz que ele lhe negava. Perdoe pelo seu próprio bem.",
+    "es": "Soltar el resentimiento trae la paz que te negaba. Perdona por tu propio bien."
+  },
+  "Have no friends not equal to yourself.": {
+    "en": "Surround yourself with people who lift you. Companions shape who you become.",
+    "pt": "Cerque-se de pessoas que o elevam. Os companheiros moldam quem você se torna.",
+    "es": "Rodéate de personas que te eleven. Los compañeros moldean en lo que te conviertes."
+  },
+  "What you do not want others to do to you  do not do to others.": {
+    "en": "Kindness costs little and creates much. Practice it especially with those who do not return it.",
+    "pt": "A gentileza custa pouco e cria muito. Pratique-a especialmente com aqueles que não a retribuem.",
+    "es": "La amabilidad cuesta poco y crea mucho. Practícala especialmente con quienes no la devuelven."
+  },
+  "The way of a superior man is threefold: Virtuous  he is free from anxieties  wise  he is free from perplexities  bold  he is free from fear.": {
+    "en": "Virtue, wisdom, and courage free you from anxiety, perplexity, and fear. Cultivate all three.",
+    "pt": "Virtude, sabedoria e coragem o libertam da ansiedade, perplexidade e medo. Cultive os três.",
+    "es": "Virtud, sabiduría y coraje te liberan de la ansiedad, la perplejidad y el miedo. Cultiva los tres."
+  }
+}
