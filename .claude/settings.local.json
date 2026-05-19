@@ -47,7 +47,25 @@
       "Read(//c/SRC/**)",
       "Bash(ls \"c:/Users/lalli/Flutter/coach_phrase_app/\"*.csv)",
       "Read(//c/Users/lalli/Flutter/**)",
-      "Read(//c/Users/lalli/Flutter/coach_phrase_app/**)"
+      "Read(//c/Users/lalli/Flutter/coach_phrase_app/**)",
+      "Bash(python -c ' *)",
+      "Bash(python batch_1.py)",
+      "Bash(python batch_2.py)",
+      "Bash(python batch_3.py)",
+      "Bash(python batch_4.py)",
+      "Bash(python batch_5.py)",
+      "Bash(python batch_6.py)",
+      "Bash(python batch_7.py)",
+      "Bash(python batch_8.py)",
+      "Bash(python batch_9.py)",
+      "Bash(python batch_10.py)",
+      "Bash(python batch_11.py)",
+      "Bash(python batch_12.py)",
+      "Bash(python batch_13.py)",
+      "Bash(python batch_14.py)",
+      "Bash(python batch_15.py)",
+      "Bash(python batch_16.py)",
+      "Bash(python _final_check.py)"
     ]
   }
 }

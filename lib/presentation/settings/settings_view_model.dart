@@ -1,3 +1,4 @@
+import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import '../../data/services/notification_service.dart';
@@ -6,14 +7,20 @@ import '../../data/services/storage_service.dart';
 class SettingsViewModel extends ChangeNotifier {
   final StorageService _storage = StorageService.instance;
   final NotificationService _notifications = NotificationService.instance;
+  static const _supportedCodes = {'en', 'pt', 'es'};
   String _appVersion = '';
   late Locale _locale;
   late bool _notificationsEnabled;
 
   SettingsViewModel() {
     final saved = _storage.selectedLocale;
-    _locale = saved != null ? Locale(saved) : const Locale('pt');
+    _locale = saved != null ? Locale(saved) : _systemLocale();
     _notificationsEnabled = _storage.notificationsEnabled;
+  }
+
+  Locale _systemLocale() {
+    final systemCode = ui.PlatformDispatcher.instance.locale.languageCode;
+    return Locale(_supportedCodes.contains(systemCode) ? systemCode : 'en');
   }
 
   String get appVersion => _appVersion;

@@ -25,18 +25,25 @@ class _RandomQuoteSheetState extends State<RandomQuoteSheet> {
   // === Properties ===
   final _repository = QuoteRepository();
   late QuoteModel _quote;
+  bool _initialized = false;
 
   // === Lifecycle ===
   @override
-  void initState() {
-    super.initState();
-    _pickRandom();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (!_initialized) {
+      _initialized = true;
+      _pickRandom(Localizations.localeOf(context).languageCode);
+    }
   }
 
   // === Actions ===
-  void _pickRandom() {
-    final all = MockDataProvider.quotes;
-    _quote = all[Random().nextInt(all.length)];
+  void _pickRandom(String locale) {
+    final pool = MockDataProvider.quotes
+        .where((q) => q.isTranslated(locale))
+        .toList();
+    final source = pool.isEmpty ? MockDataProvider.quotes : pool;
+    _quote = source[Random().nextInt(source.length)];
     HapticService.light();
     if (mounted) setState(() {});
   }
@@ -51,14 +58,33 @@ class _RandomQuoteSheetState extends State<RandomQuoteSheet> {
         padding: const EdgeInsets.all(AppSpacing.screenPadding),
         child: Column(
           children: [
-            Container(
-              width: 40, height: 4,
-              decoration: BoxDecoration(
-                color: AppColors.surfaceSecondary,
-                borderRadius: BorderRadius.circular(2),
-              ),
+            Row(
+              children: [
+                const SizedBox(width: 32),
+                Expanded(
+                  child: Center(
+                    child: Container(
+                      width: 40, height: 4,
+                      decoration: BoxDecoration(
+                        color: AppColors.surfaceSecondary,
+                        borderRadius: BorderRadius.circular(2),
+                      ),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    HapticService.light();
+                    Navigator.of(context).pop();
+                  },
+                  child: const SizedBox(
+                    width: 32, height: 32,
+                    child: Icon(Icons.close, size: 22, color: AppColors.textSecondary),
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(height: AppSpacing.xl),
+            const SizedBox(height: AppSpacing.lg),
             Flexible(
               child: SingleChildScrollView(
                 child: Column(
@@ -77,7 +103,7 @@ class _RandomQuoteSheetState extends State<RandomQuoteSheet> {
                       title: _anotherQuoteLabel(locale),
                       isOutlined: true,
                       icon: Icons.refresh,
-                      onTap: _pickRandom,
+                      onTap: () => _pickRandom(locale),
                     ),
                     const SizedBox(height: AppSpacing.md),
                   ],
